@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavWrapper = styled.nav`
-  background-color: #333;
+  background-color: #231942;
   color: #fff;
 `;
 
@@ -11,18 +11,28 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 50px;
+`;
+
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const Logo = styled(Link)`
   font-size: 1.5rem;
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px;
 `;
+
 
 const NavMenu = styled.ul`
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 `;
 
 const NavItem = styled.li`
@@ -42,7 +52,9 @@ const Header = () => {
   return (
     <NavWrapper>
       <NavContainer>
-        <Logo to="/">RPI CogSci</Logo>
+        <LogoWrapper>
+          <Logo to="/">DKE</Logo>
+        </LogoWrapper>
         <NavMenu>
           <NavItem>
             <NavLinkStyled to="/" exact activeClassName="active">

@@ -1,12 +1,21 @@
-import React from "react";
+import React from 'react';
+import styled from 'styled-components';
 
-const Projects = () => {
-    return (
-        <div>
-            <h1>Projects</h1>
-            {/* Add your projects content here */}
-        </div>
-    );
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
+
+
+const ProjectsPage = () => {
+  return (
+    <PageContainer>
+      <h1>Projects Page</h1>
+    </PageContainer>
+  );
 };
 
-export default Projects;
+export default ProjectsPage;
