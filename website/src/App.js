@@ -1,21 +1,38 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import styled from 'styled-components';
 import Header from './components/Header';
-import Homepage from './components/Homepage';
+import HomePage from './components/Homepage';
 import ProjectsPage from './components/ProjectsPage';
 import Footer from './components/Footer';
 
-function App() {
+const AppContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MainContent = styled.main`
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+`;
+
+const App = () => {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/projects" component={ProjectsPage} />
-      </Switch>
-      <Footer />
+      <AppContainer>
+        <Header />
+        <MainContent>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+          </Routes>
+        </MainContent>
+        <Footer />
+      </AppContainer>
     </Router>
   );
-}
+};
 
 export default App;
