@@ -1,3 +1,22 @@
+
+# Delta Kappa Epsilon Fraternity Website
+
+_An RCOS project intended to create a website for Fraternities._
+
+---
+
+**Welcome to the open-source repository for the Psi Omega Chapter of Delta Kappa Epsilon (DKE) Fraternity website!** This project is dedicated to creating an interactive and informative website for our fraternity chapter, Delta Kappa Epsilon. Our primary goal is to provide a centralized platform for our members and potential recruits to access essential information, stay updated on events, and learn about our rich history.
+
+## Features
+
+- **Event Calendar**: Stay in the loop with our chapter's events and activities. Our event calendar will keep you informed about upcoming gatherings, parties, and community service initiatives.
+
+- **Brother Roster**: Get to know our current brothers better with a comprehensive roster. Learn about their backgrounds, majors, and interests.
+
+- **Chapter Information**: Discover more about our chapter, including our location, history, and notable awards and achievements.
+
+- **Fraternity History**: Explore the rich history and traditions of the Delta Kappa Epsilon fraternity, both at the chapter level and within the national organization.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
