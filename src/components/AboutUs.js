@@ -12,11 +12,20 @@ const AboutUs = () => {
                 <li>Chapter Size: 24 dedicated members</li>
                 <li>GPA Average: A proud 3.34</li>
                 <li>Philanthropy: We raised over $1000 this year for charitable causes</li>
-                <li>Community Service: Each member commits to 8 hours of community service</li>
+                <li>Community Service: Each member commits to at least 10 hours of community service</li>
                 <li>Diverse Majors: Our brothers represent the School of Business, Engineering, Humanities, and Science.</li>
             </ul>
 
+            <h4>Our Mission</h4>
+            <p><strong>Academic Excellence:</strong> We prioritize our studies, with a dedicated Academic Chair supporting those who strive for academic greatness.</p>
 
+            <p><strong>Moral & Cultural Development:</strong> Our leadership structures and external community involvement ensures our brothers grow holistically, absorbing diverse perspectives and fostering leadership skills.</p>
+
+            <p><strong>Community Engagement:</strong> We actively serve our community, from our partnership with Oakwood Community Center to campus-wide events, always upholding our core values.</p>
+
+            <p><strong>Human Connection:</strong> Brotherhood is the cornerstone of our fraternity. It's not just about spending time together but supporting one another academically, professionally, and personally.</p>
+
+            <p><strong>Behind The Scenes:</strong> The Psi Omega Chapter of DKE is not just a fraternity; it's a legacy. Upheld by our Objects, we believe in intellectual excellence, honorable friendship, tolerance, and the unity of kindred spirits.</p>
         </div>
     );
 };
