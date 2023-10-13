@@ -11,6 +11,8 @@ _An RCOS project intended to create a website for Fraternities._
 
 - **Event Calendar**: Stay in the loop with our chapter's events and activities. Our event calendar will keep you informed about upcoming gatherings, parties, and community service initiatives.
 
+- **Announcements**: Make announcements about important things that our chapter is doing   
+
 - **Brother Roster**: Get to know our current brothers better with a comprehensive roster. Learn about their backgrounds, majors, and interests.
 
 - **Chapter Information**: Discover more about our chapter, including our location, history, and notable awards and achievements.
