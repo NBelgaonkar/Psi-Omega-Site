@@ -63,7 +63,7 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/about" activeClassName="active">
-              About
+              About Us
             </NavLinkStyled>
           </NavItem>
           <NavItem>
