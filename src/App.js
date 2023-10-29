@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import HomePage from './components/Homepage';
 import ProjectsPage from './components/ProjectsPage';
+import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 import Footer from './components/Footer';
 
 const AppContainer = styled.div`
@@ -27,6 +28,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/about" element={<AboutUs />} />  
           </Routes>
         </MainContent>
         <Footer />
