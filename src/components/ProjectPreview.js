@@ -1,12 +1,29 @@
 import React from 'react';
 
-const ProjectPreview = ({ image, description }) => {
-    return (
-        <div style={{width: "200px", textAlign: "center"}}>
-            <img src={image} alt={description} style={{width: "100%", height: "200px", objectFit: "cover"}} />
-            <p style={{color: "silver"}}>{description}</p>
-        </div>
-    );
+const containerStyle = {
+    width: '200px',
+    textAlign: 'center',
 };
+
+const imageStyle = {
+    width: '100%',
+    height: '200px',
+    objectFit: 'cover',
+};
+
+const descriptionStyle = {
+    color: 'silver',
+};
+
+const ProjectPreview = React.memo(({ image, description }) => {
+    const altText = description || 'Project preview image';
+
+    return (
+        <figure style={containerStyle} className="project-preview">
+            <img src={image} alt={altText} style={imageStyle} />
+            <figcaption style={descriptionStyle}>{description}</figcaption>
+        </figure>
+    );
+});
 
 export default ProjectPreview;
