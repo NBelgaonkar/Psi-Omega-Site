@@ -5,6 +5,11 @@ import styled from 'styled-components';
 const NavWrapper = styled.nav`
   background-color: #231942;
   color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 `;
 
 const NavContainer = styled.div`
@@ -12,6 +17,8 @@ const NavContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const LogoWrapper = styled.div`
@@ -26,7 +33,6 @@ const Logo = styled(Link)`
   font-weight: bold;
   margin-right: 20px;
 `;
-
 
 const NavMenu = styled.ul`
   display: flex;
