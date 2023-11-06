@@ -1,6 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import background from '../Images/pic.png';
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+`;
 
 const ReadMoreButton = styled.button`
   border: none;
@@ -25,11 +32,13 @@ const Container = styled.div`
   background-image: url(${background});
   background-size: cover;
   background-attachment: fixed;
-  color: white;
-  font-family: Arial, sans-serif;
+  background-position: center top;
+  color: black;
   flex-grow: 1;
   min-height: 100vh;
+  padding-top: 60px;
   padding: 50px;
+  margin-top: 60px;
 `;
 
 const Content = styled.div`
@@ -46,10 +55,10 @@ const TextSection = styled.div`
   margin-top: 250px;
   margin-bottom: 400px;
   margin-right: 1200px;
-  color: 'gray';
+  color: black;
   p {
     font-size: 24px; 
-  };
+  }
   h1 {
     font-size: 36px; 
     margin-bottom: 30px;
@@ -94,63 +103,67 @@ const Image = styled.img`
 
 const Title = styled.h2`
   font-size: 1.5em;
-  color: #333;
+  color: black;
 `;
 
 const Description = styled.p`
-  color: #666;
+  color: black;
 `;
 
-class EventsPage extends React.Component {
-    state = {
-        events: [
-            {
-                title: 'Event 1',
-                imageUrl: `https://source.unsplash.com/random?news&sig=1`,
-                description: 'Description 1',
-            },
-            {
-                title: 'Event 2',
-                imageUrl: `https://source.unsplash.com/random?news&sig=2`,
-                description: 'Description 2',
-            },
-            {
-                title: 'Event 3',
-                imageUrl: `https://source.unsplash.com/random?news&sig=3`,
-                description: 'Description 3',
-            },
-        ],
-    };
-    render() {
-        return (
-            <Container>
-                <Content>
-                    <TextSection>
-                        <h1>Welcome to the Psi Omega Chapter of DKE at RPI</h1>
-                        <p>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</p>
-                        
-                        <ReadMoreButton onClick={() => {
-                            // Navigate to 'About Us' page or some other action
-                        }}>
-                            Learn More
-                        </ReadMoreButton>
-                    </TextSection>
+class HomePage extends React.Component {
+  state = {
+    events: [
+      {
+        title: 'Event 1',
+        imageUrl: `https://source.unsplash.com/random?event&sig=1`,
+        description: 'Description 1',
+      },
+      {
+        title: 'Event 2',
+        imageUrl: `https://source.unsplash.com/random?event&sig=2`,
+        description: 'Description 2',
+      },
+      {
+        title: 'Event 3',
+        imageUrl: `https://source.unsplash.com/random?event&sig=3`,
+        description: 'Description 3',
+      },
+    ],
+  };
 
-                    <h1>Our Initiatives</h1>
-                    <EventContainer>
-                        {this.state.events.map((event, index) => (
-                            <EventCard key={index}>
-                                <ImageContainer>
-                                    <Image src={event.imageUrl} alt={event.title} />
-                                </ImageContainer>
-                                <Title>{event.title}</Title>
-                                <Description>{event.description}</Description>
-                            </EventCard>
-                        ))}
-                    </EventContainer>
-                </Content>
-            </Container>
-        );
-    }
+  render() {
+    return (
+      <>
+        <GlobalStyle />
+        <Container>
+          <Content>
+            <TextSection>
+              <h1>Welcome to the Psi Omega Chapter of DKE at RPI</h1>
+              <p>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</p>
+              <ReadMoreButton onClick={() => {
+                  // Navigate to 'About Us' page or some other action
+              }}>
+                Learn More
+              </ReadMoreButton>
+            </TextSection>
+
+            <h1>Our Initiatives</h1>
+            <EventContainer>
+              {this.state.events.map((event, index) => (
+                <EventCard key={index}>
+                  <ImageContainer>
+                    <Image src={event.imageUrl} alt={event.title} />
+                  </ImageContainer>
+                  <Title>{event.title}</Title>
+                  <Description>{event.description}</Description>
+                </EventCard>
+              ))}
+            </EventContainer>
+          </Content>
+        </Container>
+      </>
+    );
+  }
 }
-export default EventsPage;
+
+export default HomePage;
