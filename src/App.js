@@ -5,6 +5,8 @@ import Header from './components/Header';
 import HomePage from './components/Homepage';
 import ProjectsPage from './components/ProjectsPage';
 import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
+//import the calender component
+import Calender from './components/Calender';
 import Footer from './components/Footer';
 
 const AppContainer = styled.div`
@@ -28,7 +30,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/about" element={<AboutUs />} />  
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/calender" element={<Calender />} />
           </Routes>
         </MainContent>
         <Footer />
