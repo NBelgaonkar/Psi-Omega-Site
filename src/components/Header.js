@@ -77,6 +77,11 @@ const Header = () => {
               Contact Us
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/history" activeClassName="active">
+              Our History
+            </NavLinkStyled>
+          </NavItem>
         </NavMenu>
       </NavContainer>
     </NavWrapper>
