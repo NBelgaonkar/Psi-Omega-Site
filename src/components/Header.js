@@ -74,7 +74,7 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/projects" activeClassName="active">
-              Contact Us
+              Projects
             </NavLinkStyled>
           </NavItem>
           <NavItem>
