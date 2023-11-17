@@ -1,7 +1,11 @@
+// Importing React and styled-components for component styling
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+
+// Importing background image for styling
 import background from '../Images/pic.png';
 
+// Global styles, including font import and body styling
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
   body {
@@ -9,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// Styled button component for 'Read More' functionality
 const ReadMoreButton = styled.button`
   border: none;
   background-color: white;
@@ -25,6 +30,7 @@ const ReadMoreButton = styled.button`
   }
 `;
 
+// Main container styling, including background image and layout
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,6 +47,7 @@ const Container = styled.div`
   margin-top: 60px;
 `;
 
+// Content container styling, primarily for layout
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -49,6 +56,7 @@ const Content = styled.div`
   padding: 20px;
 `;
 
+// Text section styling, including typography and margins
 const TextSection = styled.div`
   text-align: left;
   max-width: 460px;
@@ -65,6 +73,7 @@ const TextSection = styled.div`
   }
 `;
 
+// Container for event cards, with responsive layout
 const EventContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -74,6 +83,7 @@ const EventContainer = styled.div`
   margin-bottom: 240px;
 `;
 
+// Individual event card styling
 const EventCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -85,12 +95,14 @@ const EventCard = styled.div`
   width: 300px;
 `;
 
+// Image container styling within each event card
 const ImageContainer = styled.div`
   width: 100%;
   position: relative;
   padding-bottom: 75%;
 `;
 
+// Image styling for event images
 const Image = styled.img`
   position: absolute;
   top: 0;
@@ -101,16 +113,20 @@ const Image = styled.img`
   border-radius: 10px;
 `;
 
+// Title styling for event cards
 const Title = styled.h2`
   font-size: 1.5em;
   color: black;
 `;
 
+// Description styling for event cards
 const Description = styled.p`
   color: black;
 `;
 
+// HomePage component, representing the main page of the site
 class HomePage extends React.Component {
+  // State containing event data
   state = {
     events: [
       {
@@ -131,6 +147,7 @@ class HomePage extends React.Component {
     ],
   };
 
+  // Render method for the component
   render() {
     return (
       <>
@@ -141,7 +158,7 @@ class HomePage extends React.Component {
               <h1>Welcome to the Psi Omega Chapter of DKE at RPI</h1>
               <p>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</p>
               <ReadMoreButton onClick={() => {
-                  // Navigate to 'About Us' page or some other action
+                  // Placeholder for navigation or action on button click
               }}>
                 Learn More
               </ReadMoreButton>
@@ -166,4 +183,5 @@ class HomePage extends React.Component {
   }
 }
 
+// Exporting HomePage for use in other parts of the application
 export default HomePage;
