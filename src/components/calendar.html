@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+    <style>
+        :root {
+            --fc-border-color: black;
+            --fc-daygrid-event-dot-width: 5px;
+        }
+        #calendar {
+            max-width: 800px; /* Adjust the width as needed */
+            margin: 0 auto;
+        }
+        .event-button {
+            cursor: pointer;
+            position: relative;
+        }
+        .event-preview {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            width: 200px;
+            height: 400px;
+        }
+        .event-button:hover .event-preview {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                showNonCurrentDates: false,
+                events: [
+                    { title: 'Event 1', start: '2023-11-10', url: 'https://example.com/event1', description: 'Description for Event 1' },
+                    { title: 'Event 2', start: '2023-11-15', url: 'https://example.com/event2', description: 'Description for Event 2' },
+                    { title: 'Event 3', start: '2023-11-20', url: 'https://example.com/event3', description: 'Description for Event 3' }
+                ],
+                eventContent: function(arg) {
+                    var element = document.createElement('div');
+                    var preview = document.createElement('div');
+                    element.classList.add('event-button');
+                    preview.classList.add('event-preview');
+                    element.innerText = arg.event.title;
+                    preview.innerText = arg.event.extendedProps.description;
+                    element.appendChild(preview);
+                    element.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        window.open(arg.event.extendedProps.url, '_blank');
+                    });
+                    return { domNodes: [element] };
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</head>
+<body>
+    <div id='calendar'></div>
+</body>
+</html>
