@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 //import the calender component
 import Calender from './components/Calender';
 import Footer from './components/Footer';
+import OurHistory from './components/History';
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/calender" element={<Calender />} />
+            <Route path="/history" element={<OurHistory />} />
           </Routes>
         </MainContent>
         <Footer />
