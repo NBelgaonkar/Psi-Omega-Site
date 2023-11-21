@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import HomePage from './components/Homepage';
-import ProjectsPage from './components/ProjectsPage';
+import ProjectsPage from './components/History';
 import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 //import the calender component
 import Calender from './components/Calender';
@@ -30,7 +30,7 @@ const App = () => {
         <MainContent>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/History" element={<ProjectsPage />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/calender" element={<Calender />} />
             <Route path="/history" element={<OurHistory />} />
