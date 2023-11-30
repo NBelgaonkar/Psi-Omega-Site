@@ -30,6 +30,9 @@ const AboutUs = () => {
                 <h3>Delta Kappa Epsilon - Psi Omega Chapter</h3>
                 <p>Located at the heart of Rensselaer Polytechnic Institute, 901 Peoples Avenue, the Psi Omega Chapter of Delta Kappa Epsilon (DKE) stands as a beacon of brotherhood and excellence.</p>
 
+                {/* Link to DKE Nationals */}
+                <p>Learn more about Delta Kappa Epsilon on the <a href="https://dke.org/" target="_blank" rel="noopener noreferrer">DKE Nationals Website</a>.</p>
+
                 <h4>At A Glance</h4>
                 <ul>
                     <li>Chapter Size: 24 dedicated members</li>
@@ -65,45 +68,45 @@ const AboutUs = () => {
             </div>
 
             <style jsx>{`
-                .about-us-container {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 100%;
-                }
+              .about-us-container {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+              }
 
-                .about-us-content {
-                    flex: 1;
-                    margin-right: 20px;
-                }
+              .about-us-content {
+                flex: 1;
+                margin-right: 20px;
+              }
 
-                .map-and-eboard {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 400px;
-                }
+              .map-and-eboard {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 400px;
+              }
 
-                .google-map {
-                    margin-bottom: 20px;
-                }
+              .google-map {
+                margin-bottom: 20px;
+              }
 
-                .carousel {
-                    width: 200px;
-                    height: 300px;
-                    position: relative;
-                    overflow: hidden;
-                }
+              .carousel {
+                width: 200px;
+                height: 300px;
+                position: relative;
+                overflow: hidden;
+              }
 
-                .carousel img {
-                    width: 100%;
-                    height: 80%;
-                    object-fit: cover;
-                }
+              .carousel img {
+                width: 100%;
+                height: 80%;
+                object-fit: cover;
+              }
 
-                .carousel h5 {
-                    text-align: center;
-                    padding: 10px 0;
-                }
+              .carousel h5 {
+                text-align: center;
+                padding: 10px 0;
+              }
             `}</style>
         </div>
     );
