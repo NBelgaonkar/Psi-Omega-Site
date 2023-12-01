@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 const eboardMembers = [
-    { position: 'President', photo: 'path_to_photo' },
-    { position: 'Vice President', photo: 'path_to_photo' },
-    { position: 'Social Chair', photo: 'path_to_photo' },
-    { position: 'Recruitment Chair', photo: 'path_to_photo' },
-    { position: 'Health & Safety Chair', photo: 'path_to_photo' },
-    { position: 'Treasurer', photo: 'path_to_photo' },
-    { position: 'Philanthropy Chair', photo: 'path_to_photo' },
-    { position: 'Alumni Relations Chair', photo: 'path_to_photo' },
-    { position: 'Marketing Chair', photo: 'path_to_photo' }
+    { position: 'President', photo: 'src/Images/Jacob.jpg' },
+    { position: 'Vice President', photo: 'src/Images/Gavin.jpg' },
+    { position: 'Social Chair', photo: 'src/Images/IMG_9442.jpg' },
+    { position: 'Recruitment Chair', photo: 'src/Images/Alex.jpg' },
+    { position: 'Health & Safety Chair', photo: 'src/Images/Dante.jpg' },
+    { position: 'Treasurer', photo: 'src/Images/Dylan S.png' },
+    { position: 'Philanthropy Chair', photo: 'src/Images/Ben.jpg' },
+    { position: 'Alumni Relations Chair', photo: 'src/Images/Nat.jpg' },
+    { position: 'Marketing Chair', photo: 'src/Images/Dylan.jpg' }
 ];
 
 const AboutUs = () => {
@@ -18,7 +18,7 @@ const AboutUs = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % eboardMembers.length);
-        }, 3000);  // change slides every 3 seconds
+        }, 3000); // change slides every 3 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -29,7 +29,7 @@ const AboutUs = () => {
                 <h2>About Us</h2>
                 <h3>Delta Kappa Epsilon - Psi Omega Chapter</h3>
                 <p>Located at the heart of Rensselaer Polytechnic Institute, 901 Peoples Avenue, the Psi Omega Chapter of Delta Kappa Epsilon (DKE) stands as a beacon of brotherhood and excellence.</p>
-
+                <p>Learn more about Delta Kappa Epsilon on the <a href="https://dke.org/" target="_blank" rel="noopener noreferrer">DKE Nationals Website</a>.</p>
                 <h4>At A Glance</h4>
                 <ul>
                     <li>Chapter Size: 24 dedicated members</li>
@@ -38,7 +38,6 @@ const AboutUs = () => {
                     <li>Community Service: Each member commits to at least 10 hours of community service</li>
                     <li>Diverse Majors: Our brothers represent the School of Business, Engineering, Humanities, and Science.</li>
                 </ul>
-
                 <h4>Our Mission</h4>
                 <p><strong>Academic Excellence:</strong> We prioritize our studies, with a dedicated Academic Chair supporting those who strive for academic greatness.</p>
                 <p><strong>Moral & Cultural Development:</strong> Our leadership structures and external community involvement ensure our brothers grow holistically, absorbing diverse perspectives and fostering leadership skills.</p>
@@ -62,6 +61,12 @@ const AboutUs = () => {
                     <img src={eboardMembers[activeIndex].photo} alt={`${eboardMembers[activeIndex].position}'s Photo`} />
                     <h5>{eboardMembers[activeIndex].position}</h5>
                 </div>
+
+                {/* New section for Brothers and DKE National Director photo */}
+                <div className="special-photo-section">
+                    <img src="src/Images/Brothers+Doug.jpg" alt="Brothers and DKE National Director" />
+                    <h5>Brothers & DKE National Director</h5>
+                </div>
             </div>
 
             <style jsx>{`
@@ -70,37 +75,47 @@ const AboutUs = () => {
                     justify-content: space-between;
                     width: 100%;
                 }
-
                 .about-us-content {
                     flex: 1;
                     margin-right: 20px;
                 }
-
                 .map-and-eboard {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     width: 400px;
                 }
-
                 .google-map {
                     margin-bottom: 20px;
                 }
-
                 .carousel {
                     width: 200px;
                     height: 300px;
                     position: relative;
                     overflow: hidden;
                 }
-
                 .carousel img {
                     width: 100%;
                     height: 80%;
                     object-fit: cover;
                 }
-
                 .carousel h5 {
+                    text-align: center;
+                    padding: 10px 0;
+                }
+                .special-photo-section {
+                    width: 200px;
+                    height: 300px;
+                    margin-top: 20px;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .special-photo-section img {
+                    width: 100%;
+                    height: 80%;
+                    object-fit: cover;
+                }
+                .special-photo-section h5 {
                     text-align: center;
                     padding: 10px 0;
                 }
