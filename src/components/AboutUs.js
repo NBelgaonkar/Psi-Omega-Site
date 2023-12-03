@@ -1,30 +1,40 @@
+// Importing necessary React hooks and external CSS
 import React, { useState, useEffect } from 'react';
+import './AboutUs.css';
 
+// Array containing e-board members' information
 const eboardMembers = [
     { position: 'President', photo: 'src/Images/Jacob.jpg' },
     { position: 'Vice President', photo: 'src/Images/Gavin.jpg' },
-    { position: 'Social Chair', photo: 'src/Images/IMG_9442.jpg' },
+    { position: 'Social Chair', photo: 'src/Images/Nikhil.jpg' },
     { position: 'Recruitment Chair', photo: 'src/Images/Alex.jpg' },
     { position: 'Health & Safety Chair', photo: 'src/Images/Dante.jpg' },
     { position: 'Treasurer', photo: 'src/Images/Dylan S.png' },
     { position: 'Philanthropy Chair', photo: 'src/Images/Ben.jpg' },
-    { position: 'Alumni Relations Chair', photo: 'src/Images/Nat.jpg' },
+    { position: 'Alumni Relations Chair', photo: 'src/Images/Nat.png' },
     { position: 'Marketing Chair', photo: 'src/Images/Dylan.jpg' }
 ];
 
+// Functional component for the About Us page
 const AboutUs = () => {
+    // State to track the active index for the image carousel
     const [activeIndex, setActiveIndex] = useState(0);
 
+    // useEffect hook to change the active index at a set interval
     useEffect(() => {
         const interval = setInterval(() => {
+            // Update the active index, cycling back to 0 after the last member
             setActiveIndex((prevIndex) => (prevIndex + 1) % eboardMembers.length);
-        }, 3000); // change slides every 3 seconds
+        }, 3000); // Change slides every 3 seconds
 
+        // Cleanup function to clear the interval on component unmount
         return () => clearInterval(interval);
-    }, []);
+    }, []); // Empty dependency array ensures effect runs only once on mount
 
+    // JSX for the About Us page
     return (
         <div className="about-us-container">
+            // Content section with text and links
             <div className="about-us-content">
                 <h2>About Us</h2>
                 <h3>Delta Kappa Epsilon - Psi Omega Chapter</h3>
@@ -46,7 +56,9 @@ const AboutUs = () => {
                 <p><strong>Behind The Scenes:</strong> The Psi Omega Chapter of DKE is not just a fraternity; it's a legacy. Upheld by our Objects, we believe in intellectual excellence, honorable friendship, tolerance, and the unity of kindred spirits.</p>
             </div>
 
+            // Section containing the map and eboard carousel
             <div className="map-and-eboard">
+                // Embedded Google map
                 <div className="google-map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2920.22522574596!2d-73.67892508451474!3d42.72940517916625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de0b4ad1f9da57%3A0x60c67c91b79a2038!2s901%20Peoples%20Ave%2C%20Troy%2C%20NY%2012180%2C%20USA!5e0!3m2!1sen!2sus!4v1634556527181!5m2!1sen!2sus"
@@ -57,71 +69,22 @@ const AboutUs = () => {
                         title="Location of Delta Kappa Epsilon - Psi Omega Chapter"
                     ></iframe>
                 </div>
+
+                // Carousel for eboard member images
                 <div className="carousel">
                     <img src={eboardMembers[activeIndex].photo} alt={`${eboardMembers[activeIndex].position}'s Photo`} />
                     <h5>{eboardMembers[activeIndex].position}</h5>
                 </div>
 
-                {/* New section for Brothers and DKE National Director photo */}
+                // Special section for additional photo
                 <div className="special-photo-section">
                     <img src="src/Images/Brothers+Doug.jpg" alt="Brothers and DKE National Director" />
                     <h5>Brothers & DKE National Director</h5>
                 </div>
             </div>
-
-            <style jsx>{`
-                .about-us-container {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 100%;
-                }
-                .about-us-content {
-                    flex: 1;
-                    margin-right: 20px;
-                }
-                .map-and-eboard {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 400px;
-                }
-                .google-map {
-                    margin-bottom: 20px;
-                }
-                .carousel {
-                    width: 200px;
-                    height: 300px;
-                    position: relative;
-                    overflow: hidden;
-                }
-                .carousel img {
-                    width: 100%;
-                    height: 80%;
-                    object-fit: cover;
-                }
-                .carousel h5 {
-                    text-align: center;
-                    padding: 10px 0;
-                }
-                .special-photo-section {
-                    width: 200px;
-                    height: 300px;
-                    margin-top: 20px;
-                    position: relative;
-                    overflow: hidden;
-                }
-                .special-photo-section img {
-                    width: 100%;
-                    height: 80%;
-                    object-fit: cover;
-                }
-                .special-photo-section h5 {
-                    text-align: center;
-                    padding: 10px 0;
-                }
-            `}</style>
         </div>
     );
 };
 
+// Exporting the AboutUs component for use in other parts of the application
 export default AboutUs;
