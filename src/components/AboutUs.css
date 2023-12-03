@@ -1,0 +1,68 @@
+/* Style for the main container of the About Us section */
+.about-us-container {
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: space-between; /* Spaces children evenly */
+    width: 100%; /* Container takes full width of its parent */
+}
+
+/* Style for the content section within the About Us container */
+.about-us-content {
+    flex: 1; /* Flex item that grows to fill space */
+    margin-right: 20px; /* Adds spacing to the right */
+}
+
+/* Style for the map and eboard section */
+.map-and-eboard {
+    display: flex; /* Uses Flexbox for layout */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers children horizontally */
+    width: 400px; /* Fixed width for the section */
+}
+
+/* Style for the Google map embed */
+.google-map {
+    margin-bottom: 20px; /* Adds spacing below the map */
+}
+
+/* Style for the carousel container */
+.carousel {
+    width: 200px; /* Fixed width for carousel */
+    height: 300px; /* Fixed height for carousel */
+    position: relative; /* Sets a relative positioning context */
+    overflow: hidden; /* Hides any overflow beyond boundaries */
+}
+
+/* Style for images inside the carousel */
+.carousel img {
+    width: 100%; /* Image takes full width of carousel */
+    height: 80%; /* Image height is 80% of carousel */
+    object-fit: cover; /* Scales the image to cover the area */
+}
+
+/* Style for the heading inside the carousel */
+.carousel h5 {
+    text-align: center; /* Centers the text horizontally */
+    padding: 10px 0; /* Adds padding above and below the heading */
+}
+
+/* Style for the special photo section */
+.special-photo-section {
+    width: 200px; /* Fixed width for the section */
+    height: 300px; /* Fixed height for the section */
+    margin-top: 20px; /* Adds spacing above the section */
+    position: relative; /* Sets a relative positioning context */
+    overflow: hidden; /* Hides any overflow beyond boundaries */
+}
+
+/* Style for images inside the special photo section */
+.special-photo-section img {
+    width: 100%; /* Image takes full width of the section */
+    height: 80%; /* Image height is 80% of the section */
+    object-fit: cover; /* Scales the image to cover the area */
+}
+
+/* Style for the heading inside the special photo section */
+.special-photo-section h5 {
+    text-align: center; /* Centers the text horizontally */
+    padding: 10px 0; /* Adds padding above and below the heading */
+}
