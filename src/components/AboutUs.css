@@ -1,68 +1,79 @@
-/* Style for the main container of the About Us section */
+/* Main container for the About Us section, using Flexbox for layout */
 .about-us-container {
-    display: flex; /* Uses Flexbox for layout */
-    justify-content: space-between; /* Spaces children evenly */
-    width: 100%; /* Container takes full width of its parent */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Style for the content section within the About Us container */
+/* Content section within the About Us container */
 .about-us-content {
-    flex: 1; /* Flex item that grows to fill space */
-    margin-right: 20px; /* Adds spacing to the right */
+    flex: 1;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Style for the map and eboard section */
+/* Section for the map and eboard, using Flexbox for vertical layout */
 .map-and-eboard {
-    display: flex; /* Uses Flexbox for layout */
-    flex-direction: column; /* Stacks children vertically */
-    align-items: center; /* Centers children horizontally */
-    width: 400px; /* Fixed width for the section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Style for the Google map embed */
+/* Google map embed styling */
 .google-map {
-    margin-bottom: 20px; /* Adds spacing below the map */
+    margin-bottom: 20px;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
 }
 
-/* Style for the carousel container */
+/* Carousel container styling */
 .carousel {
-    width: 200px; /* Fixed width for carousel */
-    height: 300px; /* Fixed height for carousel */
-    position: relative; /* Sets a relative positioning context */
-    overflow: hidden; /* Hides any overflow beyond boundaries */
+    width: 200px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Style for images inside the carousel */
+/* Images inside the carousel */
 .carousel img {
-    width: 100%; /* Image takes full width of carousel */
-    height: 80%; /* Image height is 80% of carousel */
-    object-fit: cover; /* Scales the image to cover the area */
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
-/* Style for the heading inside the carousel */
+/* Heading inside the carousel */
 .carousel h5 {
-    text-align: center; /* Centers the text horizontally */
-    padding: 10px 0; /* Adds padding above and below the heading */
+    text-align: center;
+    padding: 10px 0;
 }
 
-/* Style for the special photo section */
+/* Special photo section styling */
 .special-photo-section {
-    width: 200px; /* Fixed width for the section */
-    height: 300px; /* Fixed height for the section */
-    margin-top: 20px; /* Adds spacing above the section */
-    position: relative; /* Sets a relative positioning context */
-    overflow: hidden; /* Hides any overflow beyond boundaries */
+    width: 200px;
+    height: 300px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Style for images inside the special photo section */
+/* Images inside the special photo section */
 .special-photo-section img {
-    width: 100%; /* Image takes full width of the section */
-    height: 80%; /* Image height is 80% of the section */
-    object-fit: cover; /* Scales the image to cover the area */
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
-/* Style for the heading inside the special photo section */
+/* Heading inside the special photo section */
 .special-photo-section h5 {
-    text-align: center; /* Centers the text horizontally */
-    padding: 10px 0; /* Adds padding above and below the heading */
+    text-align: center;
+    padding: 10px 0;
 }
