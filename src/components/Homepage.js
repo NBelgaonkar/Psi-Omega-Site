@@ -30,24 +30,23 @@ const ReadMoreButton = styled.button`
   }
 `;
 
-// Main container styling, including background image and layout
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url(${background});
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
   color: black;
   flex-grow: 1;
   min-height: 100vh;
-  padding-top: 60px;
+  padding-top: 60px; // Adjust this if necessary for header space
   padding: 50px;
-  margin-top: 60px;
+  margin-top: 100px;
 `;
 
-// Content container styling, primarily for layout
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,19 +55,18 @@ const Content = styled.div`
   padding: 20px;
 `;
 
-// Text section styling, including typography and margins
 const TextSection = styled.div`
   text-align: left;
   max-width: 460px;
-  margin-top: 250px;
-  margin-bottom: 400px;
+  margin-top: 60px; // Adjust this to position below the header
+  margin-bottom: 100px; // Increased to create more space before events
   margin-right: 1200px;
   color: black;
   p {
-    font-size: 24px; 
+    font-size: 24px;
   }
   h1 {
-    font-size: 36px; 
+    font-size: 36px;
     margin-bottom: 30px;
   }
 `;
@@ -79,7 +77,7 @@ const EventContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  margin-top: 30px;
+  margin-top: 100px; // Increased to require scrolling
   margin-bottom: 240px;
 `;
 
@@ -147,7 +145,6 @@ class HomePage extends React.Component {
     ],
   };
 
-  // Render method for the component
   render() {
     return (
       <>
@@ -183,5 +180,4 @@ class HomePage extends React.Component {
   }
 }
 
-// Exporting HomePage for use in other parts of the application
 export default HomePage;
