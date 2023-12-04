@@ -1,11 +1,8 @@
-// Importing React and styled-components for component styling
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-// Importing background image for styling
 import background from '../Images/pic.png';
 
-// Global styles, including font import and body styling
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
   body {
@@ -13,38 +10,35 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Styled button component for 'Read More' functionality
-const ReadMoreButton = styled.button`
-  border: none;
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-  margin-top: 30px;
-  margin-left: 140px;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-`;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(${background});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
   color: black;
-  flex-grow: 1;
   min-height: 100vh;
-  padding-top: 60px; // Adjust this if necessary for header space
-  padding: 50px;
-  margin-top: 100px;
+  padding-top: 60px;
+`;
+
+const HeaderImage = styled.img`
+  width: 100%;
+  max-height: 820px; /* Adjust the height as needed */
+  object-fit: contain; /* Use "contain" to fit the full image within the container */
+  margin-bottom: 120px; /* Adjust as needed */
+`;
+
+const TextSection = styled.div`
+  text-align: center;
+  max-width: 800px;
+  margin-top: 20px; /* Adjust as needed */
+  margin-bottom: 100px; /* Adjust as needed */
+  padding: 20px;
+  color: black;
+  line-height: 2; /* Double spacing */
+`;
+
+const Title = styled.h1`
+  font-size: 36px;
+  margin-bottom: 20px;
 `;
 
 const Content = styled.div`
@@ -55,33 +49,15 @@ const Content = styled.div`
   padding: 20px;
 `;
 
-const TextSection = styled.div`
-  text-align: left;
-  max-width: 460px;
-  margin-top: 60px; // Adjust this to position below the header
-  margin-bottom: 100px; // Increased to create more space before events
-  margin-right: 1200px;
-  color: black;
-  p {
-    font-size: 24px;
-  }
-  h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
-  }
-`;
-
-// Container for event cards, with responsive layout
 const EventContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  margin-top: 100px; // Increased to require scrolling
-  margin-bottom: 240px;
+  margin-top: 50px; /* Adjust as needed */
+  margin-bottom: 20px; /* Adjust as needed */
 `;
 
-// Individual event card styling
 const EventCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -93,38 +69,32 @@ const EventCard = styled.div`
   width: 300px;
 `;
 
-// Image container styling within each event card
 const ImageContainer = styled.div`
   width: 100%;
   position: relative;
   padding-bottom: 75%;
 `;
 
-// Image styling for event images
 const Image = styled.img`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 10px;
 `;
 
-// Title styling for event cards
-const Title = styled.h2`
+const EventTitle = styled.h2`
   font-size: 1.5em;
   color: black;
 `;
 
-// Description styling for event cards
-const Description = styled.p`
+const EventDescription = styled.p`
   color: black;
 `;
 
-// HomePage component, representing the main page of the site
 class HomePage extends React.Component {
-  // State containing event data
   state = {
     events: [
       {
@@ -150,17 +120,14 @@ class HomePage extends React.Component {
       <>
         <GlobalStyle />
         <Container>
+          <HeaderImage src={background} alt="Header Image" />
+          <TextSection>
+            <Title>Welcome to Delta Kappa Epsilon at RPI</Title>
+            <p>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</p>
+            <p>As brothers, we strive to personify the three qualities of a DKE: the gentleman, the scholar, and the jolly good fellow. From our frequent charity events to our many gatherings throughout the semester, our aim remains the same: to foster friendships among young men as they work to achieve their goals at one of the most prestigious institutions in the world.</p>
+            <p>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</p>
+          </TextSection>
           <Content>
-            <TextSection>
-              <h1>Welcome to the Psi Omega Chapter of DKE at RPI</h1>
-              <p>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</p>
-              <ReadMoreButton onClick={() => {
-                  // Placeholder for navigation or action on button click
-              }}>
-                Learn More
-              </ReadMoreButton>
-            </TextSection>
-
             <h1>Our Initiatives</h1>
             <EventContainer>
               {this.state.events.map((event, index) => (
@@ -168,8 +135,8 @@ class HomePage extends React.Component {
                   <ImageContainer>
                     <Image src={event.imageUrl} alt={event.title} />
                   </ImageContainer>
-                  <Title>{event.title}</Title>
-                  <Description>{event.description}</Description>
+                  <EventTitle>{event.title}</EventTitle>
+                  <EventDescription>{event.description}</EventDescription>
                 </EventCard>
               ))}
             </EventContainer>
