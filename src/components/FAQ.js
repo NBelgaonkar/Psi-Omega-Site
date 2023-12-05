@@ -87,6 +87,18 @@ const FAQ = () => {
                         question="What are DKE's goals as a fraternity?"
                         answer="DKE’s stated goals are the “Objects of Delta Kappa Epsilon”: “The cultivation of general literature and social culture, the advancement and encouragement of intellectual excellence, the promotion of honorable friendship and useful citizenship, the development of a spirit of tolerance and respect for the rights and views of others, the maintenance of gentlemanly dignity, self-respect, and morality in all circumstances, and the union of stout hearts and kindred interests to secure, to merit its due reward.”"
                     />
+                    <FAQItem
+                        question="Does DKE have membership criteria?"
+                        answer="Yes. Article V, Section II of the DKE Constitution states: The qualifications for membership of an eligible student shall be: Good standing in the work of the curriculum; Excellence in scholarship being a worthy recommendation; High moral character; General affability and consideration for the rights and views of others; Courteous deportment; A gentlemanly and self-respecting spirit; An active and energetic character; An appreciation of the objects and principles of DELTA KAPPA EPSILON, coupled with a capability and desire to be loyal thereto."
+                    />
+                    <FAQItem
+                        question="Does DKE favor or discriminate against any physical or cultural characteristic when selecting new members?"
+                        answer="Beyond the male undergraduate exhibiting the Criteria for Membership found above, no. Article V, Section II states 'No DKE chapter shall consider the race, creed, color, or national origin of an eligible student in pledging and initiating into membership in DELTA KAPPA EPSILON.'"
+                    />
+                    <FAQItem
+                        question="What is DKE’s stance on hazing in college fraternities?"
+                        answer="In short, hazing is illegal and immoral; therefore it has no place in our Fraternity. More importantly, Delta Kappa Epsilon holds its members to the highest standard possible. Whereas hazing violates local, state, and federal law it also violates the Objects of Delta Kappa Epsilon, particularly 'the maintenance of gentlemanly dignity, self-respect, and morality in all circumstances.' Hazing is therefore strictly forbidden. Read our New Member leadership and educational materials."
+                    />
                 </FAQSection>
             </FAQContainer>
         </>
