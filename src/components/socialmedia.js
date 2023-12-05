@@ -63,7 +63,13 @@ class SocialMediaPage extends React.Component {
               <strong>Twitch:</strong> <a href="https://www.twitch.tv/dke_psiomega">dke_psiomega</a>
             </SocialMediaInfo>
             <SocialMediaInfo>
-              <strong>Gmail:</strong> <a href="mailto:marketing.dkepsiomega@gmail.com">marketing.dkepsiomega@gmail.com</a>
+              <strong>Gmail:</strong> <a href="mailto:marketing.dkepsiomega@gmail.com">social.dkepsiomega@gmail.com</a>
+            </SocialMediaInfo>
+            <SocialMediaInfo>
+              <strong>Sponsorships:</strong> <a>Please contact marketing.dkepsiomega@gmail.com for more information</a>
+            </SocialMediaInfo>
+            <SocialMediaInfo>
+              <strong>Other Places to Find us:</strong> <a>Facebook, Fizz, Twitter, and more at DKE_RPI</a>
             </SocialMediaInfo>
           </SocialMediaSection>
         </Container>
