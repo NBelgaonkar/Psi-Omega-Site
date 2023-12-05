@@ -31,7 +31,7 @@ const Logo = styled(Link)`
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 20px;
+  margin-left: -320px;
 `;
 
 const NavMenu = styled.ul`
@@ -39,6 +39,7 @@ const NavMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-right: -320px;
 `;
 
 const NavItem = styled.li`
@@ -59,7 +60,7 @@ const Header = () => {
     <NavWrapper>
       <NavContainer>
         <LogoWrapper>
-          <Logo to="/">DKE</Logo>
+          <Logo to="/">DKE PSI OMEGA</Logo>
         </LogoWrapper>
         <NavMenu>
           <NavItem>

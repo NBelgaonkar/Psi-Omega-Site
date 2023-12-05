@@ -3,10 +3,12 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import background from '../Images/pic.png';
 
+
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&style=italic&display=swap');
+
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 
@@ -29,16 +31,27 @@ const HeaderImage = styled.img`
 const TextSection = styled.div`
   text-align: center;
   max-width: 800px;
-  margin-top: 20px; /* Adjust as needed */
-  margin-bottom: 100px; /* Adjust as needed */
+  margin-top: 20px;
+  margin-bottom: 100px;
   padding: 20px;
   color: black;
-  line-height: 2; /* Double spacing */
+  line-height: 2;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  font-weight: 100; /* Thin weight */
+  font-style: italic; /* Italic style */
+  
 `;
 
 const Title = styled.h1`
-  font-size: 36px;
+  font-size: 40px; /* Increase the font size for the title */
+  margin-bottom: 30px;
+`;
+
+const Paragraph = styled.p`
+  font-size: 20px; /* Increase the font size for the paragraphs */
+  color: black;
   margin-bottom: 20px;
+  color: #71797E;
 `;
 
 const Content = styled.div`
@@ -118,17 +131,17 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-        <GlobalStyle />
+       
         <Container>
           <HeaderImage src={background} alt="Header Image" />
           <TextSection>
-            <Title>Welcome to Delta Kappa Epsilon at RPI</Title>
-            <p>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</p>
-            <p>As brothers, we strive to personify the three qualities of a DKE: the gentleman, the scholar, and the jolly good fellow. From our frequent charity events to our many gatherings throughout the semester, our aim remains the same: to foster friendships among young men as they work to achieve their goals at one of the most prestigious institutions in the world.</p>
-            <p>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</p>
-          </TextSection>
+          <Title>Welcome to Delta Kappa Epsilon at RPI</Title>
+          <Paragraph>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</Paragraph>
+          <Paragraph>As brothers, we strive to personify the three qualities of a DKE: the gentleman, the scholar, and the jolly good fellow. From our frequent charity events to our many gatherings throughout the semester, our aim remains the same: to foster friendships among young men as they work to achieve their goals at one of the most techinical institutions in the world.</Paragraph>
+          <Paragraph>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</Paragraph>
+        </TextSection>
           <Content>
-            <h1>Our Initiatives</h1>
+            <h1>The Three Pilars</h1>
             <EventContainer>
               {this.state.events.map((event, index) => (
                 <EventCard key={index}>
