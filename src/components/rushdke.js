@@ -62,6 +62,9 @@ class RushDKEPage extends React.Component {
             <RushInfo>
               <strong>DKE Rush Calendar:</strong> Available at the start of the fall and spring semesters.
             </RushInfo>
+            <RushInfo>
+              <strong>DKE Events Calendar:</strong> Refer to main calendar on homepage for details
+            </RushInfo>
           </RushSection>
         </Container>
       </>
