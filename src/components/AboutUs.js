@@ -34,7 +34,6 @@ const AboutUs = () => {
     // JSX for the About Us page
     return (
         <div className="about-us-container">
-            // Content section with text and links
             <div className="about-us-content">
                 <h2>About Us</h2>
                 <h3>Delta Kappa Epsilon - Psi Omega Chapter</h3>
@@ -56,7 +55,6 @@ const AboutUs = () => {
                 <p><strong>Behind The Scenes:</strong> The Psi Omega Chapter of DKE is not just a fraternity; it's a legacy. Upheld by our Objects, we believe in intellectual excellence, honorable friendship, tolerance, and the unity of kindred spirits.</p>
             </div>
 
-            // Section containing the map and eboard carousel
             <div className="map-and-eboard">
                 <div className="google-map">
                     <iframe
@@ -69,13 +67,11 @@ const AboutUs = () => {
                     ></iframe>
                 </div>
 
-                // Carousel for eboard member images
                 <div className="carousel">
                     <img src={eboardMembers[activeIndex].photo} alt={`${eboardMembers[activeIndex].position}'s Photo`} />
                     <h5>{eboardMembers[activeIndex].position}</h5>
                 </div>
 
-                // Special section for additional photo
                 <div className="special-photo-section">
                     <img src="src/Images/Brothers+Doug.jpg" alt="Brothers and DKE National Director" />
                     <h5>Brothers & DKE National Director</h5>
