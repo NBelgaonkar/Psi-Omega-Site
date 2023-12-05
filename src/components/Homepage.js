@@ -77,9 +77,10 @@ const EventCard = styled.div`
   align-items: center;
   background-color: #fff;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 1px;
   border-radius: 15px;
-  width: 300px;
+  width: 400px;
+  margin: 3
 `;
 
 const ImageContainer = styled.div`
@@ -104,26 +105,26 @@ const EventTitle = styled.h2`
 `;
 
 const EventDescription = styled.p`
-  color: black;
+  color: #71797E;
 `;
 
 class HomePage extends React.Component {
   state = {
     events: [
       {
-        title: 'Event 1',
+        title: 'Gentleman',
         imageUrl: `https://source.unsplash.com/random?event&sig=1`,
-        description: 'Description 1',
+        description: 'DKE cultivates a culture of respect, chivalry, and courtesy among its members. The fraternity encourages its members to exemplify the qualities of a true gentleman in their interactions with others, promoting politeness, integrity, and a commitment to treating everyone with dignity.',
       },
       {
-        title: 'Event 2',
+        title: 'Scholars',
         imageUrl: `https://source.unsplash.com/random?event&sig=2`,
-        description: 'Description 2',
+        description: 'DKE places a strong emphasis on academic excellence and intellectual growth. The fraternity supports its members in their pursuit of knowledge, encouraging them to excel academically and to engage in lifelong learning. Academic achievement is a fundamental component of the DKE experience.',
       },
       {
-        title: 'Event 3',
+        title: 'Jolly Good Fellows',
         imageUrl: `https://source.unsplash.com/random?event&sig=3`,
-        description: 'Description 3',
+        description: 'DKE embraces the spirit of camaraderie and brotherhood. Members of DKE create bonds that last a lifetime, fostering a sense of belonging, support, and friendship. The fraternity values the happiness and well-being of its members and aims to create a warm and inclusive community where all can thrive and enjoy each others company.',
       },
     ],
   };
@@ -141,7 +142,7 @@ class HomePage extends React.Component {
           <Paragraph>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</Paragraph>
         </TextSection>
           <Content>
-            <h1>The Three Pilars</h1>
+            <Title>The Three Pilars</Title>
             <EventContainer>
               {this.state.events.map((event, index) => (
                 <EventCard key={index}>
