@@ -52,6 +52,15 @@ const AboutUs = () => {
                 <p><strong>Moral & Cultural Development:</strong> Our leadership structures and external community involvement ensure our brothers grow holistically, absorbing diverse perspectives and fostering leadership skills.</p>
                 <p><strong>Community Engagement:</strong> We actively serve our community, from our partnership with Oakwood Community Center to campus-wide events, always upholding our core values.</p>
                 <p><strong>Human Connection:</strong> Brotherhood is the cornerstone of our fraternity. It's not just about spending time together but supporting one another academically, professionally, and personally.</p>
+                <p><strong>Leadership Development:</strong> We provide opportunities for members to take on leadership roles within the fraternity, fostering skills that extend beyond the campus.</p>
+                <p><strong>Social Responsibility:</strong> We're committed to making a positive impact on society through philanthropic activities and volunteer work, giving back to those in need.</p>
+                <p><strong>Career Advancement:</strong> Our alumni network spans various industries, offering valuable connections and mentorship to help our brothers excel in their chosen careers.</p>
+                <p><strong>Diversity and Inclusion:</strong> We celebrate diversity and ensure an inclusive environment where every member's background and perspective is respected and valued.</p>
+                <p><strong>Personal Growth:</strong> Beyond academics, we focus on personal development, encouraging self-discovery, and providing resources for mental and emotional well-being.</p>
+                <p><strong>Sports and Fitness:</strong> We promote an active lifestyle with sports events and fitness activities that promote physical health and camaraderie among our members.</p>
+                <p><strong>Creative Expression:</strong> Whether it's through art, music, or other creative outlets, we encourage and support our members' artistic talents and passions.</p>
+                <p><strong>Global Perspective:</strong> We offer opportunities for international experiences and cultural exchange, broadening our members' worldviews.</p>
+                <p><strong>Networking Opportunities:</strong> Through our connections with alumni and other organizations, we provide networking opportunities that can open doors for future career success.</p>
                 <p><strong>Behind The Scenes:</strong> The Psi Omega Chapter of DKE is not just a fraternity; it's a legacy. Upheld by our Objects, we believe in intellectual excellence, honorable friendship, tolerance, and the unity of kindred spirits.</p>
             </div>
 
