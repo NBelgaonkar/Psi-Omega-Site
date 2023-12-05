@@ -74,13 +74,18 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/projects" activeClassName="active">
-              Projects
+            <NavLinkStyled to="/FAQ" activeClassName="active">
+              FAQ
             </NavLinkStyled>
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/history" activeClassName="active">
               Our History
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/Calender" activeClassName="active">
+              Calender
             </NavLinkStyled>
           </NavItem>
         </NavMenu>
