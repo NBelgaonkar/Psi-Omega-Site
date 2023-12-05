@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import GlobalStyle from './GlobalStyle'; // You may need to import your global styles
 import background from '../Images/pic.png';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
