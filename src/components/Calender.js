@@ -105,7 +105,7 @@ const Calendar = () => {
                         <div key={index} className="day-name">{dayName}</div>
                     ))}
                 </div>
-                <div className="calDendar">
+                <div className="caldendar">
                     {days.map((day, index) => (
                         <div
                             key={index}
