@@ -60,10 +60,22 @@ class eventsPage extends React.Component {
               <strong>Movie Night </strong> Come hang out with us and enjoy some popcorn on friday nights!
             </eventsInfo>
             <eventsInfo>
-              <strong>Laser Tag </strong> Hit the arcade with DKE and play some laser tag once a month!
+              <strong>Mac and Milkshakes </strong> Enjoy some macaroni and cheese and homemade milkshakes during exam week!
             </eventsInfo>
             <eventsInfo>
-              <strong>Mac and Milkshakes </strong> Enjoy some macaroni and cheese and homemade milkshakes during exam week!
+              <strong>Floats and Football </strong> Come play some flag football on 86 field and enjoy some homemade rootbeer floats!
+            </eventsInfo>
+            <eventsInfo>
+              <strong>Board Game Night </strong> Visit our house and play a variety of board games like Jenga, Connect 4, and Sorry!
+            </eventsInfo>
+            <eventsInfo>
+              <strong>Superbowl Watch Party </strong> Enjoy some classic football snacks and watch the superbowl with us at our house!
+            </eventsInfo>
+            <eventsInfo>
+              <strong>Dodgeball </strong> Come play some dodgeball at the armory gym with DKE!
+            </eventsInfo>
+            <eventsInfo>
+              <strong>Laser Tag </strong> Hit the arcade with DKE and play some laser tag once a month!
             </eventsInfo>
           </eventsSection>
         </Container>
