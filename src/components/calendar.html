@@ -39,12 +39,19 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
                 initialView: 'dayGridMonth',
                 showNonCurrentDates: false,
                 events: [
                     { title: 'Event 1', start: '2023-11-10', url: 'https://example.com/event1', description: 'Description for Event 1' },
                     { title: 'Event 2', start: '2023-11-15', url: 'https://example.com/event2', description: 'Description for Event 2' },
-                    { title: 'Event 3', start: '2023-11-20', url: 'https://example.com/event3', description: 'Description for Event 3' }
+                    { title: 'Event 3', start: '2023-11-20', url: 'https://example.com/event3', description: 'Description for Event 3' },
+                    { title: 'Event 4', start: '2023-11-25', url: 'https://example.com/event4', description: 'Description for Event 4' },
+                    { title: 'Event 5', start: '2023-11-30', url: 'https://example.com/event5', description: 'Description for Event 5' }
                 ],
                 eventContent: function(arg) {
                     var element = document.createElement('div');
