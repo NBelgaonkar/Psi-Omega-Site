@@ -2,20 +2,31 @@
 <html lang='en'>
 <head>
     <meta charset='utf-8' />
+
+    <!-- Include FullCalendar library from CDN -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+
+    <!-- Define some CSS styles -->
     <style>
+        /* Custom CSS variables */
         :root {
             --fc-border-color: black;
             --fc-daygrid-event-dot-width: 5px;
         }
+
+        /* Calendar container styles */
         #calendar {
             max-width: 800px; /* Adjust the width as needed */
             margin: 0 auto;
         }
+
+        /* Event button styles */
         .event-button {
             cursor: pointer;
             position: relative;
         }
+
+        /* Event preview popup styles */
         .event-preview {
             display: none;
             position: absolute;
@@ -31,21 +42,45 @@
             width: 200px;
             height: 400px;
         }
+
+        /* Show event preview on hover */
         .event-button:hover .event-preview {
             display: block;
         }
     </style>
+
+    <!-- JavaScript code -->
     <script>
+        // Wait for the DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Get the calendar container element
             var calendarEl = document.getElementById('calendar');
+
+            // Initialize FullCalendar
             var calendar = new FullCalendar.Calendar(calendarEl, {
+                // Define the calendar header toolbar
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+
+                // Initial view
                 initialView: 'dayGridMonth',
+
+                // Hide non-current dates
                 showNonCurrentDates: false,
+
+                // Define event data
                 events: [
                     { title: 'Event 1', start: '2023-11-10', url: 'https://example.com/event1', description: 'Description for Event 1' },
                     { title: 'Event 2', start: '2023-11-15', url: 'https://example.com/event2', description: 'Description for Event 2' },
-                    { title: 'Event 3', start: '2023-11-20', url: 'https://example.com/event3', description: 'Description for Event 3' }
+                    { title: 'Event 3', start: '2023-11-20', url: 'https://example.com/event3', description: 'Description for Event 3' },
+                    { title: 'Event 4', start: '2023-11-25', url: 'https://example.com/event4', description: 'Description for Event 4' },
+                    { title: 'Event 5', start: '2023-11-30', url: 'https://example.com/event5', description: 'Description for Event 5' }
                 ],
+
+                // Customize event content and behavior
                 eventContent: function(arg) {
                     var element = document.createElement('div');
                     var preview = document.createElement('div');
@@ -61,11 +96,14 @@
                     return { domNodes: [element] };
                 }
             });
+
+            // Render the calendar
             calendar.render();
         });
     </script>
 </head>
 <body>
+    <!-- Calendar container -->
     <div id='calendar'></div>
 </body>
 </html>
