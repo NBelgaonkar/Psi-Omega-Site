@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import background from '../Images/pic.png';
-import createGlobalStyle from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: 'Open Sans', sans-serif;
-  }
-`;
+
+
 
 const Container = styled.div`
   display: flex;
@@ -50,7 +46,7 @@ class SocialMediaPage extends React.Component {
   render() {
     return (
       <>
-        <GlobalStyle />
+     
         <Container>
           <SocialMediaSection>
             <h1>Social Media</h1>
