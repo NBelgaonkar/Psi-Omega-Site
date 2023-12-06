@@ -88,6 +88,11 @@ const Header = () => {
               Calender
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/socialmedia" activeClassName="active">
+              Social Media
+            </NavLinkStyled>
+          </NavItem>
         </NavMenu>
       </NavContainer>
     </NavWrapper>

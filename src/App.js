@@ -5,6 +5,7 @@ import Header from './components/Header';
 import HomePage from './components/Homepage';
 import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 import FAQ from './components/FAQ';
+import SocialMediaPage from './components/socialmedia';
 import Calender from './components/Calender';
 import Footer from './components/Footer';
 import OurHistory from './components/History';
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/calender" element={<Calender />} />
             <Route path="/history" element={<OurHistory />} />
+            <Route path="/socialmedia" element={<SocialMediaPage />} />
             <Route path="/faq" element={<FAQ />} />
           </Routes>
         </MainContent>
