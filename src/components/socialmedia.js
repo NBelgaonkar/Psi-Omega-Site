@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import background from '../Images/pic.png';
-
 
 
 
@@ -9,10 +7,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(${background});
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center top;
   color: black;
   flex-grow: 1;
   min-height: 100vh;
