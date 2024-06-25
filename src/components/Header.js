@@ -100,6 +100,11 @@ const Header = () => {
               Roster
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/rushdke" activeClassName="active">
+              Rush
+            </NavLinkStyled>
+          </NavItem>
         </NavMenu>
       </NavContainer>
     </NavWrapper>
