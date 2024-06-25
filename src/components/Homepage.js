@@ -141,20 +141,6 @@ class HomePage extends React.Component {
           <Paragraph>As brothers, we strive to personify the three qualities of a DKE: the gentleman, the scholar, and the jolly good fellow. From our frequent charity events to our many gatherings throughout the semester, our aim remains the same: to foster friendships among young men as they work to achieve their goals at one of the most techinical institutions in the world.</Paragraph>
           <Paragraph>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</Paragraph>
         </TextSection>
-          <Content>
-            <Title>The Three Pilars</Title>
-            <EventContainer>
-              {this.state.events.map((event, index) => (
-                <EventCard key={index}>
-                  <ImageContainer>
-                    <Image src={event.imageUrl} alt={event.title} />
-                  </ImageContainer>
-                  <EventTitle>{event.title}</EventTitle>
-                  <EventDescription>{event.description}</EventDescription>
-                </EventCard>
-              ))}
-            </EventContainer>
-          </Content>
         </Container>
       </>
     );
