@@ -69,6 +69,8 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
+          </NavItem>
+          <NavItem>
             <NavLinkStyled to="/about" activeClassName="active">
               About Us
             </NavLinkStyled>
@@ -91,6 +93,11 @@ const Header = () => {
           <NavItem>
             <NavLinkStyled to="/socialmedia" activeClassName="active">
               Social Media
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/roster" activeClassName="active">
+              Roster
             </NavLinkStyled>
           </NavItem>
         </NavMenu>
