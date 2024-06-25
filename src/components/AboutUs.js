@@ -57,16 +57,6 @@ const AboutUs = () => {
                         title="Location of Delta Kappa Epsilon - Psi Omega Chapter"
                     ></iframe>
                 </div>
-
-                <div className="carousel">
-                    <img src={eboardMembers[activeIndex].photo} alt={`${eboardMembers[activeIndex].position}'s Photo`} />
-                    <h5>{eboardMembers[activeIndex].position}</h5>
-                </div>
-
-                <div className="special-photo-section">
-                    <img src="../Images/Brothers+Doug.jpg" alt="Brothers and DKE National Director" />
-                    <h5>Brothers & DKE National Director</h5>
-                </div>
             </div>
         </div>
     );
