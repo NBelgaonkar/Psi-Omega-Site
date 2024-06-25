@@ -60,7 +60,7 @@ const Header = () => {
     <NavWrapper>
       <NavContainer>
         <LogoWrapper>
-          <Logo to="/">DKE PSI OMEGA</Logo>
+          <Logo to="/"></Logo>
         </LogoWrapper>
         <NavMenu>
           <NavItem>
@@ -80,7 +80,7 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/history" activeClassName="active">
-              Our History
+              History
             </NavLinkStyled>
           </NavItem>
           <NavItem>
