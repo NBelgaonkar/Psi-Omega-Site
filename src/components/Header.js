@@ -105,6 +105,11 @@ const Header = () => {
               Rush
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/DkesDiner" activeClassName="active">
+              DKES Diner
+            </NavLinkStyled>
+          </NavItem>
         </NavMenu>
       </NavContainer>
     </NavWrapper>
