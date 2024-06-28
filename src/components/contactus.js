@@ -55,7 +55,7 @@ class ContactPage extends React.Component {
             <h1>Contact Us</h1>
             <ContactInfo>
               <strong>DKE Fraternity House Address:</strong><br />
-              901 Peoples Ave, Troy, NY
+              1599 Tibbits Ave, Troy, NY
             </ContactInfo>
             <ContactInfo>
               <strong>RPI Address:</strong><br />
