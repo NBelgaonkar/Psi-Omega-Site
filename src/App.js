@@ -9,6 +9,8 @@ import SocialMediaPage from './components/socialmedia';
 import Calender from './components/Calender';
 import Footer from './components/Footer';
 import OurHistory from './components/History';
+import DkesDiner from './components/DkesDiner';  
+
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -30,12 +32,14 @@ const App = () => {
         <MainContent>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/DkesDiner" element={<DkesDiner />} />
             <Route path="/Calender" element={<Calender />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/calender" element={<Calender />} />
             <Route path="/history" element={<OurHistory />} />
             <Route path="/socialmedia" element={<SocialMediaPage />} />
             <Route path="/faq" element={<FAQ />} />
+            
           </Routes>
         </MainContent>
         <Footer />
