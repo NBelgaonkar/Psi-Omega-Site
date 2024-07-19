@@ -101,10 +101,16 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
+            <NavLinkStyled to="/DkesDiner" activeClassName="active">
+              DKES Diner
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
             <NavLinkStyled to="/rushdke" activeClassName="active">
               Rush
             </NavLinkStyled>
           </NavItem>
+          
         </NavMenu>
       </NavContainer>
     </NavWrapper>
