@@ -1,4 +1,4 @@
-// DkesDiner.js
+// src/DkesDiner.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -44,16 +44,37 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const SuccessMessage = styled.p`
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+`;
+
 const DkesDiner = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [order, setOrder] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!name || !email || !address || !order) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
     // Handle form submission
     console.log('Order submitted:', { name, email, address, order });
+    
+    setSuccessMessage('Your order has been submitted successfully!');
+    
+    // Clear the form fields
+    setName('');
+    setEmail('');
+    setAddress('');
+    setOrder('');
   };
 
   return (
@@ -95,6 +116,7 @@ const DkesDiner = () => {
         />
 
         <Button type="submit">Submit Order</Button>
+        {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
       </Form>
     </FormWrapper>
   );
