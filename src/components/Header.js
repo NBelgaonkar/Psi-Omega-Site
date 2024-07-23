@@ -91,23 +91,13 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/socialmedia" activeClassName="active">
-              Social Media
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/roster" activeClassName="active">
-              Roster
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
             <NavLinkStyled to="/DkesDiner" activeClassName="active">
               DKES Diner
             </NavLinkStyled>
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/rushdke" activeClassName="active">
-              Rush
+              place holder nav
             </NavLinkStyled>
           </NavItem>
           
