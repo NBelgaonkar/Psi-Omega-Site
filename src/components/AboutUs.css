@@ -1,6 +1,7 @@
 /* Main container for the About Us section, using Flexbox for layout */
 .about-us-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
