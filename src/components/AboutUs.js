@@ -28,22 +28,12 @@ const AboutUs = () => {
             <div className="about-us-content">
                 <h2>About Us</h2>
                 <h3>Delta Kappa Epsilon - Psi Omega Chapter</h3>
-                <p>Located at Rensselaer Polytechnic Institute, our chapter emphasizes leadership, community involvement, and personal development.</p>
                 <p>Learn more about our national organization at <a href="https://dke.org/" target="_blank" rel="noopener noreferrer">DKE Nationals</a>.</p>
-                <h4>At A Glance</h4>
-                <ul>
-                    <li>Chapter Size: A vibrant group of 24 dedicated members, each bringing unique perspectives and skills.</li>
-                    <li>GPA Average: A collective GPA of 3.34, showcasing our commitment to academic excellence.</li>
-                    <li>Philanthropy: Over $1000 raised this year for various charitable causes, demonstrating our commitment to giving back.</li>
-                    <li>Community Service: Each member dedicates at least 10 hours per semester to community service, fostering a spirit of community engagement.</li>
-                    <li>Diverse Majors: Our members study across different fields, from Engineering to Humanities, representing a microcosm of the university's diverse academic environment.</li>
-                </ul>
-                <h4>Our Mission</h4>
-                <p><strong>Academic Excellence:</strong> Our dedicated Academic Chair supports members in achieving academic goals and excelling in their studies.</p>
-                <p><strong>Moral & Cultural Development:</strong> We grow holistically through leadership opportunities and engagement with diverse perspectives.</p>
-                <p><strong>Community Engagement:</strong> Our active participation in community events reflects our core values and commitment to service.</p>
-                <p><strong>Human Connection:</strong> Brotherhood is our cornerstone, built on mutual support and shared experiences.</p>
-                <p><strong>Behind The Scenes:</strong> Our chapter is more than a fraternity; it's a legacy of intellectual excellence, honorable friendship, and unity.</p>
+                <p><strong>Chapter Size:</strong> A vibrant group of 25 dedicated members, each bringing unique perspectives and skills.</p>
+                <p><strong>GPA Average:</strong> A collective GPA of 3.34, showcasing our commitment to academic excellence.</p>
+                <p><strong>Philanthropy:</strong> Over $1000 raised this year for various charitable causes, demonstrating our commitment to giving back.</p>
+                <p><strong>Service:</strong> Each member dedicates at least 10 hours per semester to community service, fostering a spirit of community engagement.</p>
+                <p><strong>Diversity</strong> Our members study across different fields, from Engineering to Humanities, representing a microcosm of the university's diverse academic environment.</p>
             </div>
 
             <div className="map-and-eboard">
