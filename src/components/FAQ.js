@@ -70,7 +70,6 @@ const FAQ = () => {
             <FAQContainer>
                 <h1>FAQs</h1>
                 <FAQSection>
-                    <h2>Delta Kappa Epsilon Fraternity</h2>
                     <FAQItem
                         question="What is a fraternity?"
                         answer="A fraternity is a group of individuals bound into life-long friendship by commonly held goals or values."
