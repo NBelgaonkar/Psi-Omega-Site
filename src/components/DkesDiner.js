@@ -1,7 +1,6 @@
 // DkesDiner.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 
 const FormWrapper = styled.div`
   max-width: 600px;
@@ -51,15 +50,10 @@ const DkesDiner = () => {
   const [address, setAddress] = useState('');
   const [order, setOrder] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const orderData = { name, email, address, order };
-    try {
-      const response = await axios.post('http://localhost:5000/submit', orderData);
-      console.log(response.data.message);
-    } catch (error) {
-      console.error('There was an error submitting the order:', error);
-    }
+    // Handle form submission
+    console.log('Order submitted:', { name, email, address, order });
   };
 
   return (
