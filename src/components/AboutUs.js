@@ -39,7 +39,7 @@ const AboutUs = () => {
             <div className="map-and-eboard">
                 <div className="google-map">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2920.22522574596!2d-73.67892508451474!3d42.72940517916625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de0b4ad1f9da57%3A0x60c67c91b79a2038!2s901%20Peoples%20Ave%2C%20Troy%2C%20NY%2012180%2C%20USA!5e0!3m2!1sen!2sus!4v1634556527181!5m2!1sen!2sus"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.0104139044392!2d-73.67642178889061!3d42.72467031186912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de0f74640015fd%3A0x96e5b54d34da6091!2s1599%20Tibbits%20Ave%2C%20Troy%2C%20NY%2012180!5e0!3m2!1sen!2sus!4v1722012036838!5m2!1sen!2sus"
                         width="400"
                         height="300"
                         allowFullScreen=""
