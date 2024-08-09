@@ -1,54 +1,10 @@
-// src/DkesDiner.js
 import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const FormWrapper = styled.div`
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Label = styled.label`
-  margin-bottom: 10px;
-  font-weight: bold;
-`;
-
-const Input = styled.input`
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-`;
-
-const Textarea = styled.textarea`
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-`;
-
-const Button = styled.button`
-  padding: 10px;
-  background-color: #231942;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
-const SuccessMessage = styled.p`
-  color: green;
-  font-weight: bold;
-  margin-top: 20px;
-`;
+import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 const DkesDiner = () => {
   const [name, setName] = useState('');
@@ -56,12 +12,14 @@ const DkesDiner = () => {
   const [address, setAddress] = useState('');
   const [order, setOrder] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
     if (!name || !email || !address || !order) {
-      alert('Please fill in all fields.');
+      setErrorMessage('Please fill in all fields.');
+      setSuccessMessage('');
       return;
     }
 
@@ -69,6 +27,7 @@ const DkesDiner = () => {
     console.log('Order submitted:', { name, email, address, order });
     
     setSuccessMessage('Your order has been submitted successfully!');
+    setErrorMessage('');
     
     // Clear the form fields
     setName('');
@@ -78,47 +37,72 @@ const DkesDiner = () => {
   };
 
   return (
-    <FormWrapper>
-      <h2>Order Cookies</h2>
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor="name">Name:</Label>
-        <Input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-6 text-center text-purple-800">Order Delicious Cookies</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="name">Name</Label>
+          <Input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
 
-        <Label htmlFor="email">Email:</Label>
-        <Input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
 
-        <Label htmlFor="address">Address:</Label>
-        <Textarea
-          id="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          required
-        />
+        <div className="space-y-2">
+          <Label htmlFor="address">Address</Label>
+          <Textarea
+            id="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+        </div>
 
-        <Label htmlFor="order">Order Details:</Label>
-        <Textarea
-          id="order"
-          value={order}
-          onChange={(e) => setOrder(e.target.value)}
-          required
-        />
+        <div className="space-y-2">
+          <Label htmlFor="order">Order Details</Label>
+          <Textarea
+            id="order"
+            value={order}
+            onChange={(e) => setOrder(e.target.value)}
+            required
+          />
+        </div>
 
-        <Button type="submit">Submit Order</Button>
-        {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
-      </Form>
-    </FormWrapper>
+        <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
+          Submit Order
+        </Button>
+      </form>
+
+      {successMessage && (
+        <Alert className="mt-4 bg-green-50 border-green-200">
+          <CheckCircle2 className="h-4 w-4" />
+          <AlertTitle>Success</AlertTitle>
+          <AlertDescription>{successMessage}</AlertDescription>
+        </Alert>
+      )}
+
+      {errorMessage && (
+        <Alert variant="destructive" className="mt-4">
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{errorMessage}</AlertDescription>
+        </Alert>
+      )}
+    </div>
   );
 };
 
