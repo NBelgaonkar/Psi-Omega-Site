@@ -96,6 +96,11 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
+            <NavLinkStyled to="/roster" activeClassName="active">
+              Meet the Ebaord
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
             <NavLinkStyled to="/rushdke" activeClassName="active">
               place holder nav
             </NavLinkStyled>
