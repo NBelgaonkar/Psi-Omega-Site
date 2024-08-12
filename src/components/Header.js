@@ -110,6 +110,11 @@ const Header = () => {
               Why choose DKE?
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/whyDKE" activeClassName="active">
+              Placeholdernav
+            </NavLinkStyled>
+          </NavItem>
           
         </NavMenu>
       </NavContainer>

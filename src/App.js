@@ -11,7 +11,8 @@ import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
 import RosterPage from './components/roster';
-
+import Pancake from './components/order';
+import Why from './components/WhyDKE';
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -41,6 +42,9 @@ const App = () => {
             <Route path="/socialmedia" element={<SocialMediaPage />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/roster" element={<RosterPage />} />
+            <Route path="/order" element={<Pancake />} />
+            <Route path="/WhyDKE" element={<Why />} />
+
           </Routes>
         </MainContent>
         <Footer />
