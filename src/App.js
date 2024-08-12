@@ -14,6 +14,7 @@ import RosterPage from './components/roster';
 import Pancake from './components/order';
 import Why from './components/WhyDKE';
 import Alumni from './components/alumni';
+import Philanthropy from './components/philo';
 
 
 const AppContainer = styled.div`
@@ -47,6 +48,7 @@ const App = () => {
             <Route path="/order" element={<Pancake />} />
             <Route path="/WhyDKE" element={<Why />} />
             <Route path="/alumni" element={<Alumni />} />
+            <Route path="/philo" element={<Philanthropy />} />
 
           </Routes>
         </MainContent>
