@@ -102,7 +102,12 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/order" activeClassName="active">
-              ORDER holder nav
+              Pancake Order
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/whyDKE" activeClassName="active">
+              Why choose DKE?
             </NavLinkStyled>
           </NavItem>
           
