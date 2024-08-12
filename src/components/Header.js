@@ -92,12 +92,7 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/DkesDiner" activeClassName="active">
-              DKES Diner
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/roster" activeClassName="active">
-              Meet the Eboard
+              Cookie Order
             </NavLinkStyled>
           </NavItem>
           <NavItem>
@@ -106,8 +101,13 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
+            <NavLinkStyled to="/roster" activeClassName="active">
+              Meet the Eboard
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
             <NavLinkStyled to="/whyDKE" activeClassName="active">
-              Why choose DKE?
+              Why DKE?
             </NavLinkStyled>
           </NavItem>
           <NavItem>
