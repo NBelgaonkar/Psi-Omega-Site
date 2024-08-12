@@ -101,8 +101,8 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/rushdke" activeClassName="active">
-              place holder nav
+            <NavLinkStyled to="/order" activeClassName="active">
+              ORDER holder nav
             </NavLinkStyled>
           </NavItem>
           
