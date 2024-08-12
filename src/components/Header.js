@@ -111,6 +111,11 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
+            <NavLinkStyled to="/alumni" activeClassName="active">
+              Famous Alumni
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
             <NavLinkStyled to="/whyDKE" activeClassName="active">
               Placeholdernav
             </NavLinkStyled>

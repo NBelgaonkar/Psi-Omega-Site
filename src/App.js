@@ -13,6 +13,8 @@ import DkesDiner from './components/DkesDiner';
 import RosterPage from './components/roster';
 import Pancake from './components/order';
 import Why from './components/WhyDKE';
+import Alumni from './components/alumni';
+
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -44,6 +46,7 @@ const App = () => {
             <Route path="/roster" element={<RosterPage />} />
             <Route path="/order" element={<Pancake />} />
             <Route path="/WhyDKE" element={<Why />} />
+            <Route path="/alumni" element={<Alumni />} />
 
           </Routes>
         </MainContent>
