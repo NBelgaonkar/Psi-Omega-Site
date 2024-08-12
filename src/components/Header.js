@@ -116,6 +116,11 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
+            <NavLinkStyled to="/philo" activeClassName="active">
+              Philanthropy
+            </NavLinkStyled>
+          </NavItem>
+          <NavItem>
             <NavLinkStyled to="/whyDKE" activeClassName="active">
               Placeholdernav
             </NavLinkStyled>
