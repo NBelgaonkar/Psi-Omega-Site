@@ -22,7 +22,7 @@ const Container = styled.div`
 
 const RosterSection = styled.div`
   text-align: left;
-  max-width: 1200px; /* Adjusted to accommodate images */
+  max-width: 1200px;
   margin-top: 30px;
   color: black;
 `;
@@ -31,21 +31,21 @@ const MemberContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 `;
 
 const ImageGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 4 columns per row */
+  gap: 30px;
 `;
 
 const MemberImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 200px;  /* Larger image size */
+  height: 200px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 0%; /* Square borders */
   border: 2px solid #ccc;
 `;
 
@@ -59,6 +59,72 @@ const MemberCaption = styled.p`
   color: #666;
 `;
 
+const eboard = [
+  {
+    name: "President",
+    major: "Computer Science",
+    year: "Senior",
+    hometown: "New York, NY",
+    imageUrl: "https://via.placeholder.com/200?text=John+Doe"
+  },
+  {
+    name: "Vice President",
+    major: "Biology",
+    year: "Junior",
+    hometown: "Los Angeles, CA",
+    imageUrl: "https://via.placeholder.com/200?text=Jane+Smith"
+  },
+  {
+    name: "Tresurer",
+    major: "Engineering",
+    year: "Sophomore",
+    hometown: "Chicago, IL",
+    imageUrl: "https://via.placeholder.com/200?text=Alice+Johnson"
+  },
+  {
+    name: "Social Chair",
+    major: "Mathematics",
+    year: "Freshman",
+    hometown: "Houston, TX",
+    imageUrl: "https://via.placeholder.com/200?text=Bob+Brown"
+  },
+  {
+    name: "Health and Safety Chair",
+    major: "Physics",
+    year: "Senior",
+    hometown: "Miami, FL",
+    imageUrl: "https://via.placeholder.com/200?text=Chris+White"
+  },
+  {
+    name: "Philanthropy Chair",
+    major: "Chemistry",
+    year: "Junior",
+    hometown: "Seattle, WA",
+    imageUrl: "https://via.placeholder.com/200?text=Diana+Green"
+  },
+  {
+    name: "Marketing Chair",
+    major: "Economics",
+    year: "Sophomore",
+    hometown: "Boston, MA",
+    imageUrl: "https://via.placeholder.com/200?text=Evan+Black"
+  },
+  {
+    name: "Recruitment Chair",
+    major: "Art",
+    year: "Freshman",
+    hometown: "San Francisco, CA",
+    imageUrl: "https://via.placeholder.com/200?text=Fiona+Blue"
+  },
+  {
+    name: "Alumni Relations Chair",
+    major: "Art",
+    year: "Freshman",
+    hometown: "San Francisco, CA",
+    imageUrl: "https://via.placeholder.com/200?text=Fiona+Blue"
+  }
+];
+
 class RosterPage extends React.Component {
   render() {
     return (
@@ -66,16 +132,15 @@ class RosterPage extends React.Component {
         <GlobalStyle />
         <Container>
           <RosterSection>
-            <h1>Roster</h1>
+            <h1>Meet the Eboard</h1>
             <ImageGrid>
-              {Array(25).fill().map((_, index) => (
+              {eboard.map((member, index) => (
                 <MemberContainer key={index}>
-                  <MemberImage src={`https://via.placeholder.com/150`} alt={`Member ${index + 1}`} />
-                  <MemberName>Member {index + 1}</MemberName>
-                  <MemberCaption>Name: Example</MemberCaption>
-                  <MemberCaption>Major: Undeclared</MemberCaption>
-                  <MemberCaption>Year: Senior</MemberCaption>
-                  <MemberCaption>Hometown: Troy, NY</MemberCaption>
+                  <MemberImage src={member.imageUrl} alt={member.name} />
+                  <MemberName>{member.name}</MemberName>
+                  <MemberCaption>Major: {member.major}</MemberCaption>
+                  <MemberCaption>Year: {member.year}</MemberCaption>
+                  <MemberCaption>Hometown: {member.hometown}</MemberCaption>
                 </MemberContainer>
               ))}
             </ImageGrid>

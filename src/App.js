@@ -10,7 +10,6 @@ import Calender from './components/Calender';
 import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
-import Eboard from './components/roster';
 import RosterPage from './components/roster';
 
 
@@ -41,7 +40,7 @@ const App = () => {
             <Route path="/history" element={<OurHistory />} />
             <Route path="/socialmedia" element={<SocialMediaPage />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/eboard" element={<RosterPage />} />
+            <Route path="/roster" element={<RosterPage />} />
           </Routes>
         </MainContent>
         <Footer />

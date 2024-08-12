@@ -97,7 +97,7 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/roster" activeClassName="active">
-              Meet the Ebaord
+              Meet the Eboard
             </NavLinkStyled>
           </NavItem>
           <NavItem>
