@@ -108,11 +108,7 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-<<<<<<< HEAD
-            <NavLinkStyled to="/dkesDiner" activeClassName="active">
-=======
             <NavLinkStyled to="/DkesDiner" activeClassName="active">
->>>>>>> parent of e99f4d9 (Merge branch 'main' of https://github.com/NBelgaonkar/Psi-Omega-Site)
               DKES Diner
             </NavLinkStyled>
           </NavItem>
