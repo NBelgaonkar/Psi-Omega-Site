@@ -11,6 +11,10 @@ import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
 import RosterPage from './components/roster';
+import Pancake from './components/order';
+import Why from './components/WhyDKE';
+import Alumni from './components/alumni';
+import Philanthropy from './components/philo';
 
 
 const AppContainer = styled.div`
@@ -41,6 +45,11 @@ const App = () => {
             <Route path="/socialmedia" element={<SocialMediaPage />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/roster" element={<RosterPage />} />
+            <Route path="/order" element={<Pancake />} />
+            <Route path="/WhyDKE" element={<Why />} />
+            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/philo" element={<Philanthropy />} />
+
           </Routes>
         </MainContent>
         <Footer />
