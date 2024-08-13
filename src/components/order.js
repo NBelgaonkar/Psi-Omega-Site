@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios'; // Add this line to use axios for the POST request
+//import axios from 'axios'; // Add this line to use axios for the POST request
 
 const FormWrapper = styled.div`
   max-width: 600px;
@@ -70,8 +70,8 @@ const PancakeOrderForm = () => {
   const [quantity, setQuantity] = useState(1);
   const [specialInstructions, setSpecialInstructions] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ // const handleSubmit = async (e) => {
+  //  e.preventDefault();
 
     const orderData = {
       name,
@@ -82,7 +82,7 @@ const PancakeOrderForm = () => {
       specialInstructions,
     };
 
-    try {
+    /*try {
       const response = await axios.post(
         'https://script.google.com/macros/library/d/1ck56ShUJZ0BX3PgjiaUJTm2AHW3SgnSxZCQhGaQ0LMv_8fkqSbzUtLWO/1', // Replace this with your Web App URL
         orderData
@@ -103,12 +103,13 @@ const PancakeOrderForm = () => {
       console.error('Error submitting the order:', error);
       alert('There was an error submitting your order. Please try again.');
     }
-  };
+    */
+  //};
 
   return (
     <FormWrapper>
       <h2>Order Pancakes</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Label htmlFor="name">Name:</Label>
         <Input
           type="text"
