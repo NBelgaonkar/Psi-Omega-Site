@@ -127,6 +127,11 @@ const Header = () => {
               Why choose DKE?
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/news" activeClassName="active">
+              News
+            </NavLinkStyled>
+          </NavItem>
         </NavMenu>
         <SocialIcons>
           <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
