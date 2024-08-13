@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const NavWrapper = styled.nav`
   background-color: #231942;
@@ -57,35 +55,20 @@ const NavLinkStyled = styled(NavLink)`
   }
 `;
 
-const SocialIcons = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-`;
-
-const IconLink = styled.a`
-  color: #fff;
-  margin-left: 15px;
-  font-size: 1.5rem;
-  text-decoration: none;
-
-  &:hover {
-    color: #d4af37; /* Gold color on hover */
-  }
-`;
-
 const Header = () => {
   return (
     <NavWrapper>
       <NavContainer>
         <LogoWrapper>
-          <Logo to="/">DKE</Logo>
+          <Logo to="/"></Logo>
         </LogoWrapper>
         <NavMenu>
           <NavItem>
             <NavLinkStyled to="/" exact activeClassName="active">
               Home
             </NavLinkStyled>
+          </NavItem>
+          <NavItem>
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/about" activeClassName="active">
@@ -103,12 +86,12 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/calendar" activeClassName="active">
-              Calendar
+            <NavLinkStyled to="/Calender" activeClassName="active">
+              Calender
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/dkesDiner" activeClassName="active">
+            <NavLinkStyled to="/DkesDiner" activeClassName="active">
               DKES Diner
             </NavLinkStyled>
           </NavItem>
@@ -127,7 +110,9 @@ const Header = () => {
               Why choose DKE?
             </NavLinkStyled>
           </NavItem>
+          
         </NavMenu>
+<<<<<<< HEAD
         <SocialIcons>
           <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} />
@@ -139,6 +124,8 @@ const Header = () => {
             <FontAwesomeIcon icon={faTwitter} />
           </IconLink>
         </SocialIcons>
+=======
+>>>>>>> parent of e2c356c (header icons)
       </NavContainer>
     </NavWrapper>
   );
