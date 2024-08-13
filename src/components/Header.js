@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const NavWrapper = styled.nav`
   background-color: #231942;
@@ -55,20 +57,35 @@ const NavLinkStyled = styled(NavLink)`
   }
 `;
 
+const SocialIcons = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+`;
+
+const IconLink = styled.a`
+  color: #fff;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  text-decoration: none;
+
+  &:hover {
+    color: #d4af37; /* Gold color on hover */
+  }
+`;
+
 const Header = () => {
   return (
     <NavWrapper>
       <NavContainer>
         <LogoWrapper>
-          <Logo to="/"></Logo>
+          <Logo to="/">DKE</Logo>
         </LogoWrapper>
         <NavMenu>
           <NavItem>
             <NavLinkStyled to="/" exact activeClassName="active">
               Home
             </NavLinkStyled>
-          </NavItem>
-          <NavItem>
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/about" activeClassName="active">
@@ -86,18 +103,13 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/Calender" activeClassName="active">
-              Calender
+            <NavLinkStyled to="/calendar" activeClassName="active">
+              Calendar
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/DkesDiner" activeClassName="active">
-              Cookie Order
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/order" activeClassName="active">
-              Pancake Order
+            <NavLinkStyled to="/dkesDiner" activeClassName="active">
+              DKES Diner
             </NavLinkStyled>
           </NavItem>
           <NavItem>
@@ -106,27 +118,27 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/whyDKE" activeClassName="active">
-              Why DKE?
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/alumni" activeClassName="active">
-              Famous Alumni
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/philo" activeClassName="active">
-              Philanthropy
+            <NavLinkStyled to="/order" activeClassName="active">
+              Pancake Order
             </NavLinkStyled>
           </NavItem>
           <NavItem>
             <NavLinkStyled to="/whyDKE" activeClassName="active">
-              Placeholdernav
+              Why choose DKE?
             </NavLinkStyled>
           </NavItem>
-          
         </NavMenu>
+        <SocialIcons>
+          <IconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faInstagram} />
+          </IconLink>
+          <IconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faFacebook} />
+          </IconLink>
+          <IconLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faTwitter} />
+          </IconLink>
+        </SocialIcons>
       </NavContainer>
     </NavWrapper>
   );
