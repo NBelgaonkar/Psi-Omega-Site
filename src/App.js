@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
 import RosterPage from './components/roster';
+import PancakeOrderForm from './components/order';
 
 
 const AppContainer = styled.div`
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/socialmedia" element={<SocialMediaPage />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/roster" element={<RosterPage />} />
+            <Route path="/order" element={<PancakeOrderForm />} />
           </Routes>
         </MainContent>
         <Footer />

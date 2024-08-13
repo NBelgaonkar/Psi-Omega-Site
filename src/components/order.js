@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios'; // Add this line to use axios for the POST request
 
 const FormWrapper = styled.div`
   max-width: 600px;
@@ -69,17 +70,39 @@ const PancakeOrderForm = () => {
   const [quantity, setQuantity] = useState(1);
   const [specialInstructions, setSpecialInstructions] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Pancake order submitted:', {
+
+    const orderData = {
       name,
       email,
       phone,
       pancakeType,
       quantity,
       specialInstructions,
-    });
+    };
+
+    try {
+      const response = await axios.post(
+        'https://script.google.com/macros/s/AKfycbzzwxVjskgq26XEveLJTuDRVbd12Ll5QspC92X7BCvGi0LKLMYad-cKfxuppsSGu1LmdQ/exec', // Replace this with your Web App URL
+        orderData
+      );
+      //console.log('API response:', response);
+
+      if (response.data.result === 'success') {
+        alert('Pancake order submitted successfully!');
+        // Clear the form after submission
+        setName('');
+        setEmail('');
+        setPhone('');
+        setPancakeType('');
+        setQuantity(1);
+        setSpecialInstructions('');
+      }
+    } catch (error) {
+      console.error('Error submitting the order:', error);
+      alert('There was an error submitting your order. Please try again.');
+    }
   };
 
   return (
