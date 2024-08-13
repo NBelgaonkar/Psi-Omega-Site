@@ -129,7 +129,7 @@ const Header = () => {
           </NavItem>
         </NavMenu>
         <SocialIcons>
-          <IconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} />
           </IconLink>
           <IconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
