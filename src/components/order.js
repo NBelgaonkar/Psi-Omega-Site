@@ -84,7 +84,7 @@ const PancakeOrderForm = () => {
 
     try {
       const response = await axios.post(
-        'https://script.google.com/macros/s/AKfycbzzwxVjskgq26XEveLJTuDRVbd12Ll5QspC92X7BCvGi0LKLMYad-cKfxuppsSGu1LmdQ/exec', // Replace this with your Web App URL
+        'https://script.google.com/macros/library/d/1ck56ShUJZ0BX3PgjiaUJTm2AHW3SgnSxZCQhGaQ0LMv_8fkqSbzUtLWO/1', // Replace this with your Web App URL
         orderData
       );
       //console.log('API response:', response);
