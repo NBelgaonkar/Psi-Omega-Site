@@ -132,6 +132,11 @@ const Header = () => {
               News
             </NavLinkStyled>
           </NavItem>
+          <NavItem>
+            <NavLinkStyled to="/newhouse" activeClassName="active">
+              NewHouse
+            </NavLinkStyled>
+          </NavItem>
         </NavMenu>
         <SocialIcons>
           <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
