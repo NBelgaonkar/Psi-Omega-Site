@@ -18,22 +18,9 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 10px 20px;
   max-width: 1200px;
   margin: 0 auto;
-`;
-
-const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Logo = styled(Link)`
-  font-size: 1.5rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: -320px;
 `;
 
 const NavMenu = styled.ul`
@@ -41,17 +28,18 @@ const NavMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: -320px;
+  align-items: center;
 `;
 
 const NavItem = styled.li`
-  margin-right: 20px;
+  margin-right: 15px;
 `;
 
 const NavLinkStyled = styled(NavLink)`
   color: #fff;
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
+  font-size: 0.9rem;
   &.active {
     font-weight: bold;
   }
@@ -60,17 +48,16 @@ const NavLinkStyled = styled(NavLink)`
 const SocialIcons = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 20px;
 `;
 
 const IconLink = styled.a`
   color: #fff;
-  margin-left: 15px;
-  font-size: 1.5rem;
+  margin-left: 10px;
+  font-size: 1.2rem;
   text-decoration: none;
 
   &:hover {
-    color: #d4af37; /* Gold color on hover */
+    color: #d4af37;
   }
 `;
 
@@ -78,64 +65,36 @@ const Header = () => {
   return (
     <NavWrapper>
       <NavContainer>
-        <LogoWrapper>
-          <Logo to="/">DKE</Logo>
-        </LogoWrapper>
         <NavMenu>
           <NavItem>
-            <NavLinkStyled to="/" exact activeClassName="active">
-              Home
-            </NavLinkStyled>
+            <NavLinkStyled to="/" exact>Home</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/about" activeClassName="active">
-              About Us
-            </NavLinkStyled>
+            <NavLinkStyled to="/about">About Us</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/FAQ" activeClassName="active">
-              FAQ
-            </NavLinkStyled>
+            <NavLinkStyled to="/FAQ">FAQ</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/history" activeClassName="active">
-              History
-            </NavLinkStyled>
+            <NavLinkStyled to="/history">History</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/calendar" activeClassName="active">
-              Calendar
-            </NavLinkStyled>
+            <NavLinkStyled to="/calendar">Calendar</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/DkesDiner" activeClassName="active">
-              DKES Diner
-            </NavLinkStyled>
+            <NavLinkStyled to="/DkesDiner">DKES Diner</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/roster" activeClassName="active">
-              Meet the Eboard
-            </NavLinkStyled>
+            <NavLinkStyled to="/roster">Meet the Eboard</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/order" activeClassName="active">
-              Pancake Order
-            </NavLinkStyled>
+            <NavLinkStyled to="/order">Pancake Order</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/whyDKE" activeClassName="active">
-              Why choose DKE?
-            </NavLinkStyled>
+            <NavLinkStyled to="/whyDKE">Why choose DKE?</NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/news" activeClassName="active">
-              News
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/newhouse" activeClassName="active">
-              NewHouse
-            </NavLinkStyled>
+            <NavLinkStyled to="/newhouse">New House</NavLinkStyled>
           </NavItem>
         </NavMenu>
         <SocialIcons>
