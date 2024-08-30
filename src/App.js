@@ -14,8 +14,6 @@ import NewHouse from './components/newhouse';
 import RosterPage from './components/roster';
 import PancakeOrderForm from './components/order';
 import Updates from './components/news';
-import RushRecruitment from './components/RushRecruitment';
-//import Philanthropy from './components/Philanthropy';
 
 
 const AppContainer = styled.div`
@@ -49,7 +47,6 @@ const App = () => {
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
             <Route path="/newhouse" element={<NewHouse />} />
-            <Route path="/rush" element={<RushRecruitment />} />
           </Routes>
         </MainContent>
         <Footer />
