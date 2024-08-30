@@ -102,9 +102,6 @@ const Header = () => {
           <NavItem>
             <NavLinkStyled to="/philanthropy">Philanthropy</NavLinkStyled>
           </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/credits">Credits</NavLinkStyled>
-          </NavItem>
         </NavMenu>
         <SocialIcons>
           <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
