@@ -10,7 +10,6 @@ import Calender from './components/Calender';
 import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
-import NewHouse from './components/newhouse';  
 import RosterPage from './components/roster';
 import PancakeOrderForm from './components/order';
 import Updates from './components/news';
@@ -46,7 +45,6 @@ const App = () => {
             <Route path="/roster" element={<RosterPage />} />
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
-            <Route path="/newhouse" element={<NewHouse />} />
           </Routes>
         </MainContent>
         <Footer />
