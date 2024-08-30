@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import Header from './components/Header';
 import HomePage from './components/Homepage';
@@ -17,8 +16,6 @@ import PancakeOrderForm from './components/order';
 import Updates from './components/news';
 import RushRecruitment from './components/RushRecruitment';
 import Philanthropy from './components/Philanthropy';
-import WhyRushDKE from './components/WhyDKE';
-import CodeCredits from './components/credits';
 
 
 const AppContainer = styled.div`
@@ -54,8 +51,6 @@ const App = () => {
             <Route path="/newhouse" element={<NewHouse />} />
             <Route path="/rush" element={<RushRecruitment />} />
             <Route path="/philanthropy" element={<Philanthropy />} />
-            <Route path="whyDKE" element={<WhyRushDKE />} />
-            <Route path="credits" element={<CodeCredits />} />
           </Routes>
         </MainContent>
         <Footer />
