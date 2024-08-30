@@ -19,7 +19,6 @@ import RushRecruitment from './components/RushRecruitment';
 import Philanthropy from './components/Philanthropy';
 import WhyRushDKE from './components/WhyDKE';
 import CodeCredits from './components/credits';
-import MerchandiseOrderPage from './components/merch';
 
 
 const AppContainer = styled.div`
@@ -57,7 +56,6 @@ const App = () => {
             <Route path="/philanthropy" element={<Philanthropy />} />
             <Route path="whyDKE" element={<WhyRushDKE />} />
             <Route path="credits" element={<CodeCredits />} />
-            <Route path="merch" element={<MerchandiseOrderPage />} />
           </Routes>
         </MainContent>
         <Footer />

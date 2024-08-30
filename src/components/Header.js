@@ -105,9 +105,6 @@ const Header = () => {
           <NavItem>
             <NavLinkStyled to="/credits">Credits</NavLinkStyled>
           </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/merch">Order Merch</NavLinkStyled>
-          </NavItem>
         </NavMenu>
         <SocialIcons>
           <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
