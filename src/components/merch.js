@@ -90,7 +90,7 @@ const MerchandiseOrderPage = () => {
   return (
     <Container>
       <OrderForm>
-        <h2>Order Your Merchandise</h2>
+        <h2>Order DKE Merchandise</h2>
         <ProductCarousel showThumbs={false} infiniteLoop autoPlay>
           {merchandise.images.map((image, index) => (
             <div key={index}>
