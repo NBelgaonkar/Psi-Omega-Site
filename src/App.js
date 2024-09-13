@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import Header from './components/Header';
 import HomePage from './components/Homepage';
@@ -11,15 +10,9 @@ import Calender from './components/Calender';
 import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
-import NewHouse from './components/newhouse';  
 import RosterPage from './components/roster';
 import PancakeOrderForm from './components/order';
 import Updates from './components/news';
-import RushRecruitment from './components/RushRecruitment';
-import Philanthropy from './components/Philanthropy';
-import WhyRushDKE from './components/WhyDKE';
-import CodeCredits from './components/credits';
-import MerchandiseOrderPage from './components/merch';
 
 
 const AppContainer = styled.div`
@@ -52,12 +45,6 @@ const App = () => {
             <Route path="/roster" element={<RosterPage />} />
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
-            <Route path="/newhouse" element={<NewHouse />} />
-            <Route path="/rush" element={<RushRecruitment />} />
-            <Route path="/philanthropy" element={<Philanthropy />} />
-            <Route path="whyDKE" element={<WhyRushDKE />} />
-            <Route path="credits" element={<CodeCredits />} />
-            <Route path="merch" element={<MerchandiseOrderPage />} />
           </Routes>
         </MainContent>
         <Footer />
