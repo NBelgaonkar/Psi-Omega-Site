@@ -186,7 +186,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Note: This guide assumes that you are on Windows using WSL. If you are on a different operating system, just be aware of where you download the DKE.pem key. The other steps should be the same.
 
 1) Download the DKE.pem key
-2) Move the key to your WSL's .ssh folder as shown in the screenshot. ![[Pasted image 20241008160351.png]]
+2) Move the key to your WSL's .ssh folder as shown in the screenshot. ![Make sure the image goes to Linux/Ubuntu/home/usr/.ssh](readme/ssh-image.png)
 3) In your WSL/Linux terminal, run `chmod 600 ~/.ssh/DKE.pem`
 4) You can now use `ssh -i ~/.ssh/DKE.pem ubuntu@PUBLICDNS` to connect to the server. 
 
