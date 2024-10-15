@@ -1,0 +1,32 @@
+version: '1'
+name: 'psi-omega-server'
+
+services:
+  psi-omega-server:
+    build: .
+    image: psi-omega-server:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - PORT=3000
+    depends_on:
+      - psql
+    networks:
+      - psi-omega-network
+  
+  psql:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: psi-omega
+    ports:
+      - "5432:5432"
+    networks:
+      - psi-omega-network
+
+networks:
+  psi-omega-network:
+    driver: bridge
