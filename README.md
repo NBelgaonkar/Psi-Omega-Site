@@ -188,7 +188,7 @@ Note: This guide assumes that you are on Windows using WSL. If you are on a diff
 1) Download the DKE.pem key
 2) Move the key to your WSL's .ssh folder as shown in the screenshot. ![Make sure the image goes to Linux/Ubuntu/home/usr/.ssh](readme/ssh-image.png)
 3) In your WSL/Linux terminal, run `chmod 600 ~/.ssh/DKE.pem`
-4) You can now use `ssh -i ~/.ssh/DKE.pem ubuntu@PUBLICDNS` to connect to the server. 
+4) You can now use `ssh -i ~/.ssh/DKE.pem ubuntu@PUBLIC_DNS` to connect to the server. 
 
 For future connections, you only need to run the SSH command in the last step to connect.
 
