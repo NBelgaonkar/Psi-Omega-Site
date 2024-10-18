@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 const NavWrapper = styled.nav`
   background-color: #231942;
@@ -133,17 +132,6 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
         </NavMenu>
-        <SocialIcons>
-          <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} />
-          </IconLink>
-          <IconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faFacebook} />
-          </IconLink>
-          <IconLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faTwitter} />
-          </IconLink>
-        </SocialIcons>
       </NavContainer>
     </NavWrapper>
   );
