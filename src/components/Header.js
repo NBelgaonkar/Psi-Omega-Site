@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const NavWrapper = styled.nav`
   background-color: #231942;
@@ -16,10 +14,9 @@ const NavWrapper = styled.nav`
 
 const NavContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 `;
 
@@ -33,7 +30,6 @@ const Logo = styled(Link)`
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  margin-left: -320px;
 `;
 
 const NavMenu = styled.ul`
@@ -41,38 +37,91 @@ const NavMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: -320px;
+  margin-left: auto; /* Pushes the menu items to the far right */
 `;
 
 const NavItem = styled.li`
-  margin-right: 20px;
+  position: relative;
+  margin-left: 20px;
 `;
 
 const NavLinkStyled = styled(NavLink)`
   color: #fff;
   text-decoration: none;
   padding: 10px;
+
   &.active {
     font-weight: bold;
   }
+
+  &:hover {
+    color: #d4af37;
+  }
 `;
 
-const SocialIcons = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+/* Dropdown components */
+const DropdownContainer = styled.div`
+  position: relative;
+  display: inline-block;
 `;
 
-const IconLink = styled.a`
+const DropdownToggle = styled.a`
   color: #fff;
-  margin-left: 15px;
-  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: #d4af37;
+  }
+
+  &:after {
+    content: ' ▼'; /* Adds the dropdown arrow */
+    font-size: 0.6em;
+  }
+`;
+
+const DropdownMenu = styled.div`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  position: absolute;
+  background-color: #231942;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+`;
+
+const DropdownItemLink = styled(Link)`
+  display: block;
+  color: #fff;
+  padding: 12px 16px;
   text-decoration: none;
 
   &:hover {
-    color: #d4af37; /* Gold color on hover */
+    background-color: #555;
   }
 `;
+
+const Dropdown = ({ label, items }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <DropdownContainer
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <DropdownToggle href="#" onClick={(e) => e.preventDefault()}>
+        {label}
+      </DropdownToggle>
+      <DropdownMenu isOpen={isOpen}>
+        {items.map((item, index) => (
+          <DropdownItemLink to={item.to} key={index}>
+            {item.label}
+          </DropdownItemLink>
+        ))}
+      </DropdownMenu>
+    </DropdownContainer>
+  );
+};
 
 const Header = () => {
   return (
@@ -88,62 +137,35 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/about" activeClassName="active">
-              About Us
-            </NavLinkStyled>
+            <Dropdown
+              label="About Us"
+              items={[
+                { to: '/history', label: 'History' },
+                { to: '/roster', label: 'Meet the Eboard' },
+                { to: '/FAQ', label: 'FAQ' },
+              ]}
+            />
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/FAQ" activeClassName="active">
-              FAQ
-            </NavLinkStyled>
+            <Dropdown
+              label="Events"
+              items={[
+                { to: '/calendar', label: 'Calendar' },
+                { to: '/DkesDiner', label: "DKE's Diner" },
+                { to: '/order', label: 'Pancake Order' },
+              ]}
+            />
           </NavItem>
           <NavItem>
-            <NavLinkStyled to="/history" activeClassName="active">
-              History
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/calendar" activeClassName="active">
-              Calendar
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/DkesDiner" activeClassName="active">
-              DKES Diner
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/roster" activeClassName="active">
-              Meet the Eboard
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/order" activeClassName="active">
-              Pancake Order
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/whyDKE" activeClassName="active">
-              Why choose DKE?
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/news" activeClassName="active">
-              News
-            </NavLinkStyled>
+            <Dropdown
+              label="Alumni"
+              items={[
+                { to: '/news', label: 'News' },
+                { to: '/whyDKE', label: 'Why choose DKE?' },
+              ]}
+            />
           </NavItem>
         </NavMenu>
-        <SocialIcons>
-          <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} />
-          </IconLink>
-          <IconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faFacebook} />
-          </IconLink>
-          <IconLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faTwitter} />
-          </IconLink>
-        </SocialIcons>
       </NavContainer>
     </NavWrapper>
   );
