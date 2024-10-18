@@ -56,23 +56,6 @@ const NavLinkStyled = styled(NavLink)`
   }
 `;
 
-const SocialIcons = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-`;
-
-const IconLink = styled.a`
-  color: #fff;
-  margin-left: 15px;
-  font-size: 1.5rem;
-  text-decoration: none;
-
-  &:hover {
-    color: #d4af37; /* Gold color on hover */
-  }
-`;
-
 const Header = () => {
   return (
     <NavWrapper>
