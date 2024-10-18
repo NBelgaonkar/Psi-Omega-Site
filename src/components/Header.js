@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const NavWrapper = styled.nav`
   background-color: #231942;
@@ -53,6 +54,23 @@ const NavLinkStyled = styled(NavLink)`
   padding: 10px;
   &.active {
     font-weight: bold;
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+`;
+
+const IconLink = styled.a`
+  color: #fff;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  text-decoration: none;
+
+  &:hover {
+    color: #d4af37; /* Gold color on hover */
   }
 `;
 
@@ -115,6 +133,17 @@ const Header = () => {
             </NavLinkStyled>
           </NavItem>
         </NavMenu>
+        <SocialIcons>
+          <IconLink href="https://www.instagram.com/dke_rpi" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faInstagram} />
+          </IconLink>
+          <IconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faFacebook} />
+          </IconLink>
+          <IconLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faTwitter} />
+          </IconLink>
+        </SocialIcons>
       </NavContainer>
     </NavWrapper>
   );
