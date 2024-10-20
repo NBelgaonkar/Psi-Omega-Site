@@ -16,11 +16,19 @@ COPY . .
 # Build the React application
 RUN npm run build
 
-# Install 'serve' to serve the static files
-RUN npm install -g serve
 
-# Expose the port where the app will be served
-EXPOSE 3000
+# Stage 2: Serve the React application with Nginx
+FROM nginx:alpine
 
-# Serve the static files from the build directory
-CMD ["serve", "-s", "build", "-l", "3000"]
+# Copy the build output to the Nginx HTML directory
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Copy custom Nginx configuration file
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+
+
+EXPOSE 80
+EXPOSE 443
+
+# Start the application
