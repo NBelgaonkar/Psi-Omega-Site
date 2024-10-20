@@ -32,4 +32,4 @@ EXPOSE 80
 EXPOSE 443
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
