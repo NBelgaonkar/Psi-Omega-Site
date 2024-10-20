@@ -1,5 +1,5 @@
 # Use a Node.js base image
-FROM node:16-alpine
+FROM node:16-alpine as build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -9,6 +9,11 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
+
+# Update Browserslist database
+RUN npx update-browserslist-db@latest --update-db
+
+
 
 # Copy the rest of the application code
 COPY . .
@@ -26,10 +31,9 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Copy custom Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-
-
 EXPOSE 80
 EXPOSE 443
+EXPOSE 3000
 
 # Start the application
 CMD ["nginx", "-g", "daemon off;"]
