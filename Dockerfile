@@ -31,9 +31,19 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Copy custom Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+
+#Copy certs
+COPY /etc/letsencrypt/live/dekesrpi.org/fullchain.pem /etc/letsencrypt/live/dekesrpi.org/fullchain.pem
+COPY /etc/letsencrypt/live/dekesrpi.org/privkey.pem /etc/letsencrypt/live/dekesrpi.org/privkey.pem
+COPY /etc/letsencrypt/options-ssl-nginx.conf /etc/letsencrypt/options-ssl-nginx.conf
+COPY /etc/letsencrypt/ssl-dhparams.pem /etc/letsencrypt/ssl-dhparams.pem
+
+
+
+
 EXPOSE 80
 EXPOSE 443
-EXPOSE 3000
+
 
 # Start the application
 CMD ["nginx", "-g", "daemon off;"]
