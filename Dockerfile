@@ -16,18 +16,26 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Stage 2: Serve the React application using Nginx
-FROM nginx:alpine
+# Stage 2: Serve the React application using Node.js
+FROM node:16-alpine
 
-# Copy the build output to the Nginx HTML directory
-COPY --from=build /app/build /usr/share/nginx/html
+# Set the working directory
+WORKDIR /app
 
-# Copy the custom Nginx configuration file
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy only the build output from the previous stage
+COPY --from=build /app/build /app/build
 
-# Expose ports 80 and 443
-EXPOSE 80
-EXPOSE 443
+# Copy package.json and package-lock.json for the server setup
+COPY package*.json ./
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Install server dependencies
+RUN npm install
+
+# Copy the rest of the application code (if needed for backend)
+COPY . .
+
+# Expose the port your application runs on
+EXPOSE 3000
+
+# Command to run your application
+CMD ["npm", "start"]
