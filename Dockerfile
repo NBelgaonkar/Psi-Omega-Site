@@ -25,11 +25,11 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Copy the custom Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-#Copy Certifications
-COPY /etc/letsencrypt/live/dekesrpi.org/fullchain.pem /etc/letsencrypt/live/dekesrpi.org/fullchain.pem
-COPY /etc/letsencrypt/live/dekesrpi.org/privkey.pem /etc/letsencrypt/live/dekesrpi.org/privkey.pem
-COPY /etc/letsencrypt/options-ssl-nginx.conf /etc/letsencrypt/options-ssl-nginx.conf
-COPY /etc/letsencrypt/ssl-dhparams.pem /etc/letsencrypt/ssl-dhparams.pem
+# #Copy Certifications
+# COPY /etc/letsencrypt/live/dekesrpi.org/fullchain.pem /etc/letsencrypt/live/dekesrpi.org/fullchain.pem
+# COPY /etc/letsencrypt/live/dekesrpi.org/privkey.pem /etc/letsencrypt/live/dekesrpi.org/privkey.pem
+# COPY /etc/letsencrypt/options-ssl-nginx.conf /etc/letsencrypt/options-ssl-nginx.conf
+# COPY /etc/letsencrypt/ssl-dhparams.pem /etc/letsencrypt/ssl-dhparams.pem
 
 
 # Expose ports 80 and 443
