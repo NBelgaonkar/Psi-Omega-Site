@@ -1,1 +1,1 @@
-docker build --tag psi-omega-site .
+docker build --tag psi-omega-server .
