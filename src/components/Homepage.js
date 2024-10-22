@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import background from '../Images/pic.png';
 
-
+// Global styles
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&style=italic&display=swap');
 
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// Styled components
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,9 +24,9 @@ const Container = styled.div`
 
 const HeaderImage = styled.img`
   width: 100%;
-  max-height: 820px; /* Adjust the height as needed */
-  object-fit: contain; /* Use "contain" to fit the full image within the container */
-  margin-bottom: 120px; /* Adjust as needed */
+  max-height: 820px;
+  object-fit: contain;
+  margin-bottom: 120px;
 `;
 
 const TextSection = styled.div`
@@ -36,22 +37,20 @@ const TextSection = styled.div`
   padding: 20px;
   color: black;
   line-height: 2;
-  font-family: 'Roboto', sans-serif; /* Use Roboto font */
-  font-weight: 100; /* Thin weight */
-  font-style: italic; /* Italic style */
-  
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-style: italic;
 `;
 
 const Title = styled.h1`
-  font-size: 40px; /* Increase the font size for the title */
+  font-size: 40px;
   margin-bottom: 30px;
 `;
 
 const Paragraph = styled.p`
-  font-size: 20px; /* Increase the font size for the paragraphs */
-  color: black;
-  margin-bottom: 20px;
+  font-size: 20px;
   color: #71797E;
+  margin-bottom: 20px;
 `;
 
 const Content = styled.div`
@@ -62,50 +61,38 @@ const Content = styled.div`
   padding: 20px;
 `;
 
-const EventContainer = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-top: 50px; /* Adjust as needed */
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-top: 40px;
 `;
 
-const EventCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1px;
-  border-radius: 15px;
-  width: 400px;
-  margin: 3
-`;
-
-const ImageContainer = styled.div`
-  width: 100%;
-  position: relative;
-  padding-bottom: 75%;
-`;
-
-const Image = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+const RedirectButton = styled.button`
+  background-color: #5a5a5a;
+  color: white;
+  padding: 15px 30px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
   border-radius: 10px;
-`;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-const EventTitle = styled.h2`
-  font-size: 1.5em;
-  color: black;
-`;
+  &:hover {
+    background-color: #333;
+  }
 
-const EventDescription = styled.p`
-  color: #71797E;
+  &:nth-child(1) {
+    background-color: #8B0000; /* Red for Parents */
+  }
+
+  &:nth-child(2) {
+    background-color: #4B0082; /* Indigo for Brotherhood */
+  }
+
+  &:nth-child(3) {
+    background-color: #FFD700; /* Gold for Alumni */
+  }
 `;
 
 class HomePage extends React.Component {
@@ -132,15 +119,22 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-       
+        <GlobalStyle />
         <Container>
           <HeaderImage src={background} alt="Header Image" />
           <TextSection>
-          <Title>Welcome to Delta Kappa Epsilon at RPI</Title>
-          <Paragraph>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</Paragraph>
-          <Paragraph>As brothers, we strive to personify the three qualities of a DKE: the gentleman, the scholar, and the jolly good fellow. From our frequent charity events to our many gatherings throughout the semester, our aim remains the same: to foster friendships among young men as they work to achieve their goals at one of the most techinical institutions in the world.</Paragraph>
-          <Paragraph>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</Paragraph>
-        </TextSection>
+            <Title>Welcome to Delta Kappa Epsilon at RPI</Title>
+            <Paragraph>The Psi Omega Chapter of Delta Kappa Epsilon (DKE) is a fraternity at Rensselaer Polytechnic Institute (RPI) committed to fostering brotherhood, leadership, and community involvement.</Paragraph>
+            <Paragraph>As brothers, we strive to personify the three qualities of a DKE: the gentleman, the scholar, and the jolly good fellow. From our frequent charity events to our many gatherings throughout the semester, our aim remains the same: to foster friendships among young men as they work to achieve their goals at one of the most technical institutions in the world.</Paragraph>
+            <Paragraph>We are dedicated to upholding the values and traditions of DKE while creating a welcoming and supportive community for our members. Join us in our journey to make a positive impact on campus and in the lives of our brothers.</Paragraph>
+          </TextSection>
+
+          {/* Buttons to redirect */}
+          <ButtonContainer>
+            <RedirectButton onClick={() => window.location.href = '/parents'}>Parents</RedirectButton>
+            <RedirectButton onClick={() => window.location.href = '/brotherhood'}>Brotherhood</RedirectButton>
+            <RedirectButton onClick={() => window.location.href = '/alumni'}>Alumni</RedirectButton>
+          </ButtonContainer>
         </Container>
       </>
     );
