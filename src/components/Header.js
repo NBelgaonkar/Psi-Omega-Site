@@ -143,6 +143,7 @@ const Header = () => {
                 { to: '/history', label: 'History' },
                 { to: '/roster', label: 'Meet the Eboard' },
                 { to: '/FAQ', label: 'FAQ' },
+                { to: '/philo', label: 'Philanthropy' }
               ]}
             />
           </NavItem>

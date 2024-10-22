@@ -87,7 +87,7 @@ const RedirectButton = styled.button`
   }
 
   &:nth-child(2) {
-    background-color: #4B0082; /* Indigo for Brotherhood */
+    background-color: #0047AB; /* Indigo for Brotherhood */
   }
 
   &:nth-child(3) {
