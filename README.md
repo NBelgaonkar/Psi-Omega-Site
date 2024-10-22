@@ -196,3 +196,7 @@ For future connections, you only need to run the SSH command in the last step to
 Specs:
 core: t3.micro
 
+
+## Known Issue Regarding Web Server
+
+If you have attempted to access our website, dekesrpi.org, you might realize that it doesn't quite display anything DKE-related. Do not worry, this is a known issue and is currently being worked on by the back end team. Once we are able to connect our react script to the nginx configuration, this issue should be resolved. 
