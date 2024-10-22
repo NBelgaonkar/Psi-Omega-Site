@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   psi-omega-server:
@@ -14,7 +14,7 @@ services:
       - psql
     networks:
       - psi-omega-network
-  
+
   psql:
     image: postgres:latest
     environment:
@@ -28,12 +28,14 @@ services:
 
   nginx:
     image: nginx:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     depends_on:
       - psi-omega-server
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./ssl:/etc/nginx/ssl
-      - /etc/letsencrypt:/etc/letsencrypt 
+      - /etc/letsencrypt:/etc/letsencrypt  # Mount LetsEncrypt certs
     ports:
       - "80:80"
       - "443:443"
