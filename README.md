@@ -38,6 +38,10 @@ _An RCOS project intended to create a website for Fraternities._
 
 - **Fraternity History**: Explore the rich history and traditions of the Delta Kappa Epsilon fraternity, both at the chapter level and within the national organization.
 
+
+
+- **Frequently Asked Questions**: Are you a concerned parent or prospective brother and have any questions? We probably have the answer!
+
   
 
 # Getting Started with Create React App
