@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+// Wrapper for the whole navigation bar
 const NavWrapper = styled.nav`
   background-color: #231942;
   color: #fff;
@@ -12,6 +13,7 @@ const NavWrapper = styled.nav`
   z-index: 10;
 `;
 
+// Container to organize items in the nav bar
 const NavContainer = styled.div`
   display: flex;
   align-items: center;
@@ -20,11 +22,13 @@ const NavContainer = styled.div`
   margin: 0 auto;
 `;
 
+// Wrapper for the logo section
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
+// Style for the logo, clickable link to home
 const Logo = styled(Link)`
   font-size: 1.5rem;
   color: #fff;
@@ -32,38 +36,43 @@ const Logo = styled(Link)`
   font-weight: bold;
 `;
 
+// List for holding the nav menu items
 const NavMenu = styled.ul`
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-left: auto; /* Pushes the menu items to the far right */
+  margin-left: auto; /* Moves the menu to the right */
 `;
 
+// Each item in the navigation bar
 const NavItem = styled.li`
   position: relative;
   margin-left: 20px;
 `;
 
+// Style for each clickable nav link
 const NavLinkStyled = styled(NavLink)`
   color: #fff;
   text-decoration: none;
   padding: 10px;
 
   &.active {
-    font-weight: bold;
+    font-weight: bold; /* Makes the active link bold */
   }
 
   &:hover {
-    color: #d4af37;
+    color: #d4af37; /* Changes color on hover */
   }
 `;
 
+// Wrapper for dropdown menus
 const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
 `;
 
+// Style for the dropdown toggle button
 const DropdownToggle = styled.a`
   color: #fff;
   text-decoration: none;
@@ -71,17 +80,18 @@ const DropdownToggle = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: #d4af37;
+    color: #d4af37; /* Hover effect */
   }
 
   &:after {
-    content: ' ▼'; /* Adds the dropdown arrow */
+    content: ' ▼'; /* Adds arrow to show dropdown */
     font-size: 0.6em;
   }
 `;
 
+// Styles for the dropdown menu
 const DropdownMenu = styled.div`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  display: ${(props) => (props.isOpen ? 'block' : 'none')}; /* Toggle visibility */
   position: absolute;
   background-color: #231942;
   min-width: 160px;
@@ -89,6 +99,7 @@ const DropdownMenu = styled.div`
   z-index: 1;
 `;
 
+// Style for each item in the dropdown
 const DropdownItemLink = styled(Link)`
   display: block;
   color: #fff;
@@ -96,17 +107,18 @@ const DropdownItemLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    background-color: #555;
+    background-color: #555; /* Change background color on hover */
   }
 `;
 
+// Component for handling dropdown functionality
 const Dropdown = ({ label, items }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Toggle state for dropdown
 
   return (
     <DropdownContainer
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={() => setIsOpen(true)} // Open on hover
+      onMouseLeave={() => setIsOpen(false)} // Close when mouse leaves
     >
       <DropdownToggle href="#" onClick={(e) => e.preventDefault()}>
         {label}
@@ -122,15 +134,16 @@ const Dropdown = ({ label, items }) => {
   );
 };
 
+// The main Header component
 const Header = () => {
   return (
     <NavWrapper>
       <NavContainer>
         <LogoWrapper>
-          <Logo to="/">DKE</Logo>
+          <Logo to="/">DKE</Logo> {/* Clicking logo goes to home */}
         </LogoWrapper>
         <NavMenu>
-          {/* 1. About Us */}
+          {/* 1. About Us section with dropdown */}
           <NavItem>
             <Dropdown
               label="About Us"
@@ -144,7 +157,7 @@ const Header = () => {
             />
           </NavItem>
 
-          {/* 2. Events */}
+          {/* 2. Events section with dropdown */}
           <NavItem>
             <Dropdown
               label="Events"
@@ -155,7 +168,7 @@ const Header = () => {
             />
           </NavItem>
 
-          {/* 3. Alumni */}
+          {/* 3. Alumni section with dropdown */}
           <NavItem>
             <Dropdown
               label="Alumni"
@@ -167,7 +180,7 @@ const Header = () => {
             />
           </NavItem>
 
-          {/* 4. Contact Us */}
+          {/* 4. Contact Us section with dropdown */}
           <NavItem>
             <Dropdown
               label="Contact Us"
@@ -178,7 +191,7 @@ const Header = () => {
             />
           </NavItem>
 
-          {/* 5. FAQ */}
+          {/* 5. FAQ link, no dropdown */}
           <NavItem>
             <NavLinkStyled to="/FAQ" exact activeClassName="active">
               FAQ
