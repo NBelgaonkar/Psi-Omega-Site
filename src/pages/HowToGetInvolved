@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Container for the whole page, centers content
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 `;
 
+// Main heading for the page
 const Heading = styled.h1`
   font-size: 2.5rem;
   color: #231942;
@@ -18,12 +20,14 @@ const Section = styled.div`
   margin-bottom: 30px;
 `;
 
+// Sub-headings for each section of content
 const SubHeading = styled.h2`
   font-size: 1.8rem;
   color: #231942;
   margin-bottom: 15px;
 `;
 
+// Paragraph styles for general text
 const Paragraph = styled.p`
   font-size: 1.2rem;
   line-height: 1.6;
@@ -35,11 +39,12 @@ const List = styled.ul`
   padding: 0;
 `;
 
+// Style for each list item
 const ListItem = styled.li`
   font-size: 1.2rem;
   margin-bottom: 10px;
   &:before {
-    content: '•';
+    content: '•'; // Adds bullet point before each item
     color: #d4af37;
     font-weight: bold;
     display: inline-block;
@@ -51,8 +56,10 @@ const ListItem = styled.li`
 const GetInvolvedPage = () => {
   return (
     <Container>
+      {/* Main page heading */}
       <Heading>How to Get Involved with DKE at RPI</Heading>
 
+      {/* Section for recruitment info */}
       <Section>
         <SubHeading>Recruitment Process</SubHeading>
         <Paragraph>
@@ -63,47 +70,36 @@ const GetInvolvedPage = () => {
         <Paragraph>
           DKE hosts several recruitment (or "rush") events throughout the year. These include formal
           rush events in the spring and informal gatherings during both the fall and spring semesters. 
-          Attending these events is a great way to meet current brothers and learn more about the fraternity’s 
-          values, activities, and membership requirements.
         </Paragraph>
       </Section>
 
+      {/* Benefits of joining DKE */}
       <Section>
         <SubHeading>Why Join DKE?</SubHeading>
         <List>
-          <ListItem>
-            <strong>Brotherhood:</strong> Become part of a tight-knit community that values friendship and 
-            mutual support. DKE is more than just a fraternity—it’s a lifelong brotherhood.
-          </ListItem>
-          <ListItem>
-            <strong>Leadership:</strong> DKE offers a range of leadership roles, from committee positions 
-            to executive board spots, allowing you to develop essential management and organization skills.
-          </ListItem>
-          <ListItem>
-            <strong>Philanthropy:</strong> Get involved in meaningful community service projects and make a 
-            positive impact both on and off campus through various charitable events and initiatives.
-          </ListItem>
-          <ListItem>
-            <strong>Academic Support:</strong> DKE emphasizes academic excellence, providing resources like 
-            study groups and tutoring to help you succeed in your studies.
-          </ListItem>
+          <ListItem><strong>Brotherhood:</strong> Become part of a supportive and close community.</ListItem>
+          <ListItem><strong>Leadership:</strong> Opportunities to take leadership roles within the chapter.</ListItem>
+          <ListItem><strong>Philanthropy:</strong> Engage in community service and charity work.</ListItem>
+          <ListItem><strong>Academic Support:</strong> Resources like study groups to help with academic success.</ListItem>
         </List>
       </Section>
 
+      {/* Steps for getting involved */}
       <Section>
         <SubHeading>Steps to Get Involved</SubHeading>
         <List>
-          <ListItem>Attend a recruitment event to learn more about DKE and meet current members.</ListItem>
-          <ListItem>Speak with brothers about the fraternity's values, activities, and membership expectations.</ListItem>
-          <ListItem>Submit an application or express your interest in joining during the rush process.</ListItem>
-          <ListItem>Receive a bid (invitation) to join DKE and participate in New Member Orientation.</ListItem>
+          <ListItem>Attend recruitment events to meet the brothers.</ListItem>
+          <ListItem>Ask questions and learn about the fraternity’s values.</ListItem>
+          <ListItem>Express your interest during the rush process.</ListItem>
+          <ListItem>Receive a bid to join DKE and attend New Member Orientation.</ListItem>
         </List>
       </Section>
 
+      {/* Contact section */}
       <Section>
         <SubHeading>Contact Us</SubHeading>
         <Paragraph>
-          For more information about joining DKE at RPI, feel free to contact our recruitment team at 
+          For more information, contact our recruitment team at 
           <a href="mailto:info@dke-rpi.org"> info@dke-rpi.org</a>.
         </Paragraph>
       </Section>
