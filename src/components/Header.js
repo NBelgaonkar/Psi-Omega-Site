@@ -59,7 +59,6 @@ const NavLinkStyled = styled(NavLink)`
   }
 `;
 
-/* Dropdown components */
 const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
@@ -131,11 +130,11 @@ const Header = () => {
           <Logo to="/">DKE</Logo>
         </LogoWrapper>
         <NavMenu>
+          {/* 1. About Us */}
           <NavItem>
             <Dropdown
               label="About Us"
               items={[
-                { to: '/', label: 'Home' },
                 { to: '/officers', label: 'Officers' },
                 { to: '/brotherhood', label: 'Brotherhood' },
                 { to: '/philanthropy', label: 'Philanthropy' },
@@ -144,44 +143,46 @@ const Header = () => {
               ]}
             />
           </NavItem>
+
+          {/* 2. Events */}
           <NavItem>
             <Dropdown
               label="Events"
               items={[
-                { to: '/', label: 'Home' },
                 { to: '/rush-calendar', label: 'Rush Calendar' },
                 { to: '/upcoming-events', label: 'Upcoming Events' },
               ]}
             />
           </NavItem>
+
+          {/* 3. Alumni */}
           <NavItem>
             <Dropdown
               label="Alumni"
               items={[
-                { to: '/', label: 'Home' },
                 { to: '/psi-omega', label: 'Psi Omega Alumni Association' },
                 { to: '/alumni-events', label: 'Alumni Events' },
                 { to: '/get-involved', label: 'How to Get Involved' },
               ]}
             />
           </NavItem>
+
+          {/* 4. Contact Us */}
           <NavItem>
             <Dropdown
               label="Contact Us"
               items={[
-                { to: '/', label: 'Home' },
                 { to: '/eboard-inquiry', label: 'Eboard Inquiry' },
                 { to: '/donations', label: 'Donations' },
               ]}
             />
           </NavItem>
+
+          {/* 5. FAQ */}
           <NavItem>
-            <Dropdown
-              label="FAQ"
-              items={[
-                { to: '/', label: 'Home' },
-              ]}
-            />
+            <NavLinkStyled to="/FAQ" exact activeClassName="active">
+              FAQ
+            </NavLinkStyled>
           </NavItem>
         </NavMenu>
       </NavContainer>
