@@ -1,0 +1,114 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const Heading = styled.h1`
+  font-size: 2.5rem;
+  color: #231942;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const Section = styled.div`
+  margin-bottom: 30px;
+`;
+
+const SubHeading = styled.h2`
+  font-size: 1.8rem;
+  color: #231942;
+  margin-bottom: 15px;
+`;
+
+const Paragraph = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+`;
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  &:before {
+    content: '•';
+    color: #d4af37;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+`;
+
+const GetInvolvedPage = () => {
+  return (
+    <Container>
+      <Heading>How to Get Involved with DKE at RPI</Heading>
+
+      <Section>
+        <SubHeading>Recruitment Process</SubHeading>
+        <Paragraph>
+          At RPI, students can join Delta Kappa Epsilon (DKE) starting in their second semester under
+          the deferred recruitment system. To be eligible, you need to complete 12 credit hours with a
+          minimum GPA of 2.5. Transfer students with similar academic standing are also eligible.
+        </Paragraph>
+        <Paragraph>
+          DKE hosts several recruitment (or "rush") events throughout the year. These include formal
+          rush events in the spring and informal gatherings during both the fall and spring semesters. 
+          Attending these events is a great way to meet current brothers and learn more about the fraternity’s 
+          values, activities, and membership requirements.
+        </Paragraph>
+      </Section>
+
+      <Section>
+        <SubHeading>Why Join DKE?</SubHeading>
+        <List>
+          <ListItem>
+            <strong>Brotherhood:</strong> Become part of a tight-knit community that values friendship and 
+            mutual support. DKE is more than just a fraternity—it’s a lifelong brotherhood.
+          </ListItem>
+          <ListItem>
+            <strong>Leadership:</strong> DKE offers a range of leadership roles, from committee positions 
+            to executive board spots, allowing you to develop essential management and organization skills.
+          </ListItem>
+          <ListItem>
+            <strong>Philanthropy:</strong> Get involved in meaningful community service projects and make a 
+            positive impact both on and off campus through various charitable events and initiatives.
+          </ListItem>
+          <ListItem>
+            <strong>Academic Support:</strong> DKE emphasizes academic excellence, providing resources like 
+            study groups and tutoring to help you succeed in your studies.
+          </ListItem>
+        </List>
+      </Section>
+
+      <Section>
+        <SubHeading>Steps to Get Involved</SubHeading>
+        <List>
+          <ListItem>Attend a recruitment event to learn more about DKE and meet current members.</ListItem>
+          <ListItem>Speak with brothers about the fraternity's values, activities, and membership expectations.</ListItem>
+          <ListItem>Submit an application or express your interest in joining during the rush process.</ListItem>
+          <ListItem>Receive a bid (invitation) to join DKE and participate in New Member Orientation.</ListItem>
+        </List>
+      </Section>
+
+      <Section>
+        <SubHeading>Contact Us</SubHeading>
+        <Paragraph>
+          For more information about joining DKE at RPI, feel free to contact our recruitment team at 
+          <a href="mailto:info@dke-rpi.org"> info@dke-rpi.org</a>.
+        </Paragraph>
+      </Section>
+    </Container>
+  );
+};
+
+export default GetInvolvedPage;
