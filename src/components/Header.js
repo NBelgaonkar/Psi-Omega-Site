@@ -132,18 +132,15 @@ const Header = () => {
         </LogoWrapper>
         <NavMenu>
           <NavItem>
-            <NavLinkStyled to="/" exact activeClassName="active">
-              Home
-            </NavLinkStyled>
-          </NavItem>
-          <NavItem>
             <Dropdown
               label="About Us"
               items={[
-                { to: '/history', label: 'History' },
-                { to: '/roster', label: 'Meet the Eboard' },
-                { to: '/FAQ', label: 'FAQ' },
-                { to: '/philo', label: 'Philanthropy' }
+                { to: '/', label: 'Home' },
+                { to: '/officers', label: 'Officers' },
+                { to: '/brotherhood', label: 'Brotherhood' },
+                { to: '/philanthropy', label: 'Philanthropy' },
+                { to: '/local-history', label: 'Local History' },
+                { to: '/chapter-house', label: 'Chapter House' },
               ]}
             />
           </NavItem>
@@ -151,9 +148,9 @@ const Header = () => {
             <Dropdown
               label="Events"
               items={[
-                { to: '/calendar', label: 'Calendar' },
-                { to: '/DkesDiner', label: "DKE's Diner" },
-                { to: '/order', label: 'Pancake Order' },
+                { to: '/', label: 'Home' },
+                { to: '/rush-calendar', label: 'Rush Calendar' },
+                { to: '/upcoming-events', label: 'Upcoming Events' },
               ]}
             />
           </NavItem>
@@ -161,8 +158,28 @@ const Header = () => {
             <Dropdown
               label="Alumni"
               items={[
-                { to: '/news', label: 'News' },
-                { to: '/whyDKE', label: 'Why choose DKE?' },
+                { to: '/', label: 'Home' },
+                { to: '/psi-omega', label: 'Psi Omega Alumni Association' },
+                { to: '/alumni-events', label: 'Alumni Events' },
+                { to: '/get-involved', label: 'How to Get Involved' },
+              ]}
+            />
+          </NavItem>
+          <NavItem>
+            <Dropdown
+              label="Contact Us"
+              items={[
+                { to: '/', label: 'Home' },
+                { to: '/eboard-inquiry', label: 'Eboard Inquiry' },
+                { to: '/donations', label: 'Donations' },
+              ]}
+            />
+          </NavItem>
+          <NavItem>
+            <Dropdown
+              label="FAQ"
+              items={[
+                { to: '/', label: 'Home' },
               ]}
             />
           </NavItem>
