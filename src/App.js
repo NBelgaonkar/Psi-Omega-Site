@@ -12,6 +12,7 @@ import DkesDiner from './components/DkesDiner';
 import RosterPage from './components/roster';
 import PancakeOrderForm from './components/order';
 import Updates from './components/news';
+import Admin from './components/Admin'; 
 
 
 const AppContainer = styled.div`
@@ -43,7 +44,7 @@ const App = () => {
             <Route path="/roster" element={<RosterPage />} />
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
-            <Route path="/Admin" element={<AdminPage />} />
+            <Route path="/Admin" element={<Admin />} />
           </Routes>
         </MainContent>
         <Footer />
