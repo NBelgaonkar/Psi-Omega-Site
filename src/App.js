@@ -43,6 +43,7 @@ const App = () => {
             <Route path="/roster" element={<RosterPage />} />
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
+            <Route path="/Admin" element={<AdminPage />} />
           </Routes>
         </MainContent>
         <Footer />
