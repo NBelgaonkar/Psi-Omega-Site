@@ -1,10 +1,14 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Ben from '../Images/Ben.jpg';
-import Alex from '../Images/Alex.jpg';
-import Gavin from '../Images/Gavin.jpg';
-import Jacob from '../Images/Jacob.jpg';
-import David from '../Images/David.jpg'
+import Ben from '../Images/BenF24.jpg';
+import Alex from '../Images/AlexF24.jpg';
+import Gavin from '../Images/GavinF24.jpg';
+import Jacob from '../Images/JacobF24.jpg';
+import David from '../Images/David2F24.jpg'
+import Joe from '../Images/JoeF24.jpg'
+import Shastoo from '../Images/ShastooF24.jpg'
+import Jake from '../Images/JakeF24.jpg'
+import Ian from '../Images/IanF24.jpg'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -78,7 +82,7 @@ const eboard = [
     major: "Biology",
     year: "Junior",
     hometown: "Los Angeles, CA",
-    imageUrl: "https://via.placeholder.com/200?text=Jane+Smith"
+    imageUrl: Joe
   },
   {
     name: "Treasurer",
@@ -92,21 +96,21 @@ const eboard = [
     major: "Mathematics",
     year: "Freshman",
     hometown: "Houston, TX",
-    imageUrl: "https://via.placeholder.com/200?text=Bob+Brown"
+    imageUrl: Shastoo
   },
   {
     name: "Health and Safety Chair",
     major: "Physics",
     year: "Senior",
     hometown: "Miami, FL",
-    imageUrl: "https://via.placeholder.com/200?text=Chris+White"
+    imageUrl: Jake
   },
   {
     name: "Philanthropy Chair",
     major: "Chemistry",
     year: "Junior",
     hometown: "Seattle, WA",
-    imageUrl: "https://via.placeholder.com/200?text=Diana+Green"
+    imageUrl: Ian
   },
   {
     name: "Marketing Chair",
