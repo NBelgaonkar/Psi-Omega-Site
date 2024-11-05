@@ -5,7 +5,7 @@ import Header from './components/Header';
 import HomePage from './components/Homepage';
 import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 import FAQ from './components/FAQ';
-import Calender from './components/Calender';
+import calendar from './components/calendar';
 import Footer from './components/Footer';
 import OurHistory from './components/History';
 import DkesDiner from './components/DkesDiner';  
@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/DkesDiner" element={<DkesDiner />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/calender" element={<Calender />} />
+            <Route path="/calendar" element={<calendar />} />
             <Route path="/history" element={<OurHistory />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/roster" element={<RosterPage />} />
