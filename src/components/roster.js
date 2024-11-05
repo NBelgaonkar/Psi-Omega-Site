@@ -1,5 +1,11 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import Ben from '../Images/Ben.jpg';
+import Alex from '../Images/Alex.jpg';
+import Gavin from '../Images/Gavin.jpg';
+import Jacob from '../Images/Jacob.jpg';
+import David from '../Images/David.jpg'
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -65,7 +71,7 @@ const eboard = [
     major: "Computer Science",
     year: "Senior",
     hometown: "New York, NY",
-    imageUrl: "https://via.placeholder.com/200?text=John+Doe"
+    imageUrl: Ben
   },
   {
     name: "Vice President",
@@ -79,7 +85,7 @@ const eboard = [
     major: "Engineering",
     year: "Sophomore",
     hometown: "Chicago, IL",
-    imageUrl: "https://via.placeholder.com/200?text=Alice+Johnson"
+    imageUrl: David
   },
   {
     name: "Social Chair",
@@ -107,21 +113,21 @@ const eboard = [
     major: "Economics",
     year: "Sophomore",
     hometown: "Boston, MA",
-    imageUrl: "https://via.placeholder.com/200?text=Evan+Black"
+    imageUrl: Gavin
   },
   {
     name: "Recruitment Chair",
     major: "Art",
     year: "Freshman",
     hometown: "San Francisco, CA",
-    imageUrl: "https://via.placeholder.com/200?text=Fiona+Blue"
+    imageUrl: Jacob
   },
   {
     name: "Alumni Relations Chair",
     major: "Art",
     year: "Freshman",
     hometown: "San Francisco, CA",
-    imageUrl: "https://via.placeholder.com/200?text=Fiona+Blue"
+    imageUrl: Alex
   }
 ];
 
