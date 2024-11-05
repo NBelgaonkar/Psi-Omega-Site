@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"  # Expose the application port
     volumes:
-      - .:/app  # Optional: Mount local files for development (can be removed for production)
+      - .:/app  # no idea if we need this or not
     environment:
       - PORT=3000
     depends_on:
@@ -26,8 +26,21 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh  # Mount the custom script
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh  # Mount custom script
     entrypoint: ["./docker-entrypoint-initdb.d/init-db.sh"]
+    networks:
+      - psi-omega-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Mount nginx.conf
+      - /etc/letsencrypt:/etc/letsencrypt  
+    depends_on:
+      - psi-omega-server
     networks:
       - psi-omega-network
 
