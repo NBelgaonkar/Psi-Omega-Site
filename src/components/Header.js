@@ -164,7 +164,7 @@ const Header = () => {
             <Dropdown
               label="Events"
               items={[
-                { to: '/calendar', label: 'Rush Calendar' },
+                { to: '/calender', label: 'Rush Calendar' },
                 // { to: '/upcoming-events', label: 'Upcoming Events' },
                 { to: '/DkesDiner', label: 'Dekes Diner' },
               ]}
