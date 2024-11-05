@@ -148,11 +148,13 @@ const Header = () => {
             <Dropdown
               label="About Us"
               items={[
-                { to: '/officers', label: 'Officers' },
-                { to: '/brotherhood', label: 'Brotherhood' },
-                { to: '/philanthropy', label: 'Philanthropy' },
-                { to: '/local-history', label: 'Local History' },
-                { to: '/chapter-house', label: 'Chapter House' },
+                { to: '/roster', label: 'Officers' },
+                // { to: '/brotherhood', label: 'Brotherhood' },
+                { to: '/philo', label: 'Philanthropy' },
+                { to: '/history', label: 'Local History' },
+                // { to: '/chapter-house', label: 'Chapter House' },
+                { to: '/news', label: 'Updates' },
+
               ]}
             />
           </NavItem>
@@ -162,8 +164,9 @@ const Header = () => {
             <Dropdown
               label="Events"
               items={[
-                { to: '/rush-calendar', label: 'Rush Calendar' },
-                { to: '/upcoming-events', label: 'Upcoming Events' },
+                { to: '/calender', label: 'Rush Calendar' },
+                // { to: '/upcoming-events', label: 'Upcoming Events' },
+                { to: '/DkesDiner', label: 'Dekes Diner' },
               ]}
             />
           </NavItem>
@@ -193,7 +196,7 @@ const Header = () => {
 
           {/* 5. FAQ link, no dropdown */}
           <NavItem>
-            <NavLinkStyled to="/FAQ" exact activeClassName="active">
+            <NavLinkStyled to="/faq" exact activeClassName="active">
               FAQ
             </NavLinkStyled>
           </NavItem>
