@@ -75,7 +75,7 @@ const eboard = [
     imageUrl: "https://via.placeholder.com/200?text=Jane+Smith"
   },
   {
-    name: "Tresurer",
+    name: "Treasurer",
     major: "Engineering",
     year: "Sophomore",
     hometown: "Chicago, IL",
