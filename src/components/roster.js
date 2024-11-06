@@ -59,7 +59,7 @@ const MemberImage = styled.img`
   border: 2px solid #ccc;
 `;
 
-const MemberName = styled.h3`
+const MemberPosition = styled.h3`
   margin-top: 10px;
   margin-bottom: 5px;
 `;
@@ -71,66 +71,75 @@ const MemberCaption = styled.p`
 
 const eboard = [
   {
-    name: "President",
+    position: "President",
+    name: "Benjamin Rodgers",
     major: "Computer Science",
-    year: "Senior",
-    hometown: "New York, NY",
+    year: "Junior",
+    hometown: "Souderton, PA",
     imageUrl: Ben
   },
   {
-    name: "Vice President",
-    major: "Biology",
+    position: "Vice President",
+    name: "Joseph Kirschner",
+    major: "Mechanical Engineering",
     year: "Junior",
-    hometown: "Los Angeles, CA",
+    hometown: "Kingston, NY",
     imageUrl: Joe
   },
   {
-    name: "Treasurer",
-    major: "Engineering",
-    year: "Sophomore",
-    hometown: "Chicago, IL",
+    position: "Treasurer",
+    name: "David Smith",
+    major: "Business Analytics / Computer Science",
+    year: "Junior",
+    hometown: "Newton, MA",
     imageUrl: David
   },
   {
-    name: "Social Chair",
-    major: "Mathematics",
-    year: "Freshman",
-    hometown: "Houston, TX",
+    position: "Social Chair",
+    name: "Shastraveer Thapa",
+    major: "Engineering",
+    year: "Sophomore",
+    hometown: "Nepal",
     imageUrl: Shastoo
   },
   {
-    name: "Health and Safety Chair",
-    major: "Physics",
-    year: "Senior",
-    hometown: "Miami, FL",
+    position: "Health and Safety Chair",
+    name: "Jake Mandel",
+    major: "Information Technology and Web Science",
+    year: "Junior",
+    hometown: "State Hill, NY",
     imageUrl: Jake
   },
   {
-    name: "Philanthropy Chair",
-    major: "Chemistry",
+    position: "Philanthropy Chair",
+    name: "Ian Lewis",
+    major: "Math and Computer Science",
     year: "Junior",
-    hometown: "Seattle, WA",
+    hometown: "Pleasant Valley, NY",
     imageUrl: Ian
   },
   {
-    name: "Marketing Chair",
-    major: "Economics",
-    year: "Sophomore",
-    hometown: "Boston, MA",
+    position: "Marketing Chair",
+    name: "Gavin MacKenzie",
+    major: "Aeronautical / Mechanical Engineering",
+    year: "Senior",
+    hometown: "Kirkland, WA",
     imageUrl: Gavin
   },
   {
-    name: "Recruitment Chair",
-    major: "Art",
-    year: "Freshman",
-    hometown: "San Francisco, CA",
+    position: "Recruitment Chair",
+    name: "Jacob Edwards",
+    major: "Computer Science / Business Analytics",
+    year: "Senior",
+    hometown: "Fairfax Station, VA",
     imageUrl: Jacob
   },
   {
-    name: "Alumni Relations Chair",
-    major: "Art",
-    year: "Freshman",
-    hometown: "San Francisco, CA",
+    position: "Alumni Relations Chair",
+    name: "Alexander Orr",
+    major: "Computer Science",
+    year: "Senior",
+    hometown: "Danbury, CT",
     imageUrl: Alex
   }
 ];
@@ -146,8 +155,9 @@ class RosterPage extends React.Component {
             <ImageGrid>
               {eboard.map((member, index) => (
                 <MemberContainer key={index}>
-                  <MemberImage src={member.imageUrl} alt={member.name} />
-                  <MemberName>{member.name}</MemberName>
+                  <MemberImage src={member.imageUrl} alt={member.position} />
+                  <MemberPosition>{member.position}</MemberPosition>
+                  <MemberCaption>Name: {member.name}</MemberCaption>
                   <MemberCaption>Major: {member.major}</MemberCaption>
                   <MemberCaption>Year: {member.year}</MemberCaption>
                   <MemberCaption>Hometown: {member.hometown}</MemberCaption>
