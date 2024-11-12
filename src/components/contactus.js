@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import background from '../Images/pic.png';
 
 const GlobalStyle = createGlobalStyle`
