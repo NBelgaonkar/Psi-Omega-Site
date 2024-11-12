@@ -1,19 +1,21 @@
 version: '3.8'
-
 services:
   psi-omega-server:
-    build: .
-    image: psi-omega-server:latest
-    ports:
-      - "3000:3000"  # Expose the application port
+    image: nginx:latest
+    container_name: psi-omega-server
+   # build: .
     volumes:
-      - .:/app  # Optional: Mount local files for development (can be removed for production)
+      - .:/app:/usr/share/nginx/html  # Optional: Mount local files for development (can be removed for production)
+    ports:
+      - 80:80  # Expose the application port
+      - "3000:3000"  # Expose the application port
     environment:
       - PORT=3000
     depends_on:
       - psql
     networks:
       - psi-omega-network
+    restard: always
 
   psql:
     image: postgres:latest
