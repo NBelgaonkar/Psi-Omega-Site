@@ -1,5 +1,5 @@
 import React from 'react';
-/*import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 `;
-*/
+
 const AlumniRecentEvents = () => {
   return (
     <GlobalStyle>

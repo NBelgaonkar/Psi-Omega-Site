@@ -1,5 +1,5 @@
 import React from 'react';
-/*import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-`;*/
+`;
 const POAA = () => {
   return (
     <GlobalStyle>
