@@ -2,15 +2,15 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-// Import Google Fonts and set global styles
+
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
+
   body {
-    font-family: 'Open Sans', sans-serif; // Use 'Open Sans' font
-    background-color: #f0f0f0; // Light gray background for the entire page
+    font-family: 'Literata', serif;
+    background-color: #F5F5F5;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 `;
 

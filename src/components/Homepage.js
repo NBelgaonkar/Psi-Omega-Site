@@ -4,12 +4,15 @@ import styled, { createGlobalStyle } from 'styled-components';
 import background from '../Images/Brotherhood.JPG';
 import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
-// Global styles
+
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
 
   body {
     font-family: 'Literata', serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
   }
 `;
 

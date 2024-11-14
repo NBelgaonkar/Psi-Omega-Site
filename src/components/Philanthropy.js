@@ -1,7 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 //import oakwoodLogo from '../Images/oakwood_community_center.png'; // Example logo path
 //import specialOlympicsLogo from '../Images/special_olympics_logo.png'; // Example logo path
+
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Literata', serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 const PhilanthropyContainer = styled.div`
   display: flex;
@@ -52,35 +64,37 @@ const PhilanthropyLink = styled.a`
 
 const Philanthropy = () => {
   return (
-    <PhilanthropyContainer>
-      <Title>Philanthropy</Title>
+    <GlobalStyle>
+      <PhilanthropyContainer>
+        <Title>Philanthropy</Title>
 
-      <PhilanthropyRow>
-        {/* Oakwood Community Center Section */}
-        <PhilanthropyItem>
-          <PhilanthropyDescription>
-            Every weekend, DKE Brothers volunteer to assist the Oakwood Community Center’s Weekly Food Pantry.
-            Learn more about their mission here:{' '}
-            {/* <PhilanthropyLink href="https://www.oakwoodcommunitycenter.org/food-pantry" target="_blank"> */}
-              https://www.oakwoodcommunitycenter.org/food-pantry
-            {/* </PhilanthropyLink>  */}
-          </PhilanthropyDescription>
-          {/* <Logo src={oakwoodLogo} alt="Oakwood Community Center Logo" /> */}
-        </PhilanthropyItem>
+        <PhilanthropyRow>
+          {/* Oakwood Community Center Section */}
+          <PhilanthropyItem>
+            <PhilanthropyDescription>
+              Every weekend, DKE Brothers volunteer to assist the Oakwood Community Center’s Weekly Food Pantry.
+              Learn more about their mission here:{' '}
+              {/* <PhilanthropyLink href="https://www.oakwoodcommunitycenter.org/food-pantry" target="_blank"> */}
+                https://www.oakwoodcommunitycenter.org/food-pantry
+              {/* </PhilanthropyLink>  */}
+            </PhilanthropyDescription>
+            {/* <Logo src={oakwoodLogo} alt="Oakwood Community Center Logo" /> */}
+          </PhilanthropyItem>
 
-        {/* Special Olympics Section */}
-        <PhilanthropyItem>
-          <PhilanthropyDescription>
-            Once per semester, DKE runs a pancake delivery event we call DKE’s Diner to support the Special Olympics.
-            Learn more about their organization here:{' '}
-            {/* <PhilanthropyLink href="https://www.specialolympics.org/" target="_blank"> */}
-              {/* https://www.specialolympics.org/ */}
-            {/* </PhilanthropyLink> */}
-          </PhilanthropyDescription>
-          {/* <Logo src={specialOlympicsLogo} alt="Special Olympics Logo" /> */}
-        </PhilanthropyItem>
-      </PhilanthropyRow>
-    </PhilanthropyContainer>
+          {/* Special Olympics Section */}
+          <PhilanthropyItem>
+            <PhilanthropyDescription>
+              Once per semester, DKE runs a pancake delivery event we call DKE’s Diner to support the Special Olympics.
+              Learn more about their organization here:{' '}
+              {/* <PhilanthropyLink href="https://www.specialolympics.org/" target="_blank"> */}
+                {/* https://www.specialolympics.org/ */}
+              {/* </PhilanthropyLink> */}
+            </PhilanthropyDescription>
+            {/* <Logo src={specialOlympicsLogo} alt="Special Olympics Logo" /> */}
+          </PhilanthropyItem>
+        </PhilanthropyRow>
+      </PhilanthropyContainer>
+    </GlobalStyle>
   );
 };
 

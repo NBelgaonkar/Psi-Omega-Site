@@ -79,7 +79,7 @@ const HousingPage = () => {
       <Container>
         <Title>Description of DPG & Housing Organization</Title>
         <Description>
-          The Psi Omega Housing Organization is currently managed by the <a href="https://dke.org/about/dke-property-group/" target="_blank" rel="noopener noreferrer">DKE Property Group (DPG)</a>, which handles all the rent and insurance costs in addition to ensuring that the Psi Omega Brotherhood maintains compliance with the lease from <a href="https://iliadhousing.com/" target="_blank" rel="noopener noreferrer">The Iliad</a> off-campus housing. Internally, Psi Omega handles upkeep and maintenance and delegates responsibility to the Housing Manager.
+          The Psi Omega Housing Organization is currently managed by the <a href="https://dke.org/about/dke-property-group/" target="_blank" rel="noopener noreferrer">Deke Property Group (DPG)</a>, which handles all the rent and insurance costs in addition to ensuring that the Psi Omega Brotherhood maintains compliance with the lease from <a href="https://iliadhousing.com/" target="_blank" rel="noopener noreferrer">The Iliad</a> off-campus housing. Internally, Psi Omega handles upkeep and maintenance and delegates responsibility to the Housing Manager.
         </Description>
 
         <ImageSection>
@@ -93,6 +93,7 @@ const HousingPage = () => {
           </ImageWrapper>
           <ImageWrapper>
             <ImageTitle>1480 Sage Ave: 1947-1965</ImageTitle>
+            <ImageTitle>Today, RPI's Admissions Building</ImageTitle>
             <Image src={sageAveImage} alt="1480 Sage Ave" />
           </ImageWrapper>
           <ImageWrapper>

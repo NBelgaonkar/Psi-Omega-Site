@@ -152,12 +152,12 @@ const HistoryPage = () => {
           The primary purpose of this webpage is to document the history of DKE’s Psi Omega Chapter. To learn more about the DKE Organization History, please visit our International Headquarters <Link href="https://dke.org/about/organization-history/" target="_blank" rel="noopener noreferrer">website</Link>.
         </Paragraph>
         
-        <Subtitle>Delta Kappa Epsilon Psi Omega Chapter History</Subtitle>
+        <Title>Delta Kappa Epsilon, Psi Omega Chapter History</Title>
         <FlexContainer>
           <Paragraph>
             <strong>1867 – Founding & Early History</strong><br/>
-            The 37th Chapter of Delta Kappa Epsilon, Psi Omega, was founded at RPI in 1867, emerging in the post-Civil War era. The chapter’s inception followed the brief tenure of the Kappa Phi Chapter at Troy University (New York), which operated from 1858 until its closure in 1862 due to financial strain from the war. Notably, Lt. E. S. P. Clapp, a Kappa Phi member, sacrificed his life for the Union in Virginia. His memory and final resting place at Oakwood Cemetery are honored by Psi Omega. 
-            Psi Omega’s charter was granted during the 21st DKE Convention in New York at the Nu Chapter’s meeting rooms at CCNY, under specific conditions:
+            The 37th Chapter of Delta Kappa Epsilon, Psi Omega, was founded at RPI in 1867, emerging in the post-Civil War era. The chapter’s inception followed the brief tenure of the Kappa Phi Chapter at Troy University (New York), which operated from 1858 until its closure in 1862 due to the university's financial strain from the war. Notably, Lt. E. S. P. Clapp, a Kappa Phi member, sacrificed his life for the Union in Virginia. His memory and final resting place at Oakwood Cemetery are honored by Psi Omega. 
+            Psi Omega’s charter was granted during the 21st DKE Convention in New York under specific conditions:
             <Quote>
               “Such Charter shall not be granted until a suitable and permanent lodge shall be provided, and that such lodge shall be secured on or before 1st of Jan. 1868 in default of which this action shall be considered null and void.”
             </Quote>
@@ -204,7 +204,7 @@ const HistoryPage = () => {
 
         <Subtitle>2010 – Hope & Return</Subtitle>
         <Paragraph>
-          Brother John Broadbent ’59, an RPI board member, was a key advocate for Psi Omega’s revival. His support and the dedication of Psi Omega alumni were instrumental in bringing the chapter back. With the backing of alumni, Psi Omega returned on April 4, 2015, when 17 men were initiated as the “Refounders of Psi Omega” during a banquet at the Sam Heffner Alumni House.
+        Brother Samuel F. Heffner Jr. ’56, Chairman of the RPI Board of Trustees, and Brother John Broadbent ’59, Trustee, were instrumental advocates for Psi Omega's revival. Their support and the dedication of Psi Omega alumni were instrumental in bringing the chapter back. With the backing of alumni, Psi Omega returned on April 4, 2015 as a colony, when 17 men were initiated as the “Refounders of Psi Omega” during a banquet at the Sam Heffner Alumni House.
         </Paragraph>
 
         <Subtitle>2021 – Struggle & Rebirth</Subtitle>
@@ -257,14 +257,14 @@ const HistoryPage = () => {
           <TextContainer>
             <Paragraph>
               <strong>Brother Samuel F. Heffner Jr. ‘56</strong><br/>
-              On December 9, 2011, after more than 30 years of dedicated service on the Rensselaer Polytechnic Institute Board of Trustees—15 as Chairman—Brother Sam Heffner retired. His retirement was marked by a grand celebration at the Curtis R. Priem Experimental Media and Performing Arts Center, attended by the Rensselaer community and special guests. The evening featured music, tributes, and skits in honor of Heffner’s legacy.
+              On December 9, 2011, after 33 years of dedicated service on the Rensselaer Polytechnic Institute Board of Trustees—15 as Chairman—Brother Sam Heffner retired. His retirement was marked by a grand celebration at the Curtis R. Priem Experimental Media and Performing Arts Center, attended by the Rensselaer community and special guests. The evening featured music, tributes, and skits in honor of Heffner’s legacy.
             </Paragraph>
             <Paragraph>
               Among the tributes were heartfelt words from fellow fraternity brothers, Trustee John Broadbent ’59 and Peter Goetz ‘56. University President Shirley Ann Jackson praised Heffner, saying:
             <Quote>
               “Leader, Partner, Builder, Philanthropist… In your program, you will see details of Samuel F. Heffner Jr.’s numerous accomplishments and contributions as a member of the Rensselaer Class of 1956. However, I would add other descriptors for Mr. Heffner: Visionary. Doer. Reliable supporter. And most importantly: Friend.”
             </Quote>
-              The Board of Trustees conferred upon Heffner the titles of Honorary Trustee and Honorary Chairman, and he was presented with a special Trustee Medallion. Heffner’s legacy is also immortalized through the Samuel F. Heffner Jr. ‘56 Alumni House, a project fully designed, constructed, and funded by Rensselaer alumni.
+              The Board of Trustees conferred upon Heffner the titles of Honorary Trustee and Honorary Chairman, and he was presented with a special Trustee Medallion. Heffner’s legacy is also immortalized through the Samuel F. Heffner Jr. ‘56 Alumni House, a project led by Brother Heffner and fully designed, constructed, and funded by Rensselaer alumni.
             </Paragraph>
             <Paragraph>
               Beyond his contributions to RPI, Brother Heffner was the founder and President of Dickinson-Heffner, Inc., a building and land development firm serving the Baltimore-Washington area. Since 1965, his companies have designed, constructed, or renovated over 18 million square feet of commercial space, including facilities for the NSA, an annex to the Social Security Administration Headquarters, and numerous cinemas, hotels, office buildings, warehouses, and manufacturing facilities.
@@ -289,17 +289,14 @@ const HistoryPage = () => {
         </ImageSection>
 
         <Paragraph>
-          <strong>Motto:</strong><br />
-          Greek: Ψυχομαχέομεν Ὡραδιν<br />
-          English: Forever Striving<br />
-          <em>- Polybius</em>
-        </Paragraph>
-
-        <Paragraph>
           <strong>Heraldic Description:</strong><br />
           Arms: Or, between two chevrons contrepoint, the upper gules and lower azure, as many men’s hearts, issuant thereout, and pendent over all a chain, the link in the base point in form of the Greek letters Ψ and Ω interlaced of the second; and upon an escutcheon of pretence, argent, a bend counterimbattled, sable.<br />
           Crest: A cross patonce argent.<br />
-          Motto: Ψυχομαχέομεν Ὡρασν.
+          Motto: Ψυχομαχέομεν Ὡρασιν.
+        </Paragraph>
+
+        <Paragraph>
+          The English translation of our Motto is <em>Forever Striving</em>. This is a quote from Polybius, a Greek historian, in his description of the First Punic War. 
         </Paragraph>
       </Container>
     </>
