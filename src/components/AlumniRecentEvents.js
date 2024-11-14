@@ -14,9 +14,9 @@ const GlobalStyle = createGlobalStyle`
 */
 const AlumniRecentEvents = () => {
   return (
-    <>
+    <GlobalStyle>
       
-    </>
+    </GlobalStyle>
   );
 };
 

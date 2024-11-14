@@ -15,9 +15,9 @@ const GlobalStyle = createGlobalStyle`
 
 const UpcomingEvents = () => {
   return (
-    <>
+    <GlobalStyle>
       
-    </>
+    </GlobalStyle>
   );
 };
 

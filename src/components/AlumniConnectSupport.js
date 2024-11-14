@@ -13,9 +13,9 @@ const GlobalStyle = createGlobalStyle`
 `;*/
 const AlumniConnectSupport = () => {
   return (
-    <>
+    <GlobalStyle>
       
-    </>
+    </GlobalStyle>
   );
 };
 
