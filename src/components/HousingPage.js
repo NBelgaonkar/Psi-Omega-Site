@@ -60,7 +60,11 @@ const ImageWrapper = styled.div`
 
 const ImageTitle = styled.h2`
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+`;
+const ImageSubtitle = styled.h3`
+  font-size: 12px;
+  margin-bottom: 3px;
 `;
 
 const Image = styled.img`
@@ -93,11 +97,11 @@ const HousingPage = () => {
           </ImageWrapper>
           <ImageWrapper>
             <ImageTitle>1480 Sage Ave: 1947-1965</ImageTitle>
-            <ImageTitle>Today, RPI's Admissions Building</ImageTitle>
+            <ImageSubtitle>Later converted into RPI's Admissions Building</ImageSubtitle>
             <Image src={sageAveImage} alt="1480 Sage Ave" />
           </ImageWrapper>
           <ImageWrapper>
-            <ImageTitle>217 River St: 1910-1930s</ImageTitle>
+            <ImageTitle>217 River St: 1867-1887</ImageTitle>
             <Image src={riverStImage} alt="217 River St" />
           </ImageWrapper>
         </ImageSection>

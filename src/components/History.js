@@ -1,16 +1,17 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-// Import alumni images
-import troyUniversityImage from '../Images/troy-university.jpg'; // Replace with actual image file names
-import admissionsImage from '../Images/old-admissions.png'; // Replace with actual image file names
-import hiraiImage from '../Images/hirai.jpg'; // Replace with actual image file names
+
+import dkeLogo from '../Images/dke-coat-of-arms.png'; 
+import troyUniversityImage from '../Images/troy-university.jpg'; 
+import admissionsImage from '../Images/old-admissions.png';
+import hiraiImage from '../Images/hirai.jpg'; 
 import martinImage from '../Images/martin.jpg';
 import davisImage from '../Images/davis.jpg';
 import davisImage2 from '../Images/davis2.jpg';
 import trahanImage from '../Images/trahan.png';
 import heffnerImage from '../Images/heffner.jpg';
-import originalCrestImage from '../Images/old-crest.jpg'; // Replace with actual file name
-import refreshedCrestImage from '../Images/Psi-Omega-Crest.png'; // Replace with actual file name
+import originalCrestImage from '../Images/old-crest.jpg'; 
+import refreshedCrestImage from '../Images/Psi-Omega-Crest.png'; 
 
 
 // Global styles
@@ -148,14 +149,19 @@ const HistoryPage = () => {
       <GlobalStyle />
       <Container>
         <Title>Delta Kappa Epsilon Organization History</Title>
-        <Paragraph>
-          The primary purpose of this webpage is to document the history of DKE’s Psi Omega Chapter. To learn more about the DKE Organization History, please visit our International Headquarters <Link href="https://dke.org/about/organization-history/" target="_blank" rel="noopener noreferrer">website</Link>.
-        </Paragraph>
-        
-        <Title>Delta Kappa Epsilon, Psi Omega Chapter History</Title>
         <FlexContainer>
           <Paragraph>
-            <strong>1867 – Founding & Early History</strong><br/>
+            The primary purpose of this webpage is to document the history of DKE’s Psi Omega Chapter. To learn more about the DKE Organization History, please visit our International Headquarters <Link href="https://dke.org/about/organization-history/" target="_blank" rel="noopener noreferrer">website</Link>.
+          </Paragraph>
+          <ImageWrapper>
+            <Image src={dkeLogo} alt="DKE Crest" />
+          </ImageWrapper>
+        </FlexContainer>
+        
+        <Title>Delta Kappa Epsilon, Psi Omega Chapter History</Title>
+        <Subtitle>1867 – Founding & Early History</Subtitle>
+        <FlexContainer>
+          <Paragraph>
             The 37th Chapter of Delta Kappa Epsilon, Psi Omega, was founded at RPI in 1867, emerging in the post-Civil War era. The chapter’s inception followed the brief tenure of the Kappa Phi Chapter at Troy University (New York), which operated from 1858 until its closure in 1862 due to the university's financial strain from the war. Notably, Lt. E. S. P. Clapp, a Kappa Phi member, sacrificed his life for the Union in Virginia. His memory and final resting place at Oakwood Cemetery are honored by Psi Omega. 
             Psi Omega’s charter was granted during the 21st DKE Convention in New York under specific conditions:
             <Quote>
@@ -169,7 +175,7 @@ const HistoryPage = () => {
         </FlexContainer>
 
         <Paragraph>
-          Brother Virgil G. Bogue ‘68, who was the Grand Marshal of the student body, played a pivotal role in securing the charter. Initially, Psi Omega operated in secrecy until the members felt secure enough to publicly announce their presence. This revelation occurred dramatically at a ball game when Brother Bogue, leading cheers, revealed his DKE pin as his coat flared open. As recorded in DKE’s 1910 Catalog, 
+          Brother Virgil G. Bogue ‘1868, who was the Grand Marshal of the student body, played a pivotal role in securing the charter. Initially, Psi Omega operated in secrecy until the members felt secure enough to publicly announce their presence. This revelation occurred dramatically at a ball game when Brother Bogue, leading cheers, revealed his DKE pin as his coat flared open. As recorded in DKE’s 1910 Catalog, 
           <Quote>
             “This caused a great sensation, for the other fraternities had not, up to this point, given up hope of getting some of the men who now wore the diamond pin.” 
           </Quote>
@@ -220,7 +226,7 @@ const HistoryPage = () => {
         <AlumniSection>
           <Image src={hiraiImage} alt="Seijiro Hirai" />
           <Paragraph>
-            <strong>Brother Seijiro Hirai ‘78</strong><br />
+            <strong>Brother Seijiro Hirai ‘1878</strong><br />
             Brother Hirai served as Director General of Imperial Railways of Japan, significantly advancing railway infrastructure in China and Japan, leveraging his engineering expertise from RPI. The RPI Class of 1935 honored him by dedicating their yearbook to his achievements, and Hirai’s legacy endures through the “Hirai Dorm” in E-Complex.
           </Paragraph>
         </AlumniSection>
