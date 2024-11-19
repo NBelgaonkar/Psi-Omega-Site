@@ -45,3 +45,7 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
     command: certonly --webroot -w /var/www/certbot --force-renewal --email it.dkepsiomega@gmail.com -d dekesrpi.org -d www.dekesrpi.org --agree-tos
+
+networks:
+  psi-omega-network:
+    driver: bridge
