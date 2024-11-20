@@ -5,6 +5,8 @@ services:
       image: psi-omega-server:latest
       volumes:
         - .:/app  # no idea if we need this or not
+      expose: 
+        - 8000 # needed for nginx
 
 
     nginx:
