@@ -11,6 +11,8 @@ services:
       - PORT=3000
     depends_on:
       - psql
+    expose:
+      - 8000 # maybe expose port for nginx??
     networks:
       - psi-omega-network
 
