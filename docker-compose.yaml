@@ -5,8 +5,6 @@ services:
       image: psi-omega-server:latest
       volumes:
         - .:/app  # no idea if we need this or not
-      networks:
-        - psi-omega-network
 
 
     nginx:
