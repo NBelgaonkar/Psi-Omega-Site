@@ -1,9 +1,13 @@
 services:
-    helloworld:
-        container_name: helloworld
-        image: crccheck/hello-world
-        expose:
-            - 8000
+    psi-omega-server:
+    container_name: psi-omega-server
+    build: .
+    image: psi-omega-server:latest
+    volumes:
+      - .:/app  # no idea if we need this or not
+    networks:
+      - psi-omega-network
+
 
     nginx:
         container_name: nginx
