@@ -1,12 +1,12 @@
 services:
     psi-omega-server:
-    container_name: psi-omega-server
-    build: .
-    image: psi-omega-server:latest
-    volumes:
-      - .:/app  # no idea if we need this or not
-    networks:
-      - psi-omega-network
+      container_name: psi-omega-server
+      build: .
+      image: psi-omega-server:latest
+      volumes:
+        - .:/app  # no idea if we need this or not
+      networks:
+        - psi-omega-network
 
 
     nginx:
