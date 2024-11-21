@@ -6,7 +6,7 @@ services:
       volumes:
         - .:/app  # no idea if we need this or not
       expose: 
-        - 8000 # needed for nginx
+        - 3000 # needed for nginx
 
 
     nginx:
