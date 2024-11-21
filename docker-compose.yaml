@@ -34,10 +34,20 @@ services:
       - 443:443
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     depends_on:
       - psi-omega-server  # so that it can find hostname
     networks:
       - psi-omega-network
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes: 
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email it.dkepsiomega@gmail.com -d dekesrpi.org --agree-tos
 
 networks:
   psi-omega-network:
