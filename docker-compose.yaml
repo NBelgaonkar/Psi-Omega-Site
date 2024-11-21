@@ -1,5 +1,4 @@
 version: '3.3'
-name: 'psi-omega-server'
 services:
   psi-omega-server:
     build: .
