@@ -1,22 +1,23 @@
-# Use a multi-stage build
-FROM node:16-alpine as build
+# Use a Node.js base image
+FROM node:16-alpine
 
+# Set the working directory in the container
 WORKDIR /app
 
-# Install dependencies
+# Copy package.json and package-lock.json
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-# Build the production version of the app
+# Copy the rest of the application code
 COPY . .
+
+# Build the React application
 RUN npm run build
 
-# Use a lightweight web server to serve the built app
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
+# Expose the port on which the app will run
+EXPOSE 3000
 
-# Expose port 80 for the static server
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start the application
+CMD ["npm", "start"]

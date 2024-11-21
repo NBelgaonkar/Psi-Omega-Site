@@ -1,20 +1,30 @@
+version: '1'
+name: 'psi-omega-server'
 services:
-    psi-omega-server:
-      container_name: psi-omega-server
-      build: .
-      image: psi-omega-server:latest
-      volumes:
-        - .:/app  # no idea if we need this or not
-      expose: 
-        - 3000 # needed for nginx
-
-
-    nginx:
-        container_name: nginx
-        restart: unless-stopped
-        image: nginx
-        ports:
-            - 80:80
-            - 443:443
-        volumes:
-            - ./nginx.conf:/etc/nginx/nginx.conf
+  psi-omega-server:
+    build: .
+    image: psi-omega-server:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - PORT=3000
+    depends_on:
+      - psql
+    networks:
+      - psi-omega-network
+  
+  psql:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: psi-omega
+    ports:
+      - "5432:5432"
+    networks:
+      - psi-omega-network
+networks:
+  psi-omega-network:
+    driver: bridge
