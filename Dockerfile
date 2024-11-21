@@ -1,36 +1,22 @@
-# Stage 1: Build the React application
+# Use a multi-stage build
 FROM node:16-alpine as build
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Install dependencies
 COPY package*.json ./
+RUN npm install
 
-# Install dependencies (production only to reduce size)
-RUN npm install --only=production
-
-# Copy the application code, excluding unnecessary files via .dockerignore
+# Build the production version of the app
 COPY . .
-
-# Build the application
 RUN npm run build
 
-# Stage 2: Serve the React application
-FROM node:16-alpine
+# Use a lightweight web server to serve the built app
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
 
-# Set the working directory
-WORKDIR /app
+# Expose port 80 for the static server
+EXPOSE 80
 
-# Copy only the build output from Stage 1
-COPY --from=build /app/build /app/build
-
-# Copy production dependencies only
-COPY package*.json ./
-RUN npm install --only=production
-
-# Expose the port
-EXPOSE 3000
-
-# Command to run your application
-CMD ["npm", "start"]
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
