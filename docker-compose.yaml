@@ -34,6 +34,8 @@ services:
       - 443:443
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - psi-omega-server  # so that it can find hostname
     networks:
       - psi-omega-network
 
