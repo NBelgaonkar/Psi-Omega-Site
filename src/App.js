@@ -3,15 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import HomePage from './components/Homepage';
-import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 import FAQ from './components/FAQ';
 import Calendar from './components/Calendar';
 import Footer from './components/Footer';
 import HistoryPage from './components/History';
-import DkesDiner from './components/DkesDiner';  
 import OfficerPage from './components/officers';
-import PancakeOrderForm from './components/order';
-import Updates from './components/news';
 import Philanthropy from './components/Philanthropy';
 import HousingPage from './components/HousingPage';
 import UpcomingEvents from './components/Upcoming';
@@ -20,7 +16,6 @@ import POAA from './components/POAA'
 import AlumniRecentEvents from './components/AlumniRecentEvents'
 import AlumniConnectSupport from './components/AlumniConnectSupport'
 import ContactPage from './components/contactus'
-
 
 
 const AppContainer = styled.div`
@@ -63,11 +58,7 @@ const App = () => {
 
 
 
-            {/*unused pages*/}
-            <Route path="/DkesDiner" element={<DkesDiner />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/order" element={<PancakeOrderForm />} />
-            <Route path="/news" element={<Updates />} />
+ 
             
             
           </Routes>
