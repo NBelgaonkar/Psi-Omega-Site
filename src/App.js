@@ -14,7 +14,7 @@ import UpcomingEvents from './components/Upcoming';
 import Brotherhood from './components/Brotherhood'
 import POAA from './components/POAA'
 import AlumniRecentEvents from './components/AlumniRecentEvents'
-import AlumniConnectSupport from './components/AlumniConnectSupport'
+import AlumniGetInvolved from './components/AlumniGetInvolved'
 import ContactPage from './components/contactus'
 
 
@@ -50,7 +50,7 @@ const App = () => {
 
             <Route path="/alumni/POAA" element={<POAA />} />
             <Route path="/alumni/events" element={<AlumniRecentEvents />} />
-            <Route path="/alumni/connect+support" element={<AlumniConnectSupport />} />
+            <Route path="/alumni/get-involved" element={<AlumniGetInvolved />} />
 
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<ContactPage />} />

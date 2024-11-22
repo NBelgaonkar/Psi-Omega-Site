@@ -130,7 +130,7 @@ const Header = () => {
               <Link to="/alumni/events">Recent Events</Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/alumni/connect+support">Connect & Support</Link>
+              <Link to="/alumni/get-involved">Get Involved</Link>
             </DropdownItem>
           </DropdownMenu>
         </NavItem>
