@@ -9,7 +9,7 @@ import Calendar from './components/Calendar';
 import Footer from './components/Footer';
 import HistoryPage from './components/History';
 import DkesDiner from './components/DkesDiner';  
-import RosterPage from './components/roster';
+import OfficerPage from './components/officers';
 import PancakeOrderForm from './components/order';
 import Updates from './components/news';
 import Philanthropy from './components/Philanthropy';
@@ -44,7 +44,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
 
-            <Route path="/about/officers" element={<RosterPage />} />
+            <Route path="/about/officers" element={<OfficerPage />} />
             <Route path="/about/brotherhood" element={<Brotherhood />} />
             <Route path="/about/philanthropy" element={<Philanthropy />} />
             <Route path="/about/history" element={<HistoryPage />} />
