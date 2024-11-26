@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
-
 // Global Styles
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -69,16 +68,34 @@ const ListItem = styled.li`
   font-size: 18px;
   margin-bottom: 10px;
 `;
+
 const CrestImage = styled.img`
   width: 200px;
   margin-top: 40px;
 `;
 
-
 const PlaceholderText = styled.div`
   font-size: 16px;
   font-style: italic;
   color: #888;
+`;
+
+// Styled component for the Google Form iframe
+const FormContainer = styled.div`
+  width: 100%;
+  max-width: 800px; /* Maximum width for the iframe */
+  margin: 0 auto; /* Centers the iframe horizontally */
+  padding: 20px;
+  border: 1px solid #ddd; /* Optional: border around the form */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a polished look */
+`;
+
+const FormIframe = styled.iframe`
+  width: 100%; /* Makes the iframe take up full width of the container */
+  height: 450px; /* Set the height of the form */
+  border: none;
+  margin: 0;
 `;
 
 // Page Component
@@ -96,7 +113,17 @@ const AlumniInvolvementPage = () => {
           <Paragraph>
             Stay connected by updating your contact information to receive fraternity updates and invitations.
           </Paragraph>
-          <PlaceholderText>Information UPDATE FORM HERE</PlaceholderText>
+          <FormContainer>
+            <FormIframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdwrwDZxcmZmJfTPacT8SyIZehpqJxr6vV0aO2H6LJpcIDXcQ/viewform?embedded=true"
+              width="640"
+              height="867"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Information Update Form"
+            />
+          </FormContainer>
         </Section>
 
         {/* Best Ways to Help Section */}
@@ -113,7 +140,6 @@ const AlumniInvolvementPage = () => {
           <Paragraph>
             Contact us at <Link href="mailto:alumni.dkepsiomega@gmail.com">alumni.dkepsiomega@gmail.com</Link> to learn more!
           </Paragraph>
-
         </Section>
 
         {/* Current Needs Section */}

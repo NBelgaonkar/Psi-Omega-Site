@@ -10,7 +10,7 @@ import HistoryPage from './components/History';
 import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
 import HousingPage from './components/HousingPage';
-import UpcomingEvents from './components/Upcoming';
+import RushCalendar from './components/Rush';
 import Brotherhood from './components/Brotherhood'
 import POAA from './components/POAA'
 import AlumniRecentEvents from './components/AlumniRecentEvents'
@@ -45,8 +45,8 @@ const App = () => {
             <Route path="/about/history" element={<HistoryPage />} />
             <Route path="/about/house" element={<HousingPage />} />
 
-            <Route path="/calendar/rush" element={<Calendar />} />
-            <Route path="/calendar/upcoming" element={<UpcomingEvents />} />
+            <Route path="/calendar/rush" element={<RushCalendar />} />
+            <Route path="/calendar/upcoming" element={<Calendar />} />
 
             <Route path="/alumni/POAA" element={<POAA />} />
             <Route path="/alumni/events" element={<AlumniRecentEvents />} />

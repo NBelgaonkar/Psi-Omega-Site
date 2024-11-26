@@ -109,7 +109,7 @@ const FAQ = () => {
       question: "Does DKE have membership criteria?",
       answer: [
         "Yes. Internationally, all Dekes are required to hold good academic standing, be men of high moral character, be considerate of the rights and views of others, be courteous, gentlemanly, self-respecting, and hold an appreciation of the objects and principles of Delta Kappa Epsilon.",
-        "Locally at RPI, our chapter has the specific additional requirements of maintaining a minimum of a 2.5 GPA (academic assistance is provided to all members with a GPA below 3.0), contribute 8-15 hours of philanthropy to their community each semester, attend weekly business meetings on the weekends, and cultivate our fraternity culture."
+        "Locally at RPI, our chapter has the additional requirements of maintaining a minimum of a 2.5 GPA (academic assistance is provided to all members with a GPA below 3.0), contributing 8-15 hours of philanthropy to their community each semester, attending weekly business meetings on the weekends, and cultivating our fraternity culture."
       ]
     },
     {

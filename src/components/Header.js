@@ -9,6 +9,7 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1000;
 `;
 
 const Logo = styled(Link)`
@@ -60,7 +61,7 @@ const DropdownMenu = styled.ul`
   margin: 0;
   border-radius: 4px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  z-index: 1500
 `;
 
 const DropdownItem = styled.li`
