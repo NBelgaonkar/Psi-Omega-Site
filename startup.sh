@@ -26,6 +26,7 @@ echo "Testing Nginx configuration..."
 if sudo nginx -t 2>/dev/null; then
     echo "Configuration is valid. Reloading Nginx..."
     # Reload Nginx
+    sudo systemctl start nginx
     sudo systemctl reload nginx
     echo "Nginx successfully reloaded!"
 else
