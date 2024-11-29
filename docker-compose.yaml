@@ -23,34 +23,6 @@ services:
     networks:
       - psi-omega-network
 
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./data/certbot/www:/var/www/certbot
-      - ./data/nginx:/etc/nginx/conf.d
-      - ./data/certbot/conf:/etc/letsencrypt
-    depends_on:
-      - psi-omega-server
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    networks:
-      - psi-omega-network
-
-
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./data/certbot/www:/var/www/certbot
-      - ./data/certbot/conf:/etc/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h & wait $${!}; done;'"
-    depends_on:
-      - nginx
-    networks:
-      - psi-omega-network
-
-
 networks:
   psi-omega-network:
     driver: bridge

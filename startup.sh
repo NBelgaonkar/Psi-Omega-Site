@@ -4,28 +4,32 @@
 echo "Building and starting services..."
 docker-compose up --build -d
 
-# Wait to ensure services are up
-sleep 120
+# Update Nginx configuration
+echo "Refreshing Nginx..."
 
-# Check volumes and certificates
-echo "Checking Certbot volumes..."
-if [ ! -d "./data/certbot/www" ]; then
-  echo "Certbot volume for www not found. Creating it..."
-  mkdir -p ./data/certbot/www
+# Define paths
+LOCAL_NGINX_CONF="./nginx.conf"
+NGINX_SITES_AVAILABLE="/etc/nginx/sites-available/default"
+
+# Step 1: Copy the local nginx.conf to /etc/nginx/sites-available as 'default'
+if [ -f "$LOCAL_NGINX_CONF" ]; then
+    echo "Copying local nginx.conf to $NGINX_SITES_AVAILABLE..."
+    sudo cp "$LOCAL_NGINX_CONF" "$NGINX_SITES_AVAILABLE"
+    echo "Successfully copied nginx.conf to sites-available as 'default'."
+else
+    echo "Error: Local nginx.conf not found in the current directory."
+    exit 1
 fi
 
-if [ ! -d "./data/certbot/conf" ]; then
-  echo "Certbot volume for conf not found. Creating it..."
-  mkdir -p ./data/certbot/conf
+# Step 2: Test Nginx configuration
+echo "Testing Nginx configuration..."
+if sudo nginx -t 2>/dev/null; then
+    echo "Configuration is valid. Reloading Nginx..."
+    # Reload Nginx
+    sudo systemctl reload nginx
+    echo "Nginx successfully reloaded!"
+else
+    echo "Configuration test failed. Please fix the errors before reloading."
+    # Print errors from configuration test
+    sudo nginx -t
 fi
-
-echo "Generating SSL certificates..."
-docker run --rm -v "$(pwd)/data/certbot/www:/var/www/certbot" \
-  -v "$(pwd)/data/certbot/conf:/etc/letsencrypt" \
-  certbot/certbot certonly --webroot \
-  --webroot-path=/var/www/certbot \
-  -d dekesrpi.org -d www.dekesrpi.org
-
-# Check container status
-echo "Checking container status..."
-docker-compose ps
