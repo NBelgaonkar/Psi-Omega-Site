@@ -35,6 +35,9 @@ services:
     depends_on:
       - psi-omega-server
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    networks:
+      - psi-omega-network
+
 
   certbot:
     image: certbot/certbot
@@ -44,6 +47,9 @@ services:
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h & wait $${!}; done;'"
     depends_on:
       - nginx
+    networks:
+      - psi-omega-network
+
 
 networks:
   psi-omega-network:
