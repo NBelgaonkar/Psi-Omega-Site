@@ -38,7 +38,7 @@ fi
 
 # Step 3: Register SSL certificates using Certbot
 echo "Registering SSL certificates for $DOMAIN..."
-sudo certbot --nginx -d "$DOMAIN" --email "$EMAIL" --agree-tos --no-eff-email
+sudo certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" --email "$EMAIL" --agree-tos --no-eff-email
 
 # Check if Certbot succeeded
 if [ $? -eq 0 ]; then
