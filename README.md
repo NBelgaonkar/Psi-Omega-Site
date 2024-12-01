@@ -197,6 +197,22 @@ Specs:
 core: t3.micro
 
 
-## Known Issue Regarding Web Server
+# Understanding the Backend
 
-If you have attempted to access our website, dekesrpi.org, you might realize that it doesn't quite display anything DKE-related. Do not worry, this is a known issue and is currently being worked on by the back end team. Once we are able to connect our react script to the nginx configuration, this issue should be resolved. 
+## What to know as a Frontend Dev
+
+If you want to understand the backend as a frontend developer, you came here for one of two things:
+1) you want to know how to "refresh" the website to show your latest additions
+2) the website is down and you want it back up
+
+To refresh the website, connect to the server, then run `docker restart psi-omega-server`. Make sure the server has your latest version of the code as well (go to Psi-Omega-Site directory and run `git fetch origin` and pull your code).
+
+If the website is down, go to the Psi-Omega-Site directory and run `./startup.sh`
+## What to know as a Backend Dev
+
+### The Setup
+Docker is used to locally host the website and a psql database. From there, nginx and certbot are used right on the server to reverse proxy the website out to the rest of the world. This is why if you do `docker ps -a` you will see a container for the website and the database but not nginx or certbot.
+
+There's already a cronjob to have certbot automatically renew the SSL certificates for the website to be on HTTPS.
+
+  
