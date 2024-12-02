@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import background from '../Images/pic.png';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -13,68 +12,81 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// Styled components
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-image: url(${background});
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center top;
-  color: black;
-  flex-grow: 1;
-  min-height: 100vh;
-  padding-top: 60px;
-  padding: 50px;
-  margin-top: 60px;
+  align-items: center; /* Ensures child elements align in the center */
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
 `;
 
-const ContactSection = styled.div`
-  text-align: left;
-  max-width: 460px;
-  margin-top: 150px;
-  margin-bottom: 300px;
-  color: black;
-  p {
-    font-size: 24px; 
-  }
-  h1 {
-    font-size: 36px; 
-    margin-bottom: 30px;
-  }
-`;
-
-const ContactInfo = styled.p`
+const Title = styled.h1`
+  font-size: 36px;
   margin-bottom: 20px;
-  font-size: 20px;
-  line-height: 1.6;
+  text-align: center;
 `;
 
-class ContactPage extends React.Component {
-  render() {
-    return (
-      <>
-        <GlobalStyle />
-        <Container>
-          <ContactSection>
-            <h1>Contact Us</h1>
-            <ContactInfo>
-              <strong>DKE Fraternity House Address:</strong><br />
-              1599 Tibbits Ave, Troy, NY
-            </ContactInfo>
-            <ContactInfo>
-              <strong>RPI Address:</strong><br />
-              110 8th St, Troy, NY
-            </ContactInfo>
-            <ContactInfo>
-              <strong>Email:</strong><br />
-              <a href="mailto:contactus@dkerpi.com">contactus@dkerpi.com</a>
-            </ContactInfo>
-          </ContactSection>
-        </Container>
-      </>
-    );
-  }
-}
+const Subtitle = styled.h2`
+  font-size: 28px;
+  margin: 20px 0 10px;
+  text-align: left;
+`;
 
-export default ContactPage;
+const Paragraph = styled.p`
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+`;
+
+const EventList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const EventItem = styled.li`
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: left;
+`;
+
+const contactus = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <Container>
+
+        <Subtitle>Contact Us</Subtitle>
+        <EventList>
+        <EventItem>
+            <strong>House Address </strong>
+            <br />
+            1599 Tibbits Ave, Troy NY, 12180 
+        </EventItem>
+            <br />
+        <EventItem>
+            <strong>RPI Address</strong>
+            <br />
+            110 8th St, Troy, NY 12180
+        </EventItem>
+            <br />
+        <EventItem>
+            <strong>Email</strong>
+            <br />
+            <a href="mailto:contactus@dkerpi.com">contactus@dkerpi.com</a>
+        </EventItem>
+            <br />
+        <EventItem>
+            <strong>Instagram</strong>
+            <br />
+            <a href="https://www.instagram.com/dke_rpi/?hl=en"> dke_rpi official account</a>
+        </EventItem>
+        </EventList>
+      </Container>
+    </>
+  );
+};
+
+export default contactus;
