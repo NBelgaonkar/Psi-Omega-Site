@@ -104,6 +104,9 @@ const Header = () => {
               <Link to="/about/history">History</Link>
             </DropdownItem>
             <DropdownItem>
+              <Link to="/about/awards">Awards</Link>
+            </DropdownItem>
+            <DropdownItem>
               <Link to="/about/house">Chapter House</Link>
             </DropdownItem>
             <DropdownItem>

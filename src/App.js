@@ -11,6 +11,7 @@ import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
 import HousingPage from './components/HousingPage';
 import RushCalendar from './components/Rush';
+import Awards from './components/Awards';
 import Brotherhood from './components/Brotherhood'
 import POAA from './components/POAA'
 import AlumniRecentEvents from './components/AlumniRecentEvents'
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/contact" element={<ContactPage />} />
 
             <Route path="/about/health-and-safety" element={<HealthAndSafety />} />
+            <Route path="/about/awards" element={<Awards />} />
 
 
 
