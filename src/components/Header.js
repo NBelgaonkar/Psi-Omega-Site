@@ -65,7 +65,7 @@ const DropdownMenu = styled.ul`
 `;
 
 const DropdownItem = styled.li`
-  padding: 8px 20px;
+  
   white-space: nowrap;
 
   &:hover {
@@ -73,6 +73,8 @@ const DropdownItem = styled.li`
   }
 
   a {
+    display: block;
+    padding: 8px 20px;
     color: white;
     text-decoration: none;
   }
