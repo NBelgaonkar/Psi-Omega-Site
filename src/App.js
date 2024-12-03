@@ -16,6 +16,7 @@ import POAA from './components/POAA'
 import AlumniRecentEvents from './components/AlumniRecentEvents'
 import AlumniGetInvolved from './components/AlumniGetInvolved'
 import ContactPage from './components/contactus'
+import HealthAndSafety from './components/HealthAndSafety';
 
 
 const AppContainer = styled.div`
@@ -55,6 +56,7 @@ const App = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<ContactPage />} />
 
+            <Route path="/about/health-and-safety" element={<HealthAndSafety />} />
 
 
 
