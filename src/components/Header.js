@@ -1,140 +1,83 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, {  } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import crestImage from '../Images/Psi-Omega-Crest.png'; // Update this path to the crest image
 
-// Wrapper for the whole navigation bar
-const NavWrapper = styled.nav`
-  background-color: #231942;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-`;
-
-// Container to organize items in the nav bar
-const NavContainer = styled.div`
+const HeaderContainer = styled.header`
+  background-color: #221F73; // Dark blue color for the header
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  padding: 20px 50px;
-  max-width: 1600px;
-  margin: 0 auto;
+  justify-content: space-between;
+  z-index: 1000;
 `;
 
-// Wrapper for the logo section
-const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-// Style for the logo, clickable link to home
 const Logo = styled(Link)`
-  font-size: 1.5rem;
-  color: #fff;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
 `;
 
-// List for holding the nav menu items
-const NavMenu = styled.ul`
+const CrestImage = styled.img`
+  height: 50px; // Adjust the size as needed
+  margin-right: 10px;
+`;
+
+const Nav = styled.nav`
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-left: auto; /* Moves the menu to the right */
+  align-items: center;
 `;
 
-// Each item in the navigation bar
-const NavItem = styled.li`
+const NavItem = styled.div`
   position: relative;
-  margin-left: 20px;
+  margin: 0 15px;
+  color: white;
+  font-size: 18px;
+
+  &:hover > ul {
+    display: block;
+  }
 `;
 
-// Style for each clickable nav link
-const NavLinkStyled = styled(NavLink)`
-  color: #fff;
+// Styled link component for the header
+const NavLinkStyled = styled(Link)`
+  color: white;
   text-decoration: none;
-  padding: 10px;
-
-  &.active {
-    font-weight: bold; /* Makes the active link bold */
-  }
 
   &:hover {
-    color: #d4af37; /* Changes color on hover */
+    color: #d4af37; // Optional: change color on hover
   }
 `;
 
-// Wrapper for dropdown menus
-const DropdownContainer = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
-// Style for the dropdown toggle button
-const DropdownToggle = styled.a`
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  cursor: pointer;
-
-  &:hover {
-    color: #d4af37; /* Hover effect */
-  }
-
-  &:after {
-    content: ' ▼'; /* Adds arrow to show dropdown */
-    font-size: 0.6em;
-  }
-`;
-
-// Styles for the dropdown menu
-const DropdownMenu = styled.div`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')}; /* Toggle visibility */
+const DropdownMenu = styled.ul`
+  display: none;
   position: absolute;
-  background-color: #231942;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  background-color: #221F73;
+  list-style: none;
+  padding:0;
+  margin: 0;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1500
 `;
 
-// Style for each item in the dropdown
-const DropdownItemLink = styled(Link)`
-  display: block;
-  color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
+const DropdownItem = styled.li`
+  padding: 8px 20px;
+  white-space: nowrap;
 
   &:hover {
-    background-color: #555; /* Change background color on hover */
+    background-color: #333;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
   }
 `;
 
-// Component for handling dropdown functionality
-const Dropdown = ({ label, items }) => {
-  const [isOpen, setIsOpen] = useState(false); // Toggle state for dropdown
-
-  return (
-    <DropdownContainer
-      onMouseEnter={() => setIsOpen(true)} // Open on hover
-      onMouseLeave={() => setIsOpen(false)} // Close when mouse leaves
-    >
-      <DropdownToggle href="#" onClick={(e) => e.preventDefault()}>
-        {label}
-      </DropdownToggle>
-      <DropdownMenu isOpen={isOpen}>
-        {items.map((item, index) => (
-          <DropdownItemLink to={item.to} key={index}>
-            {item.label}
-          </DropdownItemLink>
-        ))}
-      </DropdownMenu>
-    </DropdownContainer>
-  );
-};
-
-// The main Header component
 const Header = () => {
   return (
     <NavWrapper>
@@ -204,6 +147,71 @@ const Header = () => {
         </NavMenu>
       </NavContainer>
     </NavWrapper>
+    <HeaderContainer>
+      {/* Crest Logo Link to Home */}
+      <Logo to="/">
+        <CrestImage src={crestImage} alt="DKE Crest" />
+      </Logo>
+
+      {/* Navigation Links */}
+      <Nav>
+        <NavItem>
+          About Us
+          <DropdownMenu>
+            <DropdownItem>
+              <Link to="/about/officers">Officers</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/brotherhood">Brotherhood</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/philanthropy">Philanthropy</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/history">History</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/house">Chapter House</Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </NavItem>
+        
+        <NavItem>
+          Calendar
+          <DropdownMenu>
+            <DropdownItem>
+              <Link to="/calendar/rush">Rush Calendar</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/calendar/upcoming">Upcoming</Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </NavItem>
+
+        <NavItem>
+          Alumni
+          <DropdownMenu>
+            <DropdownItem>
+              <Link to="/alumni/POAA">Psi Omega Alumni Association</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/alumni/events">Recent Events</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/alumni/get-involved">Get Involved</Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </NavItem>
+
+        <NavItem>
+          <NavLinkStyled to="/faq">FAQs</NavLinkStyled>
+        </NavItem>
+        
+        <NavItem>
+          <NavLinkStyled to="/contact">Contact Us</NavLinkStyled>
+        </NavItem>
+      </Nav>
+    </HeaderContainer>
   );
 };
 

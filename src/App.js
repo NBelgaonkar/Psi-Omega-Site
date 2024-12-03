@@ -3,17 +3,20 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import HomePage from './components/Homepage';
-import AboutUs from './components/AboutUs';  // <-- Import the AboutUs component
 import FAQ from './components/FAQ';
 import Calendar from './components/Calendar';
 import Footer from './components/Footer';
-import OurHistory from './components/History';
-import DkesDiner from './components/DkesDiner';  
-import RosterPage from './components/roster';
-import PancakeOrderForm from './components/order';
-import Updates from './components/news';
+import HistoryPage from './components/History';
+import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
 import ContactPage from './components/contactus';
+import HousingPage from './components/HousingPage';
+import RushCalendar from './components/Rush';
+import Brotherhood from './components/Brotherhood'
+import POAA from './components/POAA'
+import AlumniRecentEvents from './components/AlumniRecentEvents'
+import AlumniGetInvolved from './components/AlumniGetInvolved'
+import ContactPage from './components/contactus'
 
 
 const AppContainer = styled.div`
@@ -36,18 +39,28 @@ const App = () => {
         <MainContent>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/DkesDiner" element={<DkesDiner />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="/history" element={<OurHistory />} />
+
+            <Route path="/about/officers" element={<OfficerPage />} />
+            <Route path="/about/brotherhood" element={<Brotherhood />} />
+            <Route path="/about/philanthropy" element={<Philanthropy />} />
+            <Route path="/about/history" element={<HistoryPage />} />
+            <Route path="/about/house" element={<HousingPage />} />
+
+            <Route path="/calendar/rush" element={<RushCalendar />} />
+            <Route path="/calendar/upcoming" element={<Calendar />} />
+
+            <Route path="/alumni/POAA" element={<POAA />} />
+            <Route path="/alumni/events" element={<AlumniRecentEvents />} />
+            <Route path="/alumni/get-involved" element={<AlumniGetInvolved />} />
+
             <Route path="/faq" element={<FAQ />} />
             <Route path="/roster" element={<RosterPage />} />
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
             <Route path="/philo" element={<Philanthropy />} />
             <Route path="/contactus" element={<ContactPage />} />
-
-
+            <Route path="/contact" element={<ContactPage />} />
+            
           </Routes>
         </MainContent>
         <Footer />
