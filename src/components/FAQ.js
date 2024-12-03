@@ -121,8 +121,9 @@ const FAQ = () => {
     {
       question: "What is DKE’s stance on hazing in college fraternities?",
       answer: [
-        "In short, hazing is illegal and immoral; therefore it has no place in our Fraternity. More importantly, Delta Kappa Epsilon holds its members to the highest standard possible. Whereas hazing violates local, state, and federal law it also violates the Objects of Delta Kappa Epsilon, particularly 'the maintenance of gentlemanly dignity, self-respect, and morality in all circumstances.' Hazing is therefore strictly forbidden. For more information, please see our Fraternity Standards on DKE's <a href='https://dke.org/standards/' target='_blank' rel='noopener noreferrer'>official website</a>.",
-        "Our Chapter specifically is uniquely distanced from these acts. The RPI DKE Chapter was inactive for over 50 years and never cultivated a culture of hazing. When we were re-founded in 2015, Delta Kappa Epsilon ensured that no part of hazing practices would be passed on to us. This is something our members have cherished, and we maintain that no practices should be introduced that would degrade our own members."
+        "In short, hazing is illegal and immoral; therefore it has no place in our Fraternity. More importantly, Delta Kappa Epsilon holds its members to the highest standard possible. Whereas hazing violates local, state, and federal law it also violates the Objects of Delta Kappa Epsilon, particularly 'the maintenance of gentlemanly dignity, self-respect, and morality in all circumstances.' Hazing is therefore strictly forbidden.",
+        "Our Chapter specifically is uniquely distanced from these acts. The RPI DKE Chapter was inactive for over 50 years and never cultivated a culture of hazing. When we were re-founded in 2015, Delta Kappa Epsilon ensured that no part of hazing practices would be passed on to us. This is something our members have cherished, and we maintain that no practices should be introduced that would degrade our own members.",
+        "For more information, please see our <a href='/about/health-and-safety' target='_blank' rel='noopener noreferrer'>Health & Safety Policy</a> and Fraternity Standards on DKE's <a href='https://dke.org/standards/' target='_blank' rel='noopener noreferrer'>official website</a>."
       ]
     },
     {
