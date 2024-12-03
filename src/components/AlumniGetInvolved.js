@@ -74,11 +74,6 @@ const CrestImage = styled.img`
   margin-top: 40px;
 `;
 
-const PlaceholderText = styled.div`
-  font-size: 16px;
-  font-style: italic;
-  color: #888;
-`;
 
 // Styled component for the Google Form iframe
 const FormContainer = styled.div`
@@ -93,7 +88,7 @@ const FormContainer = styled.div`
 
 const FormIframe = styled.iframe`
   width: 100%; /* Makes the iframe take up full width of the container */
-  height: 450px; /* Set the height of the form */
+  /*height: 450px;  Set the height of the form */
   border: none;
   margin: 0;
 `;
@@ -117,7 +112,7 @@ const AlumniInvolvementPage = () => {
             <FormIframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSdwrwDZxcmZmJfTPacT8SyIZehpqJxr6vV0aO2H6LJpcIDXcQ/viewform?embedded=true"
               width="640"
-              height="867"
+              height="450"
               frameborder="0"
               marginheight="0"
               marginwidth="0"
@@ -159,7 +154,16 @@ const AlumniInvolvementPage = () => {
         <Section>
           <Subtitle>Donate Now</Subtitle>
           <Paragraph>Your support helps us achieve our goals and continue the legacy of Psi Omega.</Paragraph>
-          <PlaceholderText>Donation Form HERE</PlaceholderText>
+          <FormContainer>
+            <FormIframe
+              src="https://www.zeffy.com/embed/donation-form/e65a8378-da29-4d87-a7e2-8bb40d94bd02"
+              width="800"
+              height="600"
+              title="Alumni Donation Form"
+              allowpaymentrequest
+              allowTransparency="true"
+            />
+          </FormContainer>
         </Section>
         <CrestImage src={crest} alt="DKE Crest" />
       </Container>

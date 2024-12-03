@@ -109,9 +109,9 @@ class HomePage extends React.Component {
             <Title>Delta Kappa Epsilon at RPI</Title>
             <Subtitle>Psi Omega Chapter</Subtitle>
             <ButtonContainer>
-              <RedirectButton onClick={() => window.location.href = '/parents'}>Parents</RedirectButton>
-              <RedirectButton onClick={() => window.location.href = '/brotherhood'}>Brotherhood</RedirectButton>
-              <RedirectButton onClick={() => window.location.href = '/alumni'}>Alumni</RedirectButton>
+              <RedirectButton onClick={() => window.location.href = '/faq'}>Parents</RedirectButton>
+              <RedirectButton onClick={() => window.location.href = '/about/brotherhood'}>Brotherhood</RedirectButton>
+              <RedirectButton onClick={() => window.location.href = '/alumni/get-involved'}>Alumni</RedirectButton>
             </ButtonContainer>
             <CrestImage src={crest} alt="DKE Crest" />
           </ContentSection>
