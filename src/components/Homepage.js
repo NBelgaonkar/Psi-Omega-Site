@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import background from '../Images/Brotherhood.JPG';
+import background from '../Images/Brotherhood.jpeg';
 import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 
@@ -27,7 +27,7 @@ const Container = styled.div`
 `;
 
 const HeaderImage = styled.img`
-  width: 100%;
+  width: 80%;
   max-height: 700px;
   object-fit: cover;  /* Ensure image spans the width of the screen */
 `;
@@ -37,7 +37,7 @@ const ContentSection = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #F5F5F5; /* Light background color */
-  padding: 40px 20px;
+  padding: 0px 20px;
   width: 100%;
 `;
 
