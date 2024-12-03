@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -51,7 +52,10 @@ const EventItem = styled.li`
   margin-bottom: 10px;
   text-align: center;
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 const AlumniRecentEvents = () => {
   return (
     <>
@@ -91,6 +95,7 @@ const AlumniRecentEvents = () => {
           </EventItem>
 
         </EventList>
+        <CrestImage src={crest} alt="DKE Crest" />
 
       </Container>
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import deltaAward from '../Images/deltaaward.png';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -61,7 +62,10 @@ const AwardImage = styled.img`
   padding: 10px;
   background-color: #fff;
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 const Awards = () => {
   return (
     <>
@@ -84,6 +88,8 @@ const Awards = () => {
             Judges evaluate chapters based on a variety of criteria, including academic performance, recruiting and new member education, alumni relations, community service, leadership on campus, and effective communication with International. Attendance at conventions and overall contributions to the DKE community are also considered. The Delta Award celebrates chapters that set an example for others by showcasing excellence in all aspects of fraternity life.
           </Paragraph>
         </Section>
+        <CrestImage src={crest} alt="DKE Crest" />
+
       </Container>
     </>
   );

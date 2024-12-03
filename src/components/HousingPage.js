@@ -6,6 +6,8 @@ import tibbitsImage from '../Images/tibbits.jpg';
 import peoplesImage from '../Images/peoples.png';
 import sageAveImage from '../Images/sage_ave.png';
 import riverStImage from '../Images/river_st.png';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
+
 
 // Global styles
 const GlobalStyle = createGlobalStyle`
@@ -73,7 +75,10 @@ const Image = styled.img`
   height: auto;
   border-radius: 10px;
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 // Sage Ave image uses the same styling now, so no need for EnlargedImage
 
 const HousingPage = () => {
@@ -105,6 +110,8 @@ const HousingPage = () => {
             <Image src={riverStImage} alt="217 River St" />
           </ImageWrapper>
         </ImageSection>
+        <CrestImage src={crest} alt="DKE Crest" />
+
       </Container>
     </>
   );

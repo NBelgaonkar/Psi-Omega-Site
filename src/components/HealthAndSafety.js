@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -42,7 +43,10 @@ const Paragraph = styled.p`
   font-size: 18px;
   line-height: 1.6;
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 const HealthAndSafety = () => {
   return (
     <>
@@ -100,6 +104,8 @@ const HealthAndSafety = () => {
             numbers and evacuation routes must be posted in accessible locations.
           </Paragraph>
         </Section>
+        <CrestImage src={crest} alt="DKE Crest" />
+
       </Container>
     </>
   );

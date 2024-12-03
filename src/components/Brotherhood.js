@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -58,7 +59,10 @@ const BannerImage = styled.img`
   border-radius: 10px; // Optional for rounded corners
   margin-bottom: 20px; // Space below the image
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 const Brotherhood = () => {
   return (
     <>
@@ -111,6 +115,7 @@ const Brotherhood = () => {
             <strong>Honorary Members:</strong> Esteemed individuals who have been recognized for their contributions to the fraternity.
           </ContributionItem>
         </ContributionList>
+        <CrestImage src={crest} alt="DKE Crest" />
 
       </Container>
     </>

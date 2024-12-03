@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import defaultProfileImage from '../Images/blank-profile-picture.png';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 
 const GlobalStyle = createGlobalStyle`
@@ -83,7 +84,10 @@ const MemberImage = styled.img`
   object-fit: cover;
   border: 2px solid #ccc;
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 const poaa_board = [
   {
     position: "President",
@@ -171,6 +175,7 @@ const POAA = () => {
         </Paragraph>
 
         <MemberList title="Meet the POAA Board" members={poaa_board} />
+        <CrestImage src={crest} alt="DKE Crest" />
       </Container>
     </>
   );

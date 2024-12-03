@@ -1,6 +1,7 @@
 // Importing React, useState and styled-components
 import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 
 const GlobalStyle = createGlobalStyle`
@@ -59,7 +60,10 @@ const Answer = styled.p`
   display: ${props => (props.isOpen ? 'block' : 'none')};
   background-color: #fafafa;
 `;
-
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 // Individual FAQ Item component
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -147,6 +151,8 @@ const FAQ = () => {
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </FAQSection>
+        <CrestImage src={crest} alt="DKE Crest" />
+
       </FAQContainer>
     </>
   );
