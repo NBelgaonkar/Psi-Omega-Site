@@ -38,7 +38,7 @@ const Paragraph = styled.p`
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 `;
 
 const EventList = styled.ul`
@@ -49,7 +49,7 @@ const EventList = styled.ul`
 const EventItem = styled.li`
   font-size: 18px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
 `;
 
 const AlumniRecentEvents = () => {
@@ -61,38 +61,33 @@ const AlumniRecentEvents = () => {
         <Subtitle>Recent Events</Subtitle>
         <EventList>
           <EventItem>
-            <strong>September 26th, 2024 - Alumni Weekend</strong>
-            <ul>
-              <li> 12 pm Lunch: We’ll be serving burgers, hot dogs, and sexy men.</li>
+            <strong>October 12th, 2024 - Alumni Weekend</strong>
+              <li> 12 pm Lunch: We’ll be serving burgers and hot dogs at our new House. Our Alumni Chair will present a chapter update.</li>
               <li>8 pm Hangout: Relax and reconnect with brothers and alumni over casual conversations and good times.</li>
-            </ul>
           </EventItem>
         </EventList>
 
         <Subtitle>Upcoming Events</Subtitle>
         <EventList>
-        <EventItem>
-            <strong>April 5th, 2025 - Alumni Weekend</strong>
+          <EventItem>
+            <strong>April 12th, 2025 - Alumni Weekend</strong>
             <br />
             Join us to celebrate the alumni of our Chapter! This event will feature:
-            <ul>
-              <li>Grilled lunch outside with the brothers</li>
+              <li>Brunch at the new House with the brothers</li>
               <li>Sports and yard games on the hill</li>
-              <li>Evening movie night </li>
-              <li>Homemande dinner</li>
-            </ul>
+              <li>Evening festivities </li>
+              <li>Early dinner at the Gala!</li>
           </EventItem>
-          <br />
-          <EventItem>
-            <strong>April 15th, 2025 - Psi Omega 10th Anniversary Gala</strong>
             <br />
-            Join us as we celebrate a decade of brotherhood, achievements, and memories. This black-tie event will feature:
-            <ul>
+          <EventItem>
+            <strong>April 12th, 2025 - Psi Omega 10th Anniversary Gala</strong>
+            <br />
+            Join us as we celebrate a decade of brotherhood, achievements, and memories. 
+            This black-tie event will feature:
               <li>Keynote speeches from distinguished alumni</li>
               <li>A formal dinner and awards ceremony</li>
               <li>Entertainment and dancing</li>
               <li>Opportunities to reconnect with brothers past and present</li>
-            </ul>
           </EventItem>
 
         </EventList>
