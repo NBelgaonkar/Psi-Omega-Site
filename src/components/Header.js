@@ -149,11 +149,11 @@ const Header = () => {
               label="About Us"
               items={[
                 { to: '/roster', label: 'Officers' },
-                // { to: '/brotherhood', label: 'Brotherhood' },
+                { to: '/brotherhood', label: 'Brotherhood' },
                 { to: '/philo', label: 'Philanthropy' },
                 { to: '/history', label: 'Local History' },
-                // { to: '/chapter-house', label: 'Chapter House' },
-                { to: '/news', label: 'Updates' },
+                { to: '/chapter', label: 'Chapter House' },
+
 
               ]}
             />
@@ -164,6 +164,7 @@ const Header = () => {
             <Dropdown
               label="Events"
               items={[
+                { to: '/news', label: 'Updates' },
                 { to: '/calendar', label: 'Rush Calendar' },
                 // { to: '/upcoming-events', label: 'Upcoming Events' },
                 { to: '/DkesDiner', label: 'Dekes Diner' },
@@ -188,7 +189,7 @@ const Header = () => {
             <Dropdown
               label="Contact Us"
               items={[
-                { to: '/eboard-inquiry', label: 'Eboard Inquiry' },
+                { to: '/contactus', label: 'Contact Info' },
                 { to: '/donations', label: 'Donations' },
               ]}
             />

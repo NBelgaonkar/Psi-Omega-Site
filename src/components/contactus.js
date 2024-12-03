@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components'; // Add createGlobalStyle here
 import background from '../Images/pic.png';
 
 const GlobalStyle = createGlobalStyle`
@@ -12,10 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(${background});
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center top;
+  background-color: #f0f0f0;
   color: black;
   flex-grow: 1;
   min-height: 100vh;

@@ -13,6 +13,7 @@ import RosterPage from './components/roster';
 import PancakeOrderForm from './components/order';
 import Updates from './components/news';
 import Philanthropy from './components/Philanthropy';
+import ContactPage from './components/contactus';
 
 
 const AppContainer = styled.div`
@@ -44,6 +45,9 @@ const App = () => {
             <Route path="/order" element={<PancakeOrderForm />} />
             <Route path="/news" element={<Updates />} />
             <Route path="/philo" element={<Philanthropy />} />
+            <Route path="/contactus" element={<ContactPage />} />
+
+
           </Routes>
         </MainContent>
         <Footer />
