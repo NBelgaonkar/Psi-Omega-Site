@@ -106,6 +106,9 @@ const Header = () => {
             <DropdownItem>
               <Link to="/about/house">Chapter House</Link>
             </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/health-and-safety">Health and Safety Policies</Link>
+            </DropdownItem>
           </DropdownMenu>
         </NavItem>
         
