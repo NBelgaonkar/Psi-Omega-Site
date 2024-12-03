@@ -4,6 +4,11 @@ import styled, { createGlobalStyle } from 'styled-components';
 import rampantLion from '../Images/dke-lion.png'; // Replace with the correct path
 
 
+/*
+This webpage can be connected to an event database and will be properly formated
+based on the event days and details. No update to the design is necessary.
+*/
+
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
 
@@ -104,6 +109,18 @@ const WeekdayHeader = styled.div`
   color: #B32017;
 `;
 
+// Helper function to determine the title
+const getRushTitle = (events) => {
+  if (!events || events.length === 0) return "ΔKE Rush"; // Default title
+
+  const firstEventDate = new Date(events[0].date);
+  const month = firstEventDate.getMonth() + 1; // Months are 0-indexed
+  const year = firstEventDate.getFullYear();
+
+  const season = month >= 7 && month <= 12 ? "Fall" : "Spring";
+  return `ΔKE ${season} Rush ${year}`;
+};
+
 // Example event data
 const events = [
   {
@@ -203,12 +220,14 @@ const RushCalendar = () => {
       : null; // Blank for days without events
   };
 
+  const title = getRushTitle(events);
+
   return (
     <>
     <GlobalStyle />
     <CalendarContainer>
       <LionImage src={rampantLion} alt="Rampant Lion" />
-      <CalendarTitle>ΔKE Fall Rush 2024</CalendarTitle>
+      <CalendarTitle>{title}</CalendarTitle>
       {renderWeekdayHeaders()}
       {weeks.map((week, weekIndex) => (
         <Week key={weekIndex}>
