@@ -80,6 +80,73 @@ const DropdownItem = styled.li`
 
 const Header = () => {
   return (
+    <NavWrapper>
+      <NavContainer>
+        <LogoWrapper>
+          <Logo to="/">DKE</Logo> {/* Clicking logo goes to home */}
+        </LogoWrapper>
+        <NavMenu>
+          {/* 1. About Us section with dropdown */}
+          <NavItem>
+            <Dropdown
+              label="About Us"
+              items={[
+                { to: '/roster', label: 'Officers' },
+                { to: '/brotherhood', label: 'Brotherhood' },
+                { to: '/philo', label: 'Philanthropy' },
+                { to: '/history', label: 'Local History' },
+                { to: '/chapter', label: 'Chapter House' },
+
+
+              ]}
+            />
+          </NavItem>
+
+          {/* 2. Events section with dropdown */}
+          <NavItem>
+            <Dropdown
+              label="Events"
+              items={[
+                { to: '/news', label: 'Updates' },
+                { to: '/calendar', label: 'Rush Calendar' },
+                // { to: '/upcoming-events', label: 'Upcoming Events' },
+                { to: '/DkesDiner', label: 'Dekes Diner' },
+              ]}
+            />
+          </NavItem>
+
+          {/* 3. Alumni section with dropdown */}
+          <NavItem>
+            <Dropdown
+              label="Alumni"
+              items={[
+                { to: '/psi-omega', label: 'Psi Omega Alumni Association' },
+                { to: '/alumni-events', label: 'Alumni Events' },
+                { to: '/get-involved', label: 'How to Get Involved' },
+              ]}
+            />
+          </NavItem>
+
+          {/* 4. Contact Us section with dropdown */}
+          <NavItem>
+            <Dropdown
+              label="Contact Us"
+              items={[
+                { to: '/contactus', label: 'Contact Info' },
+                { to: '/donations', label: 'Donations' },
+              ]}
+            />
+          </NavItem>
+
+          {/* 5. FAQ link, no dropdown */}
+          <NavItem>
+            <NavLinkStyled to="/faq" exact activeClassName="active">
+              FAQ
+            </NavLinkStyled>
+          </NavItem>
+        </NavMenu>
+      </NavContainer>
+    </NavWrapper>
     <HeaderContainer>
       {/* Crest Logo Link to Home */}
       <Logo to="/">

@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components'; 
+import background from '../Images/pic.png';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -16,16 +17,14 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures child elements align in the center */
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
-`;
-
-const Title = styled.h1`
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  color: black;
+  flex-grow: 1;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding: 50px;
+  margin-top: 60px;
 `;
 
 const Subtitle = styled.h2`

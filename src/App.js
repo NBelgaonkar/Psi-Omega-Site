@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import HistoryPage from './components/History';
 import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
+import ContactPage from './components/contactus';
 import HousingPage from './components/HousingPage';
 import RushCalendar from './components/Rush';
 import Brotherhood from './components/Brotherhood'
@@ -53,13 +54,12 @@ const App = () => {
             <Route path="/alumni/get-involved" element={<AlumniGetInvolved />} />
 
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/roster" element={<RosterPage />} />
+            <Route path="/order" element={<PancakeOrderForm />} />
+            <Route path="/news" element={<Updates />} />
+            <Route path="/philo" element={<Philanthropy />} />
+            <Route path="/contactus" element={<ContactPage />} />
             <Route path="/contact" element={<ContactPage />} />
-
-
-
-
- 
-            
             
           </Routes>
         </MainContent>
