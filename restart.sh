@@ -10,4 +10,4 @@ docker rm $(docker ps -a -q)
 docker system prune -a --volumes
 
 # call startup.sh
-./startup.sh
+sudo ./startup.sh

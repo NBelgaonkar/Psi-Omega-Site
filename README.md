@@ -205,7 +205,7 @@ If you want to understand the backend as a frontend developer, you came here for
 1) you want to know how to "refresh" the website to show your latest additions
 2) the website is down and you want it back up
 
-To refresh the website, connect to the server, then run `docker restart psi-omega-server`. Make sure the server has your latest version of the code as well (go to Psi-Omega-Site directory and run `git fetch origin` and pull your code).
+To refresh the website, connect to the server, then run `./restart.sh`. It takes awhile, sorry.
 
 If the website is down, go to the Psi-Omega-Site directory and run `./startup.sh`
 ## What to know as a Backend Dev
