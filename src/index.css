@@ -9,8 +9,6 @@ body {
   text-align: center;
   font-size: medium;
   background-color: rgb(251, 251, 251);
-  border: 1px;
-  border-radius: 20%;
   height: 100vh;
   margin: 0;
 }

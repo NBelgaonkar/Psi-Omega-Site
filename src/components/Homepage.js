@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
     font-family: 'Literata', serif;
     background-color: #F5F5F5;
   }
@@ -21,35 +24,34 @@ const GlobalStyle = createGlobalStyle`
 
 // Styled components
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: black;
+  width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  
 `;
 
 const HeroSection = styled.div`
-  overflow: hidden;
-  position: relative;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full width of the page */
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  background: url(${background}) no-repeat left center; /* Align image to the left */
-  background-size: cover; /* Ensures the image covers the container */
-  background-repeat: no-repeat;
+  background: url(${background}) no-repeat center center; 
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 `;
 
 const HeroContent = styled.div`
   color: white;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
   h1 {
     font-size: 3rem;
@@ -101,7 +103,7 @@ const ContentSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F5F5F5; /* Light background color */
+  background-color: #F5F5F5;
   padding: 40px 20px;
   width: 100%;
 `;

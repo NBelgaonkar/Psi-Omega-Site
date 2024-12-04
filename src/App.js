@@ -28,7 +28,6 @@ const AppContainer = styled.div`
 
 const MainContent = styled.main`
   flex-grow: 1;
-  padding: 20px;
   overflow: auto;
 `;
 
