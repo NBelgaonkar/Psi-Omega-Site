@@ -106,6 +106,10 @@ const Header = () => {
       {/* Navigation Links */}
       <Nav>
         <NavItem>
+          <NavLinkStyled to="/">Home</NavLinkStyled>
+        </NavItem>
+
+        <NavItem>
           About Us<Caret>▼</Caret>
           <DropdownMenu>
             <DropdownItem>
@@ -127,7 +131,10 @@ const Header = () => {
               <Link to="/about/house">Chapter House</Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/about/health-and-safety">Health & Safety</Link>
+              <Link to="/about/health-and-safety">Health and Safety</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/faq">FAQs</Link>
             </DropdownItem>
           </DropdownMenu>
         </NavItem>
@@ -148,7 +155,7 @@ const Header = () => {
           Alumni<Caret>▼</Caret>
           <DropdownMenu>
             <DropdownItem>
-              <Link to="/alumni/POAA">Association</Link>
+              <Link to="/alumni/POAA">Alumni Association</Link>
             </DropdownItem>
             <DropdownItem>
               <Link to="/alumni/events">Recent Events</Link>
@@ -157,10 +164,6 @@ const Header = () => {
               <Link to="/alumni/get-involved">Get Involved</Link>
             </DropdownItem>
           </DropdownMenu>
-        </NavItem>
-
-        <NavItem>
-          <NavLinkStyled to="/faq">FAQs</NavLinkStyled>
         </NavItem>
 
         <NavItem>
