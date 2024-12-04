@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import crestImage from '../Images/Psi-Omega-Crest.png'; // Update this path to the crest image
@@ -38,19 +38,28 @@ const NavItem = styled.div`
   font-size: 18px;
   cursor: pointer;
 
-  /* Hover effect to indicate clickability */
   &:hover {
     color: #d4af37; /* Optional: change color to indicate clickable */
   }
+
+  /* Show dropdown on hover */
+  &:hover > ul {
+    display: block;
+  }
+
+  display: flex;
+  align-items: center; /* Center text and caret vertically */
 `;
 
 const DropdownMenu = styled.ul`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: none; /* Hidden by default */
   position: absolute;
-  left: 0; /* Align dropdown menu with the left of the nav button */
+  top: 100%; /* Position dropdown below the nav item */
+  left: 50%; /* Center dropdown relative to the nav button */
+  transform: translateX(-50%); /* Adjust for true centering */
   background-color: #221F73;
   list-style: none;
-  padding: 10px;
+  padding: 0;
   margin: 0;
   border-radius: 4px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -81,13 +90,12 @@ const NavLinkStyled = styled(Link)`
   }
 `;
 
+const Caret = styled.span`
+  margin-left: 5px; /* Space between text and caret */
+  font-size: 12px;
+`;
+
 const Header = () => {
-  const [openMenu, setOpenMenu] = useState(null);
-
-  const toggleMenu = (menuName) => {
-    setOpenMenu(openMenu === menuName ? null : menuName);
-  };
-
   return (
     <HeaderContainer>
       {/* Crest Logo Link to Home */}
@@ -97,9 +105,9 @@ const Header = () => {
 
       {/* Navigation Links */}
       <Nav>
-        <NavItem onClick={() => toggleMenu('about')}>
-          About Us
-          <DropdownMenu isOpen={openMenu === 'about'}>
+        <NavItem>
+          About Us<Caret>▼</Caret>
+          <DropdownMenu>
             <DropdownItem>
               <Link to="/about/officers">Officers</Link>
             </DropdownItem>
@@ -119,14 +127,14 @@ const Header = () => {
               <Link to="/about/house">Chapter House</Link>
             </DropdownItem>
             <DropdownItem>
-              <Link to="/about/health-and-safety">Health and Safety Policies</Link>
+              <Link to="/about/health-and-safety">Health & Safety</Link>
             </DropdownItem>
           </DropdownMenu>
         </NavItem>
 
-        <NavItem onClick={() => toggleMenu('calendar')}>
-          Calendar
-          <DropdownMenu isOpen={openMenu === 'calendar'}>
+        <NavItem>
+          Calendar<Caret>▼</Caret>
+          <DropdownMenu>
             <DropdownItem>
               <Link to="/calendar/rush">Rush Calendar</Link>
             </DropdownItem>
@@ -136,11 +144,11 @@ const Header = () => {
           </DropdownMenu>
         </NavItem>
 
-        <NavItem onClick={() => toggleMenu('alumni')}>
-          Alumni
-          <DropdownMenu isOpen={openMenu === 'alumni'}>
+        <NavItem>
+          Alumni<Caret>▼</Caret>
+          <DropdownMenu>
             <DropdownItem>
-              <Link to="/alumni/POAA">Psi Omega Alumni Association</Link>
+              <Link to="/alumni/POAA">Association</Link>
             </DropdownItem>
             <DropdownItem>
               <Link to="/alumni/events">Recent Events</Link>
