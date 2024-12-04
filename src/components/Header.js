@@ -1,27 +1,15 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import crestImage from '../Images/Psi-Omega-Crest.png';
+import crestImage from '../Images/Psi-Omega-Crest.png'; // Update this path to the crest image
 
 const HeaderContainer = styled.header`
-  background-color: ${({ isHomePage }) =>
-    isHomePage ? 'rgba(15, 14, 61, 0.8)' : '#0F0E3D'}; /* Transparent for homepage, solid for others */
-  position: ${({ isHomePage }) => (isHomePage ? 'sticky' : 'fixed')}; /* Sticky for homepage, fixed for others */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 0 20px;
-  height: 80px;
+  background-color: #221F73; /* Dark blue color for the header */
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  backdrop-filter: ${({ isHomePage }) => (isHomePage ? 'blur(5px)' : 'none')}; /* Blur effect for homepage */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-`;
-
-const PageContentOffset = styled.div`
-  margin-top: ${({ isHomePage }) => (isHomePage ? '0' : '100px')}; /* Add space below header for non-homepage */
+  z-index: 1000;
 `;
 
 const Logo = styled(Link)`
@@ -34,8 +22,8 @@ const Logo = styled(Link)`
 `;
 
 const CrestImage = styled.img`
-  height: 80px;
-  margin-right: 15px;
+  height: 50px; /* Adjust the size as needed */
+  margin-right: 10px;
 `;
 
 const Nav = styled.nav`
@@ -44,13 +32,52 @@ const Nav = styled.nav`
 `;
 
 const NavItem = styled.div`
+  position: relative;
   margin: 0 15px;
   color: white;
   font-size: 18px;
   cursor: pointer;
 
   &:hover {
-    color: #d4af37;
+    color: #d4af37; /* Optional: change color to indicate clickable */
+  }
+
+  /* Show dropdown on hover */
+  &:hover > ul {
+    display: block;
+  }
+
+  display: flex;
+  align-items: center; /* Center text and caret vertically */
+`;
+
+const DropdownMenu = styled.ul`
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position dropdown below the nav item */
+  left: 50%; /* Center dropdown relative to the nav button */
+  transform: translateX(-50%); /* Adjust for true centering */
+  background-color: #221F73;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1500;
+`;
+
+const DropdownItem = styled.li`
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #333;
+  }
+
+  a {
+    display: block;
+    padding: 8px 20px;
+    color: white;
+    text-decoration: none;
   }
 `;
 
@@ -59,47 +86,91 @@ const NavLinkStyled = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: #d4af37;
+    color: #d4af37; /* Optional: change color on hover */
   }
 `;
 
-const Header = ({ children }) => {
-  const location = useLocation();
+const Caret = styled.span`
+  margin-left: 5px; /* Space between text and caret */
+  font-size: 12px;
+`;
 
-  // Check if the current route is the homepage
-  const isHomePage = location.pathname === '/';
-
+const Header = () => {
   return (
-    <>
-      <HeaderContainer isHomePage={isHomePage}>
-        {/* Crest Logo Link */}
-        <Logo to="/">
-          <CrestImage src={crestImage} alt="DKE Crest" />
-        </Logo>
+    <HeaderContainer>
+      {/* Crest Logo Link to Home */}
+      <Logo to="/">
+        <CrestImage src={crestImage} alt="DKE Crest" />
+      </Logo>
 
-        {/* Navigation Links */}
-        <Nav>
-          <NavItem>
-            <NavLinkStyled to="/">Home</NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/about">About Us</NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/calendar">Calendar</NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/alumni">Alumni</NavLinkStyled>
-          </NavItem>
-          <NavItem>
-            <NavLinkStyled to="/contact">Contact Us</NavLinkStyled>
-          </NavItem>
-        </Nav>
-      </HeaderContainer>
+      {/* Navigation Links */}
+      <Nav>
+        <NavItem>
+          <NavLinkStyled to="/">Home</NavLinkStyled>
+        </NavItem>
 
-      {/* Offset content to avoid overlap for non-homepage */}
-      <PageContentOffset isHomePage={isHomePage}>{children}</PageContentOffset>
-    </>
+        <NavItem>
+          About Us<Caret>▼</Caret>
+          <DropdownMenu>
+            <DropdownItem>
+              <Link to="/about/officers">Officers</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/brotherhood">Brotherhood</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/philanthropy">Philanthropy</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/history">History</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/awards">Awards</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/house">Chapter House</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/about/health-and-safety">Health and Safety</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/faq">FAQs</Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </NavItem>
+
+        <NavItem>
+          Calendar<Caret>▼</Caret>
+          <DropdownMenu>
+            <DropdownItem>
+              <Link to="/calendar/rush">Rush Calendar</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/calendar/upcoming">Upcoming</Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </NavItem>
+
+        <NavItem>
+          Alumni<Caret>▼</Caret>
+          <DropdownMenu>
+            <DropdownItem>
+              <Link to="/alumni/POAA">Alumni Association</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/alumni/events">Recent Events</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link to="/alumni/get-involved">Get Involved</Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </NavItem>
+
+        <NavItem>
+          <NavLinkStyled to="/contact">Contact Us</NavLinkStyled>
+        </NavItem>
+      </Nav>
+    </HeaderContainer>
   );
 };
 
