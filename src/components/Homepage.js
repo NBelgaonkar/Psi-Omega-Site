@@ -4,15 +4,18 @@ import styled, { createGlobalStyle } from 'styled-components';
 import background from '../Images/Brotherhood.jpeg';
 import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
-
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
 
-  body {
-    font-family: 'Literata', serif;
-    background-color: #F5F5F5;
+  html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Literata', serif;
+    background-color: #F5F5F5;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 `;
 
@@ -20,50 +23,48 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: black;
-  min-height: 100vh;
-  padding-top: 60px;
+  margin: 0;
+  padding: 0;
 `;
 
-const HeaderImage = styled.img`
-  width: 80%;
-  max-height: 700px;
-  object-fit: cover;  /* Ensure image spans the width of the screen */
-`;
-
-const ContentSection = styled.div`
+const HeroSection = styled.div`
+  position: relative;
+  width: 100%; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-image: url(${background});
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #F5F5F5; /* Light background color */
-  padding: 0px 20px;
-  width: 100%;
+  margin: 0;
+  padding: 0;
 `;
 
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 40px;
-`;
-
-const Title = styled.h1`
-  font-size: 40px;
-  margin-bottom: 5px;
+const HeroContent = styled.div`
+  color: white;
   text-align: center;
-`;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
 
-const Subtitle = styled.h2`
-  font-size: 28px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: 400;  /* Lighter weight for subtitle */
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 20px;
 `;
 
 const RedirectButton = styled.button`
@@ -94,6 +95,19 @@ const RedirectButton = styled.button`
   }
 `;
 
+const ContentSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F5F5; /* Light background color */
+  padding: 40px 20px;
+  width: 100%;
+`;
+
+const CrestImage = styled.img`
+  width: 200px;
+  margin-top: 20px;
+`;
 
 class HomePage extends React.Component {
   render() {
@@ -101,18 +115,21 @@ class HomePage extends React.Component {
       <>
         <GlobalStyle />
         <Container>
-          {/* Full-width header image */}
-          <HeaderImage src={background} alt="Header Image" />
-          
-          {/* Text, buttons, and crest */}
+          {/* Hero Section */}
+          <HeroSection>
+            <HeroContent>
+              <h1>Delta Kappa Epsilon at RPI</h1>
+              <h2>Psi Omega Chapter</h2>
+              <ButtonContainer>
+                <RedirectButton onClick={() => window.location.href = '/faq'}>Parents</RedirectButton>
+                <RedirectButton onClick={() => window.location.href = '/about/brotherhood'}>Brotherhood</RedirectButton>
+                <RedirectButton onClick={() => window.location.href = '/alumni/get-involved'}>Alumni</RedirectButton>
+              </ButtonContainer>
+            </HeroContent>
+          </HeroSection>
+
+          {/* Additional Content Section */}
           <ContentSection>
-            <Title>Delta Kappa Epsilon at RPI</Title>
-            <Subtitle>Psi Omega Chapter</Subtitle>
-            <ButtonContainer>
-              <RedirectButton onClick={() => window.location.href = '/faq'}>Parents</RedirectButton>
-              <RedirectButton onClick={() => window.location.href = '/about/brotherhood'}>Brotherhood</RedirectButton>
-              <RedirectButton onClick={() => window.location.href = '/alumni/get-involved'}>Alumni</RedirectButton>
-            </ButtonContainer>
             <CrestImage src={crest} alt="DKE Crest" />
           </ContentSection>
         </Container>
