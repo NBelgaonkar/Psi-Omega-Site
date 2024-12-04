@@ -31,7 +31,7 @@ const Title = styled.h1`
 
 const PhilanthropyRow = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1000px;
@@ -50,8 +50,8 @@ const Logo = styled.img`
   max-width: 150px;
   height: auto;
   margin-bottom: 20px;
-  min-height: 100px; /* Ensures consistent space for logos */
-  padding: 10px; /* Adds extra space around the logo */
+  min-height: 100px;
+  padding: 10px;
 `;
 
 const PhilanthropyDescription = styled.div`
@@ -68,10 +68,28 @@ const PhilanthropyLink = styled.a`
     text-decoration: underline;
   }
 `;
+
 const CrestImage = styled.img`
   width: 200px;
   margin-top: 20px;
 `;
+
+const ImageGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1000px;
+`;
+
+const EventImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+`;
+
 const Philanthropy = () => {
   return (
     <>
@@ -112,7 +130,16 @@ const Philanthropy = () => {
             </PhilanthropyDescription>
           </PhilanthropyItem>
         </PhilanthropyRow>
+
         <CrestImage src={crest} alt="DKE Crest" />
+
+        {/* Image Grid for Event Photos */}
+        <ImageGrid>
+          <EventImage src="https://via.placeholder.com/200" alt="Event 1" />
+          <EventImage src="https://via.placeholder.com/200" alt="Event 2" />
+          <EventImage src="https://via.placeholder.com/200" alt="Event 3" />
+          <EventImage src="https://via.placeholder.com/200" alt="Event 4" />
+        </ImageGrid>
       </PhilanthropyContainer>
     </>
   );
