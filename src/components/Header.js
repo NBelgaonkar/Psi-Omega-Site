@@ -1,10 +1,10 @@
-import React, {  } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import crestImage from '../Images/Psi-Omega-Crest.png'; // Update this path to the crest image
 
 const HeaderContainer = styled.header`
-  background-color: #221F73; // Dark blue color for the header
+  background-color: #221F73; /* Dark blue color for the header */
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ const Logo = styled(Link)`
 `;
 
 const CrestImage = styled.img`
-  height: 50px; // Adjust the size as needed
+  height: 50px; /* Adjust the size as needed */
   margin-right: 10px;
 `;
 
@@ -36,36 +36,28 @@ const NavItem = styled.div`
   margin: 0 15px;
   color: white;
   font-size: 18px;
+  cursor: pointer;
 
-  &:hover > ul {
-    display: block;
-  }
-`;
-
-// Styled link component for the header
-const NavLinkStyled = styled(Link)`
-  color: white;
-  text-decoration: none;
-
+  /* Hover effect to indicate clickability */
   &:hover {
-    color: #d4af37; // Optional: change color on hover
+    color: #d4af37; /* Optional: change color to indicate clickable */
   }
 `;
 
 const DropdownMenu = styled.ul`
-  display: none;
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   position: absolute;
+  left: 0; /* Align dropdown menu with the left of the nav button */
   background-color: #221F73;
   list-style: none;
-  padding:0;
+  padding: 10px;
   margin: 0;
   border-radius: 4px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1500
+  z-index: 1500;
 `;
 
 const DropdownItem = styled.li`
-  
   white-space: nowrap;
 
   &:hover {
@@ -80,7 +72,22 @@ const DropdownItem = styled.li`
   }
 `;
 
+const NavLinkStyled = styled(Link)`
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #d4af37; /* Optional: change color on hover */
+  }
+`;
+
 const Header = () => {
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const toggleMenu = (menuName) => {
+    setOpenMenu(openMenu === menuName ? null : menuName);
+  };
+
   return (
     <HeaderContainer>
       {/* Crest Logo Link to Home */}
@@ -90,9 +97,9 @@ const Header = () => {
 
       {/* Navigation Links */}
       <Nav>
-        <NavItem>
+        <NavItem onClick={() => toggleMenu('about')}>
           About Us
-          <DropdownMenu>
+          <DropdownMenu isOpen={openMenu === 'about'}>
             <DropdownItem>
               <Link to="/about/officers">Officers</Link>
             </DropdownItem>
@@ -116,10 +123,10 @@ const Header = () => {
             </DropdownItem>
           </DropdownMenu>
         </NavItem>
-        
-        <NavItem>
+
+        <NavItem onClick={() => toggleMenu('calendar')}>
           Calendar
-          <DropdownMenu>
+          <DropdownMenu isOpen={openMenu === 'calendar'}>
             <DropdownItem>
               <Link to="/calendar/rush">Rush Calendar</Link>
             </DropdownItem>
@@ -129,9 +136,9 @@ const Header = () => {
           </DropdownMenu>
         </NavItem>
 
-        <NavItem>
+        <NavItem onClick={() => toggleMenu('alumni')}>
           Alumni
-          <DropdownMenu>
+          <DropdownMenu isOpen={openMenu === 'alumni'}>
             <DropdownItem>
               <Link to="/alumni/POAA">Psi Omega Alumni Association</Link>
             </DropdownItem>
@@ -147,7 +154,7 @@ const Header = () => {
         <NavItem>
           <NavLinkStyled to="/faq">FAQs</NavLinkStyled>
         </NavItem>
-        
+
         <NavItem>
           <NavLinkStyled to="/contact">Contact Us</NavLinkStyled>
         </NavItem>
