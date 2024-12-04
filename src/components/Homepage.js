@@ -26,22 +26,24 @@ const Container = styled.div`
   color: black;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  
 `;
 
 const HeroSection = styled.div`
+  overflow: hidden;
   position: relative;
-  width: 100%; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  background-image: url(${background});
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the image */
+  width: 100vw; /* Full width of the page */
+  margin: 0;
+  padding: 0;
+  background: url(${background}) no-repeat left center; /* Align image to the left */
+  background-size: cover; /* Ensures the image covers the container */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
 `;
 
 const HeroContent = styled.div`

@@ -5,7 +5,8 @@ import crestImage from '../Images/Psi-Omega-Crest.png'; // Update this path to t
 
 const HeaderContainer = styled.header`
   background-color: rgba(15, 14, 61, 0.8); /* Darker blue with 80% transparency */
-  padding: 10px 20px;
+  height: 80px; /* Explicit height for the header */
+  padding: 0 20px; /* Remove vertical padding to avoid pushing content */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,6 +16,7 @@ const HeaderContainer = styled.header`
   left: 0;
   width: 100%;
   backdrop-filter: blur(5px); /* Optional: Adds a blur effect for better transparency appearance */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better separation */
 `;
 
 const Logo = styled(Link)`
