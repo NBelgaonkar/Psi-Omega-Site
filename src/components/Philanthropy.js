@@ -131,7 +131,7 @@ const Philanthropy = () => {
           </PhilanthropyItem>
         </PhilanthropyRow>
 
-        <CrestImage src={crest} alt="DKE Crest" />
+        
 
         {/* Image Grid for Event Photos */}
         <ImageGrid>
@@ -140,6 +140,8 @@ const Philanthropy = () => {
           <EventImage src="https://via.placeholder.com/200" alt="Event 3" />
           <EventImage src="https://via.placeholder.com/200" alt="Event 4" />
         </ImageGrid>
+
+        <CrestImage src={crest} alt="DKE Crest" />
       </PhilanthropyContainer>
     </>
   );
