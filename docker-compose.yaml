@@ -1,21 +1,17 @@
-version: '1'
-name: 'psi-omega-server'
+version: '3.3'
 
 services:
   psi-omega-server:
+    container_name: psi-omega-server
     build: .
     image: psi-omega-server:latest
     ports:
       - "3000:3000"
-    volumes:
-      - .:/app
     environment:
       - PORT=3000
-    depends_on:
-      - psql
     networks:
       - psi-omega-network
-  
+
   psql:
     image: postgres:latest
     environment:
