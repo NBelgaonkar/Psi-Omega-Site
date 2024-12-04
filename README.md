@@ -38,10 +38,6 @@ _An RCOS project intended to create a website for Fraternities._
 
 - **Fraternity History**: Explore the rich history and traditions of the Delta Kappa Epsilon fraternity, both at the chapter level and within the national organization.
 
-
-
-- **Frequently Asked Questions**: Are you a concerned parent or prospective brother and have any questions? We probably have the answer!
-
   
 
 # Getting Started with Create React App
@@ -192,7 +188,7 @@ Note: This guide assumes that you are on Windows using WSL. If you are on a diff
 1) Download the DKE.pem key
 2) Move the key to your WSL's .ssh folder as shown in the screenshot. ![Make sure the image goes to Linux/Ubuntu/home/usr/.ssh](readme/ssh-image.png)
 3) In your WSL/Linux terminal, run `chmod 600 ~/.ssh/DKE.pem`
-4) You can now use `ssh -i ~/.ssh/DKE.pem ubuntu@PUBLICDNS` to connect to the server. 
+4) You can now use `ssh -i ~/.ssh/DKE.pem ubuntu@PUBLIC_DNS` to connect to the server. 
 
 For future connections, you only need to run the SSH command in the last step to connect.
 
@@ -200,3 +196,23 @@ For future connections, you only need to run the SSH command in the last step to
 Specs:
 core: t3.micro
 
+
+# Understanding the Backend
+
+## What to know as a Frontend Dev
+
+If you want to understand the backend as a frontend developer, you came here for one of two things:
+1) you want to know how to "refresh" the website to show your latest additions
+2) the website is down and you want it back up
+
+To refresh the website, connect to the server, then run `docker restart psi-omega-server`. Make sure the server has your latest version of the code as well (go to Psi-Omega-Site directory and run `git fetch origin` and pull your code).
+
+If the website is down, go to the Psi-Omega-Site directory and run `./startup.sh`
+## What to know as a Backend Dev
+
+### The Setup
+Docker is used to locally host the website and a psql database. From there, nginx and certbot are used right on the server to reverse proxy the website out to the rest of the world. This is why if you do `docker ps -a` you will see a container for the website and the database but not nginx or certbot.
+
+There's already a cronjob to have certbot automatically renew the SSL certificates for the website to be on HTTPS.
+
+  
