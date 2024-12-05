@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png';
 import { FaInstagram, FaEnvelope, FaMapMarkerAlt, FaLink } from 'react-icons/fa';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 // Global Styles
 const GlobalStyle = createGlobalStyle`

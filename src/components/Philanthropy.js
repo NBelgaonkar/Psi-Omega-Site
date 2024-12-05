@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png';
 import oakwoodLogo from '../Images/oakwood.png';
 import specialOlympicsLogo from '../Images/specialOlympics.png';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');

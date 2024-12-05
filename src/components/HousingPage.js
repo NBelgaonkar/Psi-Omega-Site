@@ -1,12 +1,10 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-
-// Import images from the local directory
-import tibbitsImage from '../Images/tibbits.jpg';
+import crest from '../Images/Psi-Omega-Crest.png';
 import peoplesImage from '../Images/peoples.png';
-import sageAveImage from '../Images/sage_ave.png';
 import riverStImage from '../Images/river_st.png';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
+import sageAveImage from '../Images/sage_ave.png';
+import tibbitsImage from '../Images/tibbits.jpg';
 
 
 // Global styles

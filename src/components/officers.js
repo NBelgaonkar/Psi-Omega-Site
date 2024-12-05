@@ -1,15 +1,15 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Ben from '../Images/BenF24.jpg';
 import Alex from '../Images/AlexF24.jpg';
-import Gavin from '../Images/GavinF24.jpg';
-import Jacob from '../Images/JacobF24.jpg';
-import David from '../Images/David2F24.jpg'
-import Joe from '../Images/JoeF24.jpg'
-import Shastoo from '../Images/ShastooF24.jpg'
-import Jake from '../Images/JakeF24.jpg'
-import Ian from '../Images/IanF24.jpg'
+import Ben from '../Images/BenF24.jpg';
 import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
+import David from '../Images/David2F24.jpg';
+import Gavin from '../Images/GavinF24.jpg';
+import Ian from '../Images/IanF24.jpg';
+import Jake from '../Images/JakeF24.jpg';
+import Jacob from '../Images/JacobF24.jpg';
+import Joe from '../Images/JoeF24.jpg';
+import Shastoo from '../Images/ShastooF24.jpg';
 
 
 const GlobalStyle = createGlobalStyle`
