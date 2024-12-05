@@ -71,6 +71,12 @@ const MerchPrice = styled.p`
   margin-bottom: 10px;
 `;
 
+const MerchDescription = styled.p`
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+`;
+
 const MerchButton = styled.button`
   padding: 10px 20px;
   background-color: #0047AB;
@@ -90,31 +96,37 @@ const MerchStore = () => {
     {
       title: "Psi Omega T-Shirt",
       price: "$20",
+      description: "A comfortable, high-quality T-shirt with the Psi Omega logo. Perfect for casual wear and showing your pride!",
       image: "https://via.placeholder.com/200",
     },
     {
       title: "Psi Omega Hoodie",
       price: "$40",
+      description: "A warm and cozy hoodie featuring the Psi Omega crest. Great for chilly days or lounging around.",
       image: "https://via.placeholder.com/200",
     },
     {
       title: "Psi Omega Mug",
       price: "$10",
+      description: "Start your day with coffee or tea in this classic Psi Omega ceramic mug.",
       image: "https://via.placeholder.com/200",
     },
     {
       title: "Psi Omega Cap",
       price: "$15",
+      description: "A stylish cap with the Psi Omega emblem. Adjustable and perfect for outdoor events.",
       image: "https://via.placeholder.com/200",
     },
     {
       title: "Psi Omega Notebook",
       price: "$8",
+      description: "A handy notebook for classes, meetings, or jotting down ideas. Includes the Psi Omega logo on the cover.",
       image: "https://via.placeholder.com/200",
     },
     {
       title: "Psi Omega Sticker Pack",
       price: "$5",
+      description: "Decorate your laptop, water bottle, or notebooks with these high-quality Psi Omega stickers.",
       image: "https://via.placeholder.com/200",
     },
   ];
@@ -135,10 +147,20 @@ const MerchStore = () => {
               <MerchImage src={item.image} alt={item.title} />
               <MerchTitle>{item.title}</MerchTitle>
               <MerchPrice>{item.price}</MerchPrice>
+              <MerchDescription>{item.description}</MerchDescription>
               <MerchButton>Add to Cart</MerchButton>
             </MerchItem>
           ))}
         </MerchGrid>
+
+        <Paragraph>
+          Don’t miss out on these amazing items! By purchasing from our store, you’re directly contributing to the growth and
+          success of Psi Omega. Thank you for your support!
+        </Paragraph>
+
+        <Paragraph>
+          <strong>Need assistance?</strong> Contact our merch coordinator at merch@psiomega.org for any questions or bulk orders.
+        </Paragraph>
       </Container>
     </>
   );
