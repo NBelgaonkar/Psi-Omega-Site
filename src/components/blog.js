@@ -68,6 +68,11 @@ const BlogContent = styled.p`
   line-height: 1.5;
 `;
 
+const HighlightedText = styled.span`
+  font-weight: bold;
+  color: #0047AB;
+`;
+
 const BlogNews = () => {
   return (
     <>
@@ -76,7 +81,8 @@ const BlogNews = () => {
         <Title>Blog & News</Title>
         <Paragraph>
           Stay updated with the latest news, stories, and updates from the Psi Omega fraternity. This page is your
-          go-to source for fraternity announcements, member achievements, and community highlights.
+          go-to source for fraternity announcements, member achievements, and community highlights. Explore the insights and stories
+          that showcase the impact of Psi Omega.
         </Paragraph>
 
         <BlogList>
@@ -85,7 +91,8 @@ const BlogNews = () => {
             <BlogDate>Posted on November 1, 2024</BlogDate>
             <BlogContent>
               We’re excited to launch our new blog! Here, you’ll find regular updates on our fraternity’s activities,
-              events, and accomplishments. Stay tuned for more stories and news from Psi Omega.
+              events, and accomplishments. Stay tuned for more stories and news from Psi Omega. If you have suggestions for topics,
+              please reach out to our communications team.
             </BlogContent>
           </BlogItem>
 
@@ -94,8 +101,9 @@ const BlogNews = () => {
             <BlogDate>Posted on September 30, 2024</BlogDate>
             <BlogContent>
               This year’s Alumni Weekend was a huge success! From the lunch gathering to the evening hangout,
-              alumni and active members had a fantastic time reconnecting and sharing memories. Thank you to
-              everyone who attended!
+              alumni and active members had a fantastic time reconnecting and sharing memories. Highlights included a keynote speech
+              by <HighlightedText>John Doe</HighlightedText>, an alumni panel discussion, and a surprise musical performance by the Rusty Pipes.
+              Thank you to everyone who attended!
             </BlogContent>
           </BlogItem>
 
@@ -105,6 +113,7 @@ const BlogNews = () => {
             <BlogContent>
               Mark your calendars! Psi Omega will celebrate its 10th anniversary in April 2025 with a gala event.
               This will be a night to remember, featuring keynote speeches, dinner, and entertainment. Don’t miss out!
+              Tickets will be available starting January 1, 2025. Reach out to our events coordinator for more details.
             </BlogContent>
           </BlogItem>
 
@@ -113,7 +122,28 @@ const BlogNews = () => {
             <BlogDate>Posted on July 10, 2024</BlogDate>
             <BlogContent>
               Our fraternity recently participated in a local community service project, helping to clean up
-              parks and support local families in need. Thank you to all the brothers who volunteered their time!
+              parks and support local families in need. Volunteers contributed over 100 hours of service,
+              showcasing Psi Omega’s dedication to giving back. Stay tuned for our next service initiative coming this fall!
+            </BlogContent>
+          </BlogItem>
+
+          <BlogItem>
+            <BlogTitle>Brother Spotlight: Achievements in Academia</BlogTitle>
+            <BlogDate>Posted on June 5, 2024</BlogDate>
+            <BlogContent>
+              Congratulations to Brother <HighlightedText>James Smith</HighlightedText> for receiving the prestigious Dean’s Award for Excellence in Engineering!
+              James has also been invited to present his research at the upcoming International Engineering Symposium.
+              Psi Omega is incredibly proud of his achievements!
+            </BlogContent>
+          </BlogItem>
+
+          <BlogItem>
+            <BlogTitle>Leadership Workshop Recap</BlogTitle>
+            <BlogDate>Posted on May 20, 2024</BlogDate>
+            <BlogContent>
+              In partnership with the Rensselaer Center for Open Source, Psi Omega hosted a leadership workshop focused
+              on effective communication and project management. The workshop featured guest speaker <HighlightedText>Emily Johnson</HighlightedText>,
+              a renowned leadership coach, and included interactive sessions to enhance leadership skills.
             </BlogContent>
           </BlogItem>
         </BlogList>
