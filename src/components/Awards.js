@@ -20,7 +20,7 @@ const Container = styled.div`
   padding: 40px;
   max-width: 1200px;
   margin: auto;
-  background-color: #f7f2f3;
+  
 `;
 
 const Title = styled.h1`
