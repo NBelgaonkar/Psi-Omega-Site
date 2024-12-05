@@ -1,23 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import Header from './components/Header';
-import HomePage from './components/Homepage';
-import FAQ from './components/FAQ';
+import AlumniGetInvolved from './components/AlumniGetInvolved';
+import AlumniRecentEvents from './components/AlumniRecentEvents';
+import Awards from './components/Awards';
+import Brotherhood from './components/Brotherhood';
 import Calendar from './components/Calendar';
+import ContactPage from './components/contactus';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import HealthAndSafety from './components/HealthAndSafety';
 import HistoryPage from './components/History';
+import HomePage from './components/Homepage';
+import HousingPage from './components/HousingPage';
 import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
-import HousingPage from './components/HousingPage';
+import POAA from './components/POAA';
 import RushCalendar from './components/Rush';
-import Awards from './components/Awards';
-import Brotherhood from './components/Brotherhood'
-import POAA from './components/POAA'
-import AlumniRecentEvents from './components/AlumniRecentEvents'
-import AlumniGetInvolved from './components/AlumniGetInvolved'
-import ContactPage from './components/contactus'
-import HealthAndSafety from './components/HealthAndSafety';
 
 
 const AppContainer = styled.div`
@@ -59,10 +59,6 @@ const App = () => {
             <Route path="/about/health-and-safety" element={<HealthAndSafety />} />
             <Route path="/about/awards" element={<Awards />} />
 
-
-
- 
-            
             
           </Routes>
         </MainContent>
