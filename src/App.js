@@ -59,10 +59,6 @@ const App = () => {
             <Route path="/about/health-and-safety" element={<HealthAndSafety />} />
             <Route path="/about/awards" element={<Awards />} />
 
-
-
- 
-            
             
           </Routes>
         </MainContent>
