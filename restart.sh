@@ -7,7 +7,7 @@ docker kill $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
 # remove storage 
-docker system prune -a --volumes
+docker system prune -a --volumes -f
 
 # call startup.sh
 sudo ./startup.sh
