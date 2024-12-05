@@ -19,30 +19,32 @@ const PhilanthropyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  
 `;
 
 const Title = styled.h1`
   font-size: 36px;
   color: black;
   margin-bottom: 50px;
+  text-align: center;
 `;
 
 const PhilanthropyRow = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
+  gap: 20px; /* Space between boxes */
   max-width: 1000px;
-  gap: 20px;
+  width: 100%;
 `;
 
 const PhilanthropyItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 45%;
+  width: calc(50% - 10px); /* Two equal-sized columns */
 `;
 
 const Logo = styled.img`
@@ -53,10 +55,11 @@ const Logo = styled.img`
   padding: 10px;
 `;
 
-const PhilanthropyDescription = styled.div`
+const PhilanthropyDescription = styled.p`
   font-size: 18px;
   color: black;
   line-height: 1.6;
+  margin-bottom: 10px;
 `;
 
 const PhilanthropyLink = styled.a`
@@ -96,8 +99,8 @@ const Philanthropy = () => {
           <PhilanthropyItem>
             <Logo src={oakwoodLogo} alt="Oakwood Community Center Logo" />
             <PhilanthropyDescription>
-              Every weekend, DKE Brothers volunteer to assist the Oakwood Community Center’s Weekly Food Pantry.
-              Learn more about their mission here:{' '}
+              Every weekend, DKE Brothers volunteer to assist the Oakwood Community Center’s Weekly Food Pantry. Learn
+              more about their mission here:{' '}
               <PhilanthropyLink
                 href="https://www.oakwoodcommunitycenter.org/food-pantry"
                 target="_blank"
@@ -125,8 +128,6 @@ const Philanthropy = () => {
           </PhilanthropyItem>
         </PhilanthropyRow>
 
-        
-
         {/* Image Grid for Event Photos */}
         <ImageGrid>
           <EventImage src="https://via.placeholder.com/200" alt="Event 1" />
@@ -134,7 +135,6 @@ const Philanthropy = () => {
           <EventImage src="https://via.placeholder.com/200" alt="Event 3" />
           <EventImage src="https://via.placeholder.com/200" alt="Event 4" />
         </ImageGrid>
-
       </PhilanthropyContainer>
     </>
   );
