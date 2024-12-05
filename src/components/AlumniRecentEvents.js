@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures child elements align in the center */
+  align-items: center;
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
@@ -34,20 +34,32 @@ const Subtitle = styled.h2`
   text-align: center;
 `;
 
-const Paragraph = styled.p`
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+const EventList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+`;
+
+const EventItem = styled.div`
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 `;
 
-const EventList = styled.ul`
-  list-style-type: none;
-  padding: 0;
+const EventTitle = styled.strong`
+  font-size: 20px;
+  display: block;
+  margin-bottom: 15px;
 `;
 
-const EventItem = styled.li`
+const EventDetails = styled.p`
   font-size: 18px;
+  line-height: 1.6;
   margin-bottom: 10px;
   text-align: center;
 `;
@@ -57,39 +69,36 @@ const AlumniRecentEvents = () => {
     <>
       <GlobalStyle />
       <Container>
-
         <Subtitle>Recent Events</Subtitle>
         <EventList>
           <EventItem>
-            <strong>October 12th, 2024 - Alumni Weekend</strong>
-              <li> 12 pm Lunch: We’ll be serving burgers and hot dogs at our new House. Our Alumni Chair will present a chapter update.</li>
-              <li>8 pm Hangout: Relax and reconnect with brothers and alumni over casual conversations and good times.</li>
+            <EventTitle>October 12th, 2024 - Alumni Weekend</EventTitle>
+            <EventDetails>
+              12 pm Lunch: We’ll be serving burgers and hot dogs at our new House. Our Alumni Chair will present a chapter update.
+            </EventDetails>
+            <EventDetails>
+              8 pm Hangout: Relax and reconnect with brothers and alumni over casual conversations and good times.
+            </EventDetails>
           </EventItem>
         </EventList>
 
         <Subtitle>Upcoming Events</Subtitle>
         <EventList>
           <EventItem>
-            <strong>April 12th, 2025 - Alumni Weekend</strong>
-            <br />
-            Join us to celebrate the alumni of our Chapter! This event will feature:
-              <li>Brunch at the new House with the brothers</li>
-              <li>Sports and yard games on the hill</li>
-              <li>Evening festivities </li>
-              <li>Early dinner at the Gala!</li>
+            <EventTitle>April 12th, 2025 - Alumni Weekend</EventTitle>
+            <EventDetails>
+              Join us to celebrate the alumni of our Chapter! This event will feature brunch at the new House with the brothers,
+              sports and yard games on the hill, evening festivities, and an early dinner at the Gala!
+            </EventDetails>
           </EventItem>
-            <br />
           <EventItem>
-            <strong>April 12th, 2025 - Psi Omega 10th Anniversary Gala</strong>
-            <br />
-            Join us as we celebrate a decade of brotherhood, achievements, and memories. 
-            This black-tie event will feature:
-              <li>Keynote speeches from distinguished alumni</li>
-              <li>A formal dinner and awards ceremony</li>
-              <li>Entertainment and dancing</li>
-              <li>Opportunities to reconnect with brothers past and present</li>
+            <EventTitle>April 12th, 2025 - Psi Omega 10th Anniversary Gala</EventTitle>
+            <EventDetails>
+              Join us as we celebrate a decade of brotherhood, achievements, and memories. This black-tie event will feature
+              keynote speeches from distinguished alumni, a formal dinner and awards ceremony, entertainment and dancing,
+              and opportunities to reconnect with brothers past and present.
+            </EventDetails>
           </EventItem>
-
         </EventList>
       </Container>
     </>
