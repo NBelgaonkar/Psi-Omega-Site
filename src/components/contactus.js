@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import crest from '../Images/Psi-Omega-Crest.png';
 import { FaInstagram, FaEnvelope, FaMapMarkerAlt, FaLink } from 'react-icons/fa';
 
 // Global Styles
@@ -85,11 +84,6 @@ const IconWrapper = styled.span`
   margin-right: 10px;
 `;
 
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 20px;
-`;
-
 // Page Component
 const ContactPage = () => {
   const contactItems = [
@@ -153,7 +147,6 @@ const ContactPage = () => {
             </GridItem>
           ))}
         </Grid>
-        <CrestImage src={crest} alt="DKE Crest" />
       </Container>
     </>
   );

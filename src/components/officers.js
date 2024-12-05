@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Alex from '../Images/AlexF24.jpg';
 import Ben from '../Images/BenF24.jpg';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 import David from '../Images/David2F24.jpg';
 import Gavin from '../Images/GavinF24.jpg';
 import Ian from '../Images/IanF24.jpg';
@@ -77,11 +76,6 @@ const MemberImage = styled.img`
   height: 200px;
   object-fit: cover;
   border: 2px solid #ccc;
-`;
-
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 20px;
 `;
 
 const eboard = [
@@ -264,7 +258,6 @@ class OfficerPage extends React.Component {
         <Container>
           <MemberList title="Meet the Executive Board" members={eboard} showImages={true} />
           <MemberList title="Meet the Officer Board" members={officerBoard} showImages={false} />
-          <CrestImage src={crest} alt="DKE Crest" />
 
         </Container>
       </>

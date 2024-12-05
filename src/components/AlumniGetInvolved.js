@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import crest from '../Images/Psi-Omega-Crest.png';
 
 // Global Styles
 const GlobalStyle = createGlobalStyle`
@@ -67,11 +66,6 @@ const List = styled.ul`
 const ListItem = styled.li`
   font-size: 18px;
   margin-bottom: 10px;
-`;
-
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 40px;
 `;
 
 
@@ -165,7 +159,6 @@ const AlumniInvolvementPage = () => {
             />
           </FormContainer>
         </Section>
-        <CrestImage src={crest} alt="DKE Crest" />
       </Container>
     </>
   );

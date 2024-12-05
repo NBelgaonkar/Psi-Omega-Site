@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-
 import background from '../Images/Brotherhood.jpeg';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -108,11 +106,6 @@ const ContentSection = styled.div`
   width: 100%;
 `;
 
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 20px;
-`;
-
 class HomePage extends React.Component {
   render() {
     return (
@@ -134,7 +127,6 @@ class HomePage extends React.Component {
 
           {/* Additional Content Section */}
           <ContentSection>
-            <CrestImage src={crest} alt="DKE Crest" />
           </ContentSection>
         </Container>
       </>
