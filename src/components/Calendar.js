@@ -200,7 +200,7 @@ const Calendar = () => {
           width="150px"
         />
         <CalendarContainer>
-          <CalendarTitle>DKE Events</CalendarTitle>
+          <CalendarTitle>ΔKE Events</CalendarTitle>
           <Header>
             <button onClick={prevMonth}>&lt;</button>
             <h2>{format(currentMonth, 'MMMM yyyy')}</h2>
