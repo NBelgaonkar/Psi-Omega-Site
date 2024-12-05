@@ -62,6 +62,43 @@ const ResourceContent = styled.p`
   line-height: 1.5;
 `;
 
+const HighlightedText = styled.span`
+  font-weight: bold;
+  color: #0047AB;
+`;
+
+const FAQSection = styled.div`
+  margin-top: 40px;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+`;
+
+const FAQTitle = styled.h2`
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+`;
+
+const FAQItem = styled.div`
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+const FAQQuestion = styled.h3`
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+
+const FAQAnswer = styled.p`
+  font-size: 16px;
+  line-height: 1.5;
+`;
+
 const ParentResources = () => {
   return (
     <>
@@ -86,7 +123,7 @@ const ParentResources = () => {
             <ResourceTitle>Safety and Well-Being</ResourceTitle>
             <ResourceContent>
               The safety and well-being of our members are our top priorities. We adhere to strict risk management policies
-              and promote a supportive, inclusive environment for all brothers.
+              and promote a supportive, inclusive environment for all brothers. Learn more about our <HighlightedText>Safety Initiatives</HighlightedText>.
             </ResourceContent>
           </ResourceItem>
 
@@ -94,7 +131,7 @@ const ParentResources = () => {
             <ResourceTitle>Academic Support</ResourceTitle>
             <ResourceContent>
               Psi Omega provides resources to help members excel academically, including study groups, peer mentorship,
-              and access to alumni networks for career guidance.
+              and access to alumni networks for career guidance. Dedicated programs ensure members achieve their full potential.
             </ResourceContent>
           </ResourceItem>
 
@@ -102,7 +139,8 @@ const ParentResources = () => {
             <ResourceTitle>Philanthropy and Community Engagement</ResourceTitle>
             <ResourceContent>
               Our fraternity is dedicated to giving back to the community through philanthropic initiatives and service projects.
-              These experiences teach valuable skills and instill a sense of responsibility in our members.
+              These experiences teach valuable skills and instill a sense of responsibility in our members. Recent initiatives include
+              <HighlightedText>charity drives</HighlightedText> and <HighlightedText>local volunteering events</HighlightedText>.
             </ResourceContent>
           </ResourceItem>
 
@@ -110,7 +148,7 @@ const ParentResources = () => {
             <ResourceTitle>Financial Information</ResourceTitle>
             <ResourceContent>
               We are transparent about dues and fees, and we offer financial aid and scholarships to eligible members.
-              If you have concerns, feel free to reach out to our finance team for assistance.
+              If you have concerns, feel free to reach out to our finance team for assistance. See our <HighlightedText>Financial Aid Opportunities</HighlightedText>.
             </ResourceContent>
           </ResourceItem>
 
@@ -118,10 +156,41 @@ const ParentResources = () => {
             <ResourceTitle>Contact Us</ResourceTitle>
             <ResourceContent>
               Have more questions? Reach out to our Parent Liaison or Chapter Advisor for more information. We’re here to
-              support you and your student.
+              support you and your student. Contact us at <HighlightedText>parents@psiomega.org</HighlightedText>.
             </ResourceContent>
           </ResourceItem>
         </ResourceList>
+
+        <FAQSection>
+          <FAQTitle>Frequently Asked Questions</FAQTitle>
+          <FAQItem>
+            <FAQQuestion>What is the time commitment for fraternity members?</FAQQuestion>
+            <FAQAnswer>
+              Members are encouraged to participate actively in chapter meetings, events, and community service activities. The time commitment is balanced to allow members to focus on academics and other responsibilities.
+            </FAQAnswer>
+          </FAQItem>
+
+          <FAQItem>
+            <FAQQuestion>Are there resources for parents to get involved?</FAQQuestion>
+            <FAQAnswer>
+              Yes! We encourage parents to join our <HighlightedText>Parent Advisory Council</HighlightedText> and participate in fraternity events. Your support is invaluable to the success of Psi Omega.
+            </FAQAnswer>
+          </FAQItem>
+
+          <FAQItem>
+            <FAQQuestion>How does Psi Omega support students during challenging times?</FAQQuestion>
+            <FAQAnswer>
+              Our fraternity emphasizes mental health and well-being through peer support, access to counseling services, and wellness initiatives. Members are encouraged to reach out to their brothers and advisors during challenging times.
+            </FAQAnswer>
+          </FAQItem>
+
+          <FAQItem>
+            <FAQQuestion>What leadership opportunities are available?</FAQQuestion>
+            <FAQAnswer>
+              Psi Omega offers numerous leadership roles, from chapter officer positions to committee chairs. Members can also attend regional and national leadership conferences hosted by our fraternity.
+            </FAQAnswer>
+          </FAQItem>
+        </FAQSection>
       </Container>
     </>
   );
