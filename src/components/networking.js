@@ -51,12 +51,22 @@ const NetworkingItem = styled.li`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
+const SubTitle = styled.h2`
+  font-size: 28px;
+  margin: 30px 0 20px;
+  text-align: center;
+`;
+
+const Highlight = styled.span`
+  font-weight: bold;
+  color: #0047AB;
+`;
+
 const CareerNetworking = () => {
   return (
     <>
       <GlobalStyle />
       <Container>
-
         <Title>
           Career Networking
         </Title>
@@ -67,6 +77,8 @@ const CareerNetworking = () => {
           looking for your next opportunity or willing to lend a hand to a brother, this platform ensures
           our network stays strong and supportive.
         </Paragraph>
+
+        <SubTitle>Core Resources</SubTitle>
 
         <NetworkingList>
           <NetworkingItem>
@@ -109,6 +121,58 @@ const CareerNetworking = () => {
           </NetworkingItem>
         </NetworkingList>
 
+        <SubTitle>Additional Features</SubTitle>
+
+        <NetworkingList>
+          <NetworkingItem>
+            <strong>Peer Networking:</strong>
+            Collaborate with brothers who are currently active in your field of interest. Share insights,
+            discuss industry trends, and form study or project groups.
+          </NetworkingItem>
+
+          <NetworkingItem>
+            <strong>Career Spotlights:</strong>
+            Learn from the experiences of successful alumni through detailed spotlights that highlight
+            their journeys, challenges, and advice for aspiring professionals.
+          </NetworkingItem>
+
+          <NetworkingItem>
+            <strong>Career Development Library:</strong>
+            Access a repository of articles, eBooks, and videos on professional growth, leadership,
+            and industry-specific skills curated by Psi Omega members and alumni.
+          </NetworkingItem>
+
+          <NetworkingItem>
+            <strong>Guest Speaker Series:</strong>
+            Participate in live Q&A sessions with distinguished professionals, providing direct
+            access to their expertise and real-world experience.
+          </NetworkingItem>
+        </NetworkingList>
+
+        <SubTitle>Exclusive Opportunities</SubTitle>
+
+        <Paragraph>
+          As a member of Psi Omega, you have access to <Highlight>exclusive opportunities</Highlight> not available elsewhere:
+        </Paragraph>
+
+        <NetworkingList>
+          <NetworkingItem>
+            <strong>Specialized Certifications:</strong>
+            Enroll in certification programs offered through alumni partnerships, providing valuable
+            credentials to enhance your resume and professional profile.
+          </NetworkingItem>
+
+          <NetworkingItem>
+            <strong>Global Alumni Network:</strong>
+            Connect with Psi Omega alumni from around the world, expanding your reach beyond local or national boundaries.
+          </NetworkingItem>
+
+          <NetworkingItem>
+            <strong>Private Job Listings:</strong>
+            Gain access to job listings shared exclusively within the Psi Omega network, ensuring
+            opportunities are targeted and tailored for our members.
+          </NetworkingItem>
+        </NetworkingList>
       </Container>
     </>
   );
