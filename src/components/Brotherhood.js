@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
@@ -53,22 +52,11 @@ const ContributionItem = styled.li`
   text-align: left;
 `;
 
-const BannerImage = styled.img`
-  width: 100%; // Full width of the container
-  height: auto; // Maintain aspect ratio
-  border-radius: 10px; // Optional for rounded corners
-  margin-bottom: 20px; // Space below the image
-`;
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 20px;
-`;
 const Brotherhood = () => {
   return (
     <>
       <GlobalStyle />
       <Container>
-      <BannerImage src="../Images/Alex.jpg" alt="Brotherhood Banner" />
         <Paragraph>
           Delta Kappa Epsilon’s Psi Omega Chapter is built upon the pillars of friendship, leadership, and character. 
           Our brotherhood is not just a collection of individuals but a unified group dedicated to personal growth, 
@@ -115,8 +103,6 @@ const Brotherhood = () => {
             <strong>Honorary Members:</strong> Esteemed individuals who have been recognized for their contributions to the fraternity.
           </ContributionItem>
         </ContributionList>
-        <CrestImage src={crest} alt="DKE Crest" />
-
       </Container>
     </>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import crest from '../Images/Psi-Omega-Crest.png';
 import oakwoodLogo from '../Images/oakwood.png';
 import specialOlympicsLogo from '../Images/specialOlympics.png';
 
@@ -67,11 +66,6 @@ const PhilanthropyLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
-`;
-
-const CrestImage = styled.img`
-  width: 200px;
-  margin-top: 20px;
 `;
 
 const ImageGrid = styled.div`
@@ -141,7 +135,6 @@ const Philanthropy = () => {
           <EventImage src="https://via.placeholder.com/200" alt="Event 4" />
         </ImageGrid>
 
-        <CrestImage src={crest} alt="DKE Crest" />
       </PhilanthropyContainer>
     </>
   );
