@@ -12,6 +12,10 @@ import {
   isSameDay,
 } from 'date-fns';
 import styled, { createGlobalStyle } from 'styled-components';
+import ChapterCrest from '../Images/Psi-Omega-Crest.png'; 
+import NationalCrest from '../Images/dke-coat-of-arms.png'; 
+
+
 
 // Global styles for consistent font and background
 const GlobalStyle = createGlobalStyle`
@@ -25,9 +29,26 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const PageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center content */
+  padding: 20px;
+  box-sizing: border-box; /* Prevent padding from causing overflow */
+  flex-grow: 1; /* Allow the container to fill available space */
+`;
+
+
+const Crest = styled.img`
+  width: ${(props) => props.width || '150px'};
+  height: auto;
+  margin: 0 20px; 
+  align-self: center; 
+`;
+
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
-  max-width: 1000px; /* Increased width */
+  max-width: 1000px;
   margin: auto;
   text-align: center;
   background-color: #f5f5f5;
@@ -78,16 +99,16 @@ const DayName = styled.div`
 const CalendarGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 8px; /* Added more spacing between days */
+  gap: 8px;
 `;
 
 const Day = styled.div`
-  padding: 15px; /* Increased padding for better spacing */
+  padding: 15px;
   background-color: ${(props) => (props.isCurrentDay ? '#8FA5D9' : props.isSameMonth ? '#FFF' : '#F0F0F0')};
   border: 1px solid #DDD;
   border-radius: 5px;
   position: relative;
-  min-height: 120px; /* Increased height for better readability */
+  min-height: 120px;
   text-align: left;
   box-shadow: ${(props) => (props.hasEvents ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
 `;
@@ -172,32 +193,44 @@ const Calendar = () => {
   return (
     <>
       <GlobalStyle />
-      <CalendarContainer>
-        <CalendarTitle>DKE Events</CalendarTitle>
-        <Header>
-          <button onClick={prevMonth}>&lt;</button>
-          <h2>{format(currentMonth, 'MMMM yyyy')}</h2>
-          <button onClick={nextMonth}>&gt;</button>
-        </Header>
-        <DayNames>
-          {dayNames.map((dayName, index) => (
-            <DayName key={index}>{dayName}</DayName>
-          ))}
-        </DayNames>
-        <CalendarGrid>
-          {days.map((day, index) => (
-            <Day
-              key={index}
-              isCurrentDay={isSameDay(day, currentDay)}
-              isSameMonth={isSameMonth(day, currentMonth)}
-              hasEvents={events.some((event) => isSameDay(event.date, day))}
-            >
-              <DayHeader isCurrentDay={isSameDay(day, currentDay)}>{format(day, 'd')}</DayHeader>
-              {renderEvents(day)}
-            </Day>
-          ))}
-        </CalendarGrid>
-      </CalendarContainer>
+      <PageContainer>
+        <Crest
+          src={ChapterCrest} // Replace with the actual path to the chapter crest image
+          alt="Chapter Crest"
+          width="150px"
+        />
+        <CalendarContainer>
+          <CalendarTitle>DKE Events</CalendarTitle>
+          <Header>
+            <button onClick={prevMonth}>&lt;</button>
+            <h2>{format(currentMonth, 'MMMM yyyy')}</h2>
+            <button onClick={nextMonth}>&gt;</button>
+          </Header>
+          <DayNames>
+            {dayNames.map((dayName, index) => (
+              <DayName key={index}>{dayName}</DayName>
+            ))}
+          </DayNames>
+          <CalendarGrid>
+            {days.map((day, index) => (
+              <Day
+                key={index}
+                isCurrentDay={isSameDay(day, currentDay)}
+                isSameMonth={isSameMonth(day, currentMonth)}
+                hasEvents={events.some((event) => isSameDay(event.date, day))}
+              >
+                <DayHeader isCurrentDay={isSameDay(day, currentDay)}>{format(day, 'd')}</DayHeader>
+                {renderEvents(day)}
+              </Day>
+            ))}
+          </CalendarGrid>
+        </CalendarContainer>
+        <Crest
+          src={NationalCrest} // Replace with the actual path to the national crest image
+          alt="National Crest"
+          width="150px"
+        />
+      </PageContainer>
     </>
   );
 };
