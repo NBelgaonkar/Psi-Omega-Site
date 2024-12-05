@@ -68,21 +68,28 @@ const ListItem = styled.li`
   margin-bottom: 10px;
 `;
 
+const Box = styled.div`
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+`;
 
 // Styled component for the Google Form iframe
 const FormContainer = styled.div`
   width: 100%;
-  max-width: 800px; /* Maximum width for the iframe */
-  margin: 0 auto; /* Centers the iframe horizontally */
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ddd; /* Optional: border around the form */
-  border-radius: 10px; /* Optional: rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a polished look */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const FormIframe = styled.iframe`
-  width: 100%; /* Makes the iframe take up full width of the container */
-  /*height: 450px;  Set the height of the form */
+  width: 100%;
   border: none;
   margin: 0;
 `;
@@ -118,30 +125,34 @@ const AlumniInvolvementPage = () => {
         {/* Best Ways to Help Section */}
         <Section>
           <Subtitle>Best Ways to Help Us</Subtitle>
-          <Paragraph>
-            Your contributions, both time and financial, make a huge impact. Here are some of the best ways you can support Psi Omega:
-          </Paragraph>
-          <List>
-            <ListItem>Participate in mentorship programs for active brothers.</ListItem>
-            <ListItem>Attend fraternity events to share your experiences.</ListItem>
-            <ListItem>Contribute to funding for scholarships or chapter improvements.</ListItem>
-          </List>
-          <Paragraph>
-            Contact us at <Link href="mailto:alumni.dkepsiomega@gmail.com">alumni.dkepsiomega@gmail.com</Link> to learn more!
-          </Paragraph>
+          <Box>
+            <Paragraph>
+              Your contributions, both time and financial, make a huge impact. Here are some of the best ways you can support Psi Omega:
+            </Paragraph>
+            <List>
+              <ListItem>Participate in mentorship programs for active brothers.</ListItem>
+              <ListItem>Attend fraternity events to share your experiences.</ListItem>
+              <ListItem>Contribute to funding for scholarships or chapter improvements.</ListItem>
+            </List>
+            <Paragraph>
+              Contact us at <Link href="mailto:alumni.dkepsiomega@gmail.com">alumni.dkepsiomega@gmail.com</Link> to learn more!
+            </Paragraph>
+          </Box>
         </Section>
 
         {/* Current Needs Section */}
         <Section>
           <Subtitle>Current Needs</Subtitle>
-          <Paragraph>Our fraternity has identified specific needs for growth and development:</Paragraph>
-          <List>
-            <ListItem>Lettered Tabling Tent - ~$2000</ListItem>
-            <ListItem>New Member Support Fund - $500</ListItem>
-          </List>
-          <Paragraph>
-          You can also choose to sponsor specific events such as recruitment, brotherhood activities, formal events, philanthropy initiatives, or retreats. Every contribution directly supports programs that uphold the legacy and values of Psi Omega. Your generosity not only strengthens our chapter but also ensures future success for our members. All donors will be recognized in our semesterly newsletter as a token of our appreciation.
-          </Paragraph>
+          <Box>
+            <Paragraph>Our fraternity has identified specific needs for growth and development:</Paragraph>
+            <List>
+              <ListItem><strong>Lettered Tabling Tent  ~$2000</strong></ListItem>
+              <ListItem><strong>New Member Support Fund  $500</strong></ListItem>
+            </List>
+            <Paragraph>
+              You can also choose to sponsor specific events such as recruitment, brotherhood activities, formal events, philanthropy initiatives, or retreats. Every contribution directly supports programs that uphold the legacy and values of Psi Omega. Your generosity not only strengthens our chapter but also ensures future success for our members. All donors will be recognized in our semesterly newsletter as a token of our appreciation.
+            </Paragraph>
+          </Box>
         </Section>
 
         {/* Donation Section */}
