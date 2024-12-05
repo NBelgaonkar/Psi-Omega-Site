@@ -72,7 +72,7 @@ const Awards = () => {
     <>
       <GlobalStyle />
       <Container>
-        <Title>Awards</Title>
+        <Title>Delta Kappa Epsilon Awards</Title>
 
         <ImageSection>
           <AwardImage src={deltaAward} alt="Delta Award" />
