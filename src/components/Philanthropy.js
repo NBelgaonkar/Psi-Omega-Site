@@ -19,7 +19,7 @@ const PhilanthropyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  background-color: #f7f2f3;
+  
 `;
 
 const Title = styled.h1`
