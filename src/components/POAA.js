@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png';
 import defaultProfileImage from '../Images/blank-profile-picture.png';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 
 const GlobalStyle = createGlobalStyle`

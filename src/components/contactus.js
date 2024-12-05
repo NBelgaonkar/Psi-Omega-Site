@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import crest from '../Images/Psi-Omega-Crest.png';
 import { FaInstagram, FaEnvelope, FaMapMarkerAlt, FaLink } from 'react-icons/fa';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
 
 // Global Styles
 const GlobalStyle = createGlobalStyle`
@@ -23,7 +23,7 @@ const Container = styled.div`
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
-  text-align: center; /* Ensures all content within is centered */
+  text-align: center;
 `;
 
 const Title = styled.h1`
@@ -31,9 +31,40 @@ const Title = styled.h1`
   margin-bottom: 20px;
 `;
 
+const Address = styled.div`
+  font-size: 18px;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  svg {
+    margin-right: 10px;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+`;
+
+const GridItem = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
+
 const Subtitle = styled.h2`
-  font-size: 28px;
-  margin: 10px 0;
+  font-size: 20px;
+  margin-bottom: 10px;
 `;
 
 const Link = styled.a`
@@ -41,9 +72,9 @@ const Link = styled.a`
   text-decoration: none;
   font-weight: bold;
   display: flex;
-  justify-content: center; /* Center-aligns the icon and text horizontally */
+  justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   &:hover {
     text-decoration: underline;
@@ -54,91 +85,74 @@ const IconWrapper = styled.span`
   margin-right: 10px;
 `;
 
-const ContactSection = styled.div`
-  margin-bottom: 15px; /* Spacing between sections */
-`;
-
-const Address = styled.div`
-  font-size: 18px;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center; /* Center-aligns the icon and text */
-  align-items: center;
-
-  svg {
-    margin-right: 10px;
-  }
-`;
 const CrestImage = styled.img`
   width: 200px;
   margin-top: 20px;
 `;
+
 // Page Component
 const ContactPage = () => {
+  const contactItems = [
+    {
+      title: 'General Inquiries',
+      link: 'mailto:rpidekes@gmail.com',
+      text: 'rpidekes@gmail.com',
+      icon: <FaEnvelope />,
+    },
+    {
+      title: 'Alumni',
+      link: 'mailto:alumni.dkepsiomega@gmail.com',
+      text: 'alumni.dkepsiomega@gmail.com',
+      icon: <FaEnvelope />,
+    },
+    {
+      title: 'Marketing and Sponsorships',
+      link: 'mailto:marketing.dkepsiomega@gmail.com',
+      text: 'marketing.dkepsiomega@gmail.com',
+      icon: <FaEnvelope />,
+    },
+    {
+      title: 'Follow Us',
+      links: [
+        { href: 'https://www.instagram.com/dke_rpi/', text: '@dke_rpi', icon: <FaInstagram /> },
+        { href: 'https://linktr.ee/dke_rpi', text: 'Linktree', icon: <FaLink /> },
+      ],
+    },
+  ];
+
   return (
     <>
       <GlobalStyle />
       <Container>
         <Title>Contact Us</Title>
 
-        {/* General Inquiries Section */}
-        <ContactSection>
-          <Subtitle>General Inquiries</Subtitle>
-          <Link href="mailto:rpidekes@gmail.com">
-            <IconWrapper>
-              <FaEnvelope />
-            </IconWrapper>
-            rpidekes@gmail.com
-          </Link>
-        </ContactSection>
+        {/* Our Address Section */}
+        <Address>
+          <FaMapMarkerAlt />
+          1599 Tibbits Ave, Troy NY 12180
+        </Address>
 
-        {/* Alumni Section */}
-        <ContactSection>
-          <Subtitle>Alumni</Subtitle>
-          <Link href="mailto:alumni.dkepsiomega@gmail.com">
-            <IconWrapper>
-              <FaEnvelope />
-            </IconWrapper>
-            alumni.dkepsiomega@gmail.com
-          </Link>
-        </ContactSection>
-
-        {/* Marketing Section */}
-        <ContactSection>
-          <Subtitle>Marketing and Sponsorships</Subtitle>
-          <Link href="mailto:marketing.dkepsiomega@gmail.com">
-            <IconWrapper>
-              <FaEnvelope />
-            </IconWrapper>
-            marketing.dkepsiomega@gmail.com
-          </Link>
-        </ContactSection>
-
-        {/* Social Media Section */}
-        <ContactSection>
-          <Subtitle>Follow Us</Subtitle>
-          <Link href="https://www.instagram.com/dke_rpi/" target="_blank">
-            <IconWrapper>
-              <FaInstagram />
-            </IconWrapper>
-            @dke_rpi
-          </Link>
-          <Link href="https://linktr.ee/dke_rpi" target="_blank">
-            <IconWrapper>
-              <FaLink />
-            </IconWrapper>
-            Linktree
-          </Link>
-        </ContactSection>
-
-        {/* Address Section */}
-        <ContactSection>
-          <Subtitle>Our Address</Subtitle>
-          <Address>
-            <FaMapMarkerAlt />
-            1599 Tibbits Ave, Troy NY 12180
-          </Address>
-        </ContactSection>
+        {/* Contact Information Grid */}
+        <Grid>
+          {contactItems.map((item, index) => (
+            <GridItem key={index}>
+              <Subtitle>{item.title}</Subtitle>
+              {item.link && (
+                <Link href={item.link}>
+                  <IconWrapper>{item.icon}</IconWrapper>
+                  {item.text}
+                </Link>
+              )}
+              {item.links &&
+                item.links.map((subLink, subIndex) => (
+                  <Link key={subIndex} href={subLink.href}>
+                    <IconWrapper>{subLink.icon}</IconWrapper>
+                    {subLink.text}
+                  </Link>
+                ))}
+            </GridItem>
+          ))}
+        </Grid>
         <CrestImage src={crest} alt="DKE Crest" />
       </Container>
     </>

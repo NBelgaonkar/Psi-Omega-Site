@@ -1,17 +1,17 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-
-import dkeLogo from '../Images/dke-coat-of-arms.png'; 
-import troyUniversityImage from '../Images/troy-university.jpg'; 
 import admissionsImage from '../Images/old-admissions.png';
-import hiraiImage from '../Images/hirai.jpg'; 
-import martinImage from '../Images/martin.jpg';
 import davisImage from '../Images/davis.jpg';
 import davisImage2 from '../Images/davis2.jpg';
-import trahanImage from '../Images/trahan.png';
+import dkeLogo from '../Images/dke-coat-of-arms.png';
 import heffnerImage from '../Images/heffner.jpg';
-import originalCrestImage from '../Images/old-crest.jpg'; 
-import refreshedCrestImage from '../Images/Psi-Omega-Crest.png'; 
+import hiraiImage from '../Images/hirai.jpg';
+import martinImage from '../Images/martin.jpg';
+import originalCrestImage from '../Images/old-crest.jpg';
+import refreshedCrestImage from '../Images/Psi-Omega-Crest.png';
+import trahanImage from '../Images/trahan.png';
+import troyUniversityImage from '../Images/troy-university.jpg';
+
 
 
 // Global styles

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import crest from '../Images/Psi-Omega-Crest.png'; // Import the crest image
+import crest from '../Images/Psi-Omega-Crest.png';
 
 // Global Styles
 const GlobalStyle = createGlobalStyle`
