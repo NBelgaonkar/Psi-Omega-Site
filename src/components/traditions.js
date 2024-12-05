@@ -62,6 +62,45 @@ const SymbolContent = styled.p`
   line-height: 1.5;
 `;
 
+const CalendarContainer = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin-top: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+const CalendarTitle = styled.h2`
+  font-size: 28px;
+  margin-bottom: 20px;
+`;
+
+const EventList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const EventItem = styled.li`
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: left;
+`;
+
+const EventDate = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+
+const EventDescription = styled.p`
+  font-size: 16px;
+  line-height: 1.5;
+`;
+
 const TraditionsAndSymbols = () => {
   return (
     <>
@@ -122,6 +161,28 @@ const TraditionsAndSymbols = () => {
             </SymbolContent>
           </SymbolItem>
         </SymbolList>
+
+        <CalendarContainer>
+          <CalendarTitle>Important Events in Psi Omega History</CalendarTitle>
+          <EventList>
+            <EventItem>
+              <EventDate>1867</EventDate>
+              <EventDescription>The founding of Psi Omega, marking the beginning of our fraternity’s rich legacy.</EventDescription>
+            </EventItem>
+            <EventItem>
+              <EventDate>1947</EventDate>
+              <EventDescription>The expansion of the fraternity post-World War II, leading to significant growth in membership.</EventDescription>
+            </EventItem>
+            <EventItem>
+              <EventDate>2015</EventDate>
+              <EventDescription>The re-establishment of Psi Omega as a colony, revitalizing our presence on campus.</EventDescription>
+            </EventItem>
+            <EventItem>
+              <EventDate>2023</EventDate>
+              <EventDescription>Psi Omega regains full chapter status after years of dedication and hard work by members and alumni.</EventDescription>
+            </EventItem>
+          </EventList>
+        </CalendarContainer>
       </Container>
     </>
   );
