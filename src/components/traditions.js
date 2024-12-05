@@ -151,31 +151,140 @@ const TraditionsAndSymbols = () => {
           <Poem>
             <PoemTitle>Son of a DKE</PoemTitle>
             <PoemContent>
-              "He was born in the twilight of the year,
-              Of a century's ebb and flow.
-              Heir to the glory of DKE's past,
-              And the strength of its future glow."
+              "When I was a Freshman
+              A freshman, soft and green
+              I dreamt of Delta Kappa,
+              Of College life the queen.
+              And when upon the wooly goat ,
+              They gently mounted me,
+              I felt with jo I'd reached at last
+              The Hall of DKE,
+
+              CHORUS
+
+              I'm the son of a, son of a, son of a, son of a.
+              son of a DKE!
+              I'm the sen of a, son of a, sen of a, son of a,
+              son of a DKE!
+              Like ev'ry college fellow.
+              I like my whiskey free.
+              For I'm a rambling rake of a college man,
+              And the son of a DKE
+
+              When I was a Sophomore
+              So festive gay and tree.
+              I were with pride the diamond pin
+              Of our jolly fraternity.
+              I thought I owned the campus,
+              My style was great to see.
+              And I paralyzed the Freshmen
+              With my yarns of DKE.
+
+              (REPEAT CHORUS)
+
+              A sentimental junior,
+              I sported a moustache;
+              Among the innocent maidens
+              I cut an awful dash!
+              I broke a leg en the football field,
+              But I only said "Oh! Gee!
+              For I never swear, I'm a moral man
+              And the son of a DKE!
+
+              (REPEAT CHORUS)
+
+              A grave and reverend Senior,
+              I soothed my fevered brain
+              By dreaming of Commencement Bay.
+              Pipes, ladies and champagne!
+              And when In happy years to come
+              I sport my children three,
+              I'll mark them each with a stencil plate
+              One D! one K! one E!
+
+              (REPEAT CHORUS)"
             </PoemContent>
           </Poem>
 
           <Poem>
             <PoemTitle>Vive la DKE</PoemTitle>
             <PoemContent>
-              "Here's to the brothers of DKE,
-              Long may they live in fame.
-              Here's to the hearts that are ever true,
-              And the strength of Delta Kappa's name.
-              Vive la, vive la, vive la DKE!"
+              "A band of brothers in DKE.
+              We march along tonight,
+              Two by two with
+              Arms locked firm and tight:
+              Our leader signals with hat in hand.
+              As we go marching on,
+              Singing Delta Kappa Epsilon
+
+              CHORUS
+
+              So merrily sing we all to D K E,
+              The mother of jollity,
+              Whose children are gay and free,
+              We'll sing to Phi
+              And then we'll sing to
+              Dear old Delta Kappa Epsilon.
+
+              The stars are out, the moon is shining
+              On our jolly crowd,
+              As arm in arm,
+              We march and sing aloud.
+              We'll sing in honor of the tie
+              That binds our hearts in one,
+              Singing Delta Kappa Epsilon.
+
+              (REPEAT CHORUS)
+
+              The campus windows are lifted high
+              As we go marching by,
+              Bur torches flash
+              In ev'ry lady's eye.
+              Our trembling victims await our call,
+              As we go marching on,
+              Singing Delta Kappa Epsilon.
+
+              (REPEAT CHORUS)"
             </PoemContent>
           </Poem>
 
           <Poem>
             <PoemTitle>Phi Marching Song</PoemTitle>
             <PoemContent>
-              "March on, march on, ye sons of Phi,
-              The strength of youth is ours.
-              With the bonds of brotherhood we stride,
-              Beneath the DKE towers."
+              "O DELTA KAPPA EPSILON.
+              VIVA LA DKE
+
+              Let every good fellow of ev'ry degree,
+              Vive la DKE!
+              How drink to the health of DKE,
+              Vive la DKE!
+
+              Chorus
+
+              Vive la, vive la. vive I'amour,
+              Vive la. vive la, Vive l'amour,
+              vive l'amour, Vive l'amour
+              Vive la DKE!
+
+              The present and past are full el her fame
+              Vive la DKE!
+              The future shall only emblazon her name
+              Vive la DKE!
+
+              Chorus
+
+              Like the snow of the mountains, all stainless and pure,
+              Vive la DKE!
+              Her name and her glory will ever endure,
+              Vive la DKE!
+
+              Chorus
+
+              Then fill up a bumper for DKE,
+              Vive la DKE!
+              And drink to her health with three times three,
+              Vive la BKE!
+              Chorus"
             </PoemContent>
           </Poem>
         </Section>
