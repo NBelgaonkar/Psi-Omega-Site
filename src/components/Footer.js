@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { FaLinkedin, FaInstagram, FaTiktok, FaDiscord } from "react-icons/fa"; // Import required icons
 import crestImage from "../Images/Psi-Omega-Crest.png"; // Path to crest logo
 
 // Styled components for the footer
 const FooterContainer = styled.footer`
-  background-color: white;
-  color: black;
+  background-color: #002d72; /* Blue background */
+  color: #ffc72c; /* Gold text */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,21 +25,25 @@ const FooterContent = styled.div`
 
 const Section = styled.div`
   flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: flex-start; /* Align elements to the left */
+  text-align: left;
 
   &:first-child {
     text-align: left;
-    margin-left: -170px; /* Move left section closer to the page edge */
+    margin-left: -180px; /* Move left section closer to the page edge */
+  
   }
 
   &:last-child {
-    text-align: right;
-    margin-right: -170px; /* Move right section closer to the page edge */
+    text-align: left; /* Align content to the left */
+    margin-right: -350px; /* Move right section closer to the page edge */
   }
 
   h3 {
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 30px; /* Increase spacing below the header */
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -55,7 +60,7 @@ const Section = styled.div`
 
     a {
       text-decoration: none;
-      color: black;
+      color: #ffc72c;
     }
   }
 
@@ -66,15 +71,49 @@ const Section = styled.div`
 
   p {
     font-size: 16px;
-    margin: 5px 0;
+    margin-top: 30px; /* Increase spacing above Privacy Policy */
+    margin-bottom: 0;
+    color: #ffc72c;
   }
 `;
+
+const SocialIcons = styled.div`
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to form rows */
+  gap: 10px; /* Adjust space between icons */
+  margin-bottom: 30px; /* Add more space below the icons */
+
+  a {
+    text-decoration: none;
+    color: #002d72; /* Blue icon color (inside gold background) */
+    background-color: #ffc72c; /* Gold circle background */
+    width: 45px; /* Icon container size */
+    height: 45px; /* Match width for circular size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make the icons circular */
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffd700; /* Brighter gold on hover */
+      color: #002d72; /* Ensure the blue remains the same */
+    }
+
+    .icon {
+      font-size: 22px; /* Icon size */
+    }
+  }
+`;
+
+
+
 
 const FooterBottom = styled.div`
   text-align: center;
   font-size: 14px;
   margin-top: 20px;
-  color: gray;
+  color: #ffc72c;
 `;
 
 const Footer = () => {
@@ -123,17 +162,28 @@ const Footer = () => {
           </ul>
         </Section>
 
-        {/* Right Section */}
+        {/* Right Section - Connect With Us */}
         <Section>
-          <h3>Brothers Only</h3>
-          <ul>
-            <li>
-              <a href="/login">Member Login</a>
-            </li>
-            <li>
-              <a href="/contact">Contact Us</a>
-            </li>
-          </ul>
+          <h3>Connect With Us</h3>
+          <SocialIcons>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="icon" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="icon" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+              <FaTiktok className="icon" />
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+              <FaDiscord className="icon" />
+            </a>
+          </SocialIcons>
+          <p>
+            <a href="/privacy-policy" style={{ color: "#ffc72c" }}>
+              Privacy Policy &gt;
+            </a>
+          </p>
         </Section>
       </FooterContent>
 
