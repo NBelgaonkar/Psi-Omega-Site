@@ -8,8 +8,8 @@ const FooterContainer = styled.footer`
   color: black; /* Text color */
   display: flex;
   justify-content: space-between; /* Space out the sections */
-  align-items: center; /* Vertically center items */
-  padding: 20px 40px; /* Add padding for spacing */
+  align-items: flex-start; /* Align items at the top for larger content */
+  padding: 40px 60px; /* Increase padding for spacing */
   flex-wrap: wrap; /* Ensure responsiveness */
   border-top: 1px solid #ccc; /* Optional: subtle border for separation */
 `;
@@ -22,13 +22,13 @@ const LeftSection = styled.div`
   flex: 1;
 
   img {
-    width: 80px; /* Adjust logo size */
-    margin-bottom: 10px; /* Space between the logo and text */
+    width: 120px; /* Larger logo size */
+    margin-bottom: 20px; /* Space between the logo and text */
   }
 
   p {
     margin: 0;
-    font-size: 14px; /* Smaller text for address */
+    font-size: 16px; /* Larger text size for address */
   }
 `;
 
@@ -37,8 +37,8 @@ const CenterSection = styled.div`
   text-align: center;
 
   h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px; /* Larger heading text */
+    margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -49,8 +49,8 @@ const CenterSection = styled.div`
     margin: 0;
 
     li {
-      margin: 5px 0;
-      font-size: 14px;
+      margin: 8px 0; /* More spacing between items */
+      font-size: 16px; /* Larger text size for list items */
     }
   }
 `;
@@ -60,8 +60,8 @@ const RightSection = styled.div`
   text-align: center;
 
   h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px; /* Larger heading text */
+    margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -72,16 +72,16 @@ const RightSection = styled.div`
     margin: 0;
 
     li {
-      margin: 5px 0;
-      font-size: 14px;
+      margin: 8px 0; /* More spacing between items */
+      font-size: 16px; /* Larger text size for list items */
     }
   }
 `;
 
 const FooterBottom = styled.div`
   text-align: center;
-  font-size: 12px;
-  margin-top: 20px;
+  font-size: 14px; /* Slightly larger text */
+  margin-top: 30px;
   width: 100%;
   color: gray;
 `;
@@ -95,7 +95,7 @@ const Footer = () => {
           <img src={crestImage} alt="Crest Logo" />
           <p>DELTA KAPPA EPSILON PSI OMEGA AT RPI</p>
           <p>
-             1599 Tibbits<br />
+            1599 Tibbits Avenue<br />
             Troy, New York 12180<br />
           </p>
         </LeftSection>
@@ -118,6 +118,19 @@ const Footer = () => {
               </a>
             </li>
           </ul>
+          <h3>Helpful Links</h3>
+          <ul>
+            <li>
+              <a href="/events" style={{ textDecoration: "none", color: "black" }}>
+                Upcoming Events
+              </a>
+            </li>
+            <li>
+              <a href="/resources" style={{ textDecoration: "none", color: "black" }}>
+                Chapter Resources
+              </a>
+            </li>
+          </ul>
         </CenterSection>
 
         {/* Right Section with "Brothers Only" */}
@@ -126,6 +139,11 @@ const Footer = () => {
           <ul>
             <li>
               <a href="/login" style={{ textDecoration: "none", color: "black" }}>
+                Member Login
+              </a>
+            </li>
+            <li>
+              <a href="/contact" style={{ textDecoration: "none", color: "black" }}>
                 Contact Us
               </a>
             </li>
@@ -135,7 +153,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <FooterBottom>
-        © 2024 Delta Kappa Epsilon Psi Omega 
+        © 2024 Delta Kappa Epsilon Psi Omega | Site Map | Privacy Policy
       </FooterBottom>
     </>
   );
