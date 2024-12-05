@@ -135,13 +135,13 @@ const Footer = () => {
           <h3>More Info</h3>
           <ul>
             <li>
-              <a href="/about">About Us</a>
+              <a href="/about/brotherhood">Brotherhood Info</a>
             </li>
             <li>
-              <a href="/events">Upcoming Events</a>
+              <a href="/calendar/upcoming">Upcoming Events</a>
             </li>
             <li>
-              <a href="/resources">Chapter Resources</a>
+            <a href="/about/history">Chapter History</a>
             </li>
           </ul>
         </Section>
@@ -151,7 +151,7 @@ const Footer = () => {
           <h3>How To Join</h3>
           <ul>
             <li>
-              <a href="/rush-info">Rush Information</a>
+              <a href="/calendar/rush">Rush Calendar</a>
             </li>
             <li>
               <a href="/faq">FAQs</a>
