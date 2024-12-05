@@ -85,7 +85,9 @@ const ChapterAchievements = () => {
             <AchievementDate>Spring 2023</AchievementDate>
             <AchievementContent>
               Psi Omega was honored with the Delta Award for Most Improved Chapter by DKE International,
-              recognizing our efforts in revitalizing the chapter and growing our membership.
+              recognizing our efforts in revitalizing the chapter and growing our membership. This milestone
+              reflects the dedication of our brothers and alumni who worked tirelessly to rebuild and strengthen
+              the chapter.
             </AchievementContent>
           </AchievementItem>
 
@@ -94,7 +96,8 @@ const ChapterAchievements = () => {
             <AchievementDate>Fall 2022</AchievementDate>
             <AchievementContent>
               Our chapter received this award for outstanding contributions to local community projects,
-              including park cleanups and charity fundraisers.
+              including park cleanups and charity fundraisers. We partnered with local organizations to make
+              a meaningful impact, demonstrating the values of service and brotherhood.
             </AchievementContent>
           </AchievementItem>
 
@@ -103,6 +106,7 @@ const ChapterAchievements = () => {
             <AchievementDate>Spring 2021</AchievementDate>
             <AchievementContent>
               Psi Omega achieved the highest GPA among fraternities at RPI, reflecting our commitment to academic success.
+              Our dedicated study programs and peer tutoring sessions played a significant role in achieving this milestone.
             </AchievementContent>
           </AchievementItem>
 
@@ -111,7 +115,8 @@ const ChapterAchievements = () => {
             <AchievementDate>Upcoming - April 2025</AchievementDate>
             <AchievementContent>
               Psi Omega is preparing for its 10th Anniversary Gala, a milestone event celebrating a decade of brotherhood,
-              achievements, and memories.
+              achievements, and memories. The event will feature keynote speeches, a formal dinner, and opportunities
+              to reconnect with alumni and current members.
             </AchievementContent>
           </AchievementItem>
 
@@ -120,6 +125,55 @@ const ChapterAchievements = () => {
             <AchievementDate>Spring 2023</AchievementDate>
             <AchievementContent>
               After 58 years, Psi Omega officially regained its chapter status, marking a historic moment in our fraternity’s legacy.
+              This achievement symbolizes the resilience and dedication of our members and alumni who worked tirelessly
+              to rebuild the chapter.
+            </AchievementContent>
+          </AchievementItem>
+
+          <AchievementItem>
+            <AchievementTitle>Philanthropy Partnership Expansion</AchievementTitle>
+            <AchievementDate>Fall 2020</AchievementDate>
+            <AchievementContent>
+              Psi Omega expanded its philanthropic efforts by partnering with local charities and national organizations.
+              These initiatives included fundraising events, food drives, and volunteer activities, showcasing our commitment
+              to giving back to the community.
+            </AchievementContent>
+          </AchievementItem>
+
+          <AchievementItem>
+            <AchievementTitle>Brotherhood Retreat</AchievementTitle>
+            <AchievementDate>Summer 2019</AchievementDate>
+            <AchievementContent>
+              Our annual retreat brought brothers together for a weekend of team-building, reflection, and goal setting.
+              This event strengthened bonds and provided a platform for planning future chapter initiatives.
+            </AchievementContent>
+          </AchievementItem>
+
+          <AchievementItem>
+            <AchievementTitle>Leadership Development Series</AchievementTitle>
+            <AchievementDate>Spring 2018</AchievementDate>
+            <AchievementContent>
+              Psi Omega introduced a leadership series aimed at developing skills in communication, project management,
+              and team dynamics. Alumni and guest speakers hosted workshops, equipping members with tools for personal
+              and professional growth.
+            </AchievementContent>
+          </AchievementItem>
+
+          <AchievementItem>
+            <AchievementTitle>Historic Preservation Award</AchievementTitle>
+            <AchievementDate>Fall 2017</AchievementDate>
+            <AchievementContent>
+              Psi Omega received recognition for preserving and restoring historic artifacts and documents related to our chapter’s
+              legacy. This project ensured that future generations can learn from and appreciate our rich history.
+            </AchievementContent>
+          </AchievementItem>
+
+          <AchievementItem>
+            <AchievementTitle>Interfraternity Council Collaboration Award</AchievementTitle>
+            <AchievementDate>Spring 2016</AchievementDate>
+            <AchievementContent>
+              This award highlighted our efforts in fostering unity and collaboration among RPI’s fraternities and sororities.
+              Psi Omega hosted interfraternity events that promoted inclusivity and mutual respect within the Greek community.
             </AchievementContent>
           </AchievementItem>
         </AchievementList>
