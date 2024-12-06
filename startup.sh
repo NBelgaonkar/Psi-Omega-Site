@@ -6,6 +6,14 @@ if [ -f .env ]; then
     export $(grep -v '^#' .env | xargs)
 fi
 
+# Replace $ADMIN_PASSWORD in init.sql only if the placeholder exists
+if grep -q '\$ADMIN_PASSWORD' init.sql; then
+    echo "Replacing \$ADMIN_PASSWORD in init.sql with the actual password..."
+    sed -i "s/\$ADMIN_PASSWORD/$ADMIN_PASSWORD/g" init.sql
+else
+    echo "init.sql already updated with the actual password."
+fi
+
 # Build and start services
 echo "Building and starting services..."
 docker-compose up --build -d
