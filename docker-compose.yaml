@@ -18,8 +18,11 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       POSTGRES_DB: psi-omega
+      ADMIN_PASSWORD_HASH: "${ADMIN_PASSWORD_HASH:-}"
     ports:
       - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - psi-omega-network
 

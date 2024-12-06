@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Export .env variables
+# psql container uses .env admin pass variable
+if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+
 # Build and start services
 echo "Building and starting services..."
 docker-compose up --build -d
