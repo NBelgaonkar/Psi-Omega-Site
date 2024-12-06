@@ -25,3 +25,7 @@ yarn-error.log*
 
 # Private keys
 *.pem
+
+# Folders created by Certbot and nginx
+certbot/
+data/
