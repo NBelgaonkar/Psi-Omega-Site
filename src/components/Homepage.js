@@ -2,21 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import background from '../Images/Brotherhood.jpeg';
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-`;
 
 // Styled components
 const Container = styled.div`
@@ -109,7 +95,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-        <GlobalStyle />
         <Container>
           {/* Hero Section */}
           <HeroSection>
