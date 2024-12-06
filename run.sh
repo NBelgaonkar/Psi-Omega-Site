@@ -1,1 +1,1 @@
-docker run psi-omega-site
+docker compose up -d
