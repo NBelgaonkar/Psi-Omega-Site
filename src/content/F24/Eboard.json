@@ -1,0 +1,78 @@
+{
+  "showImages": true,
+  "imagesPath": "Eboard/F24/",
+  "members": [
+    {
+      "position": "President",
+      "name": "Benjamin Rodgers",
+      "major": "Computer Science",
+      "year": "'26",
+      "hometown": "Souderton, PA",
+      "imageUrl": "BenF24.jpg"
+    },
+    {
+      "position": "Vice President",
+      "name": "Joseph Kirschner",
+      "major": "Mechanical Engineering",
+      "year": "'26",
+      "hometown": "Kingston, NY",
+      "imageUrl": "JoeF24.jpg"
+    },
+    {
+      "position": "Treasurer",
+      "name": "David Smith",
+      "major": "Business Analytics / Computer Science",
+      "year": "'26",
+      "hometown": "Newton, MA",
+      "imageUrl": "David2F24.jpg"
+    },
+    {
+      "position": "Social Chair",
+      "name": "Shastraveer Thapa",
+      "major": "Engineering",
+      "year": "'27",
+      "hometown": "Nepal",
+      "imageUrl": "ShastooF24.jpg"
+    },
+    {
+      "position": "Health and Safety Chair",
+      "name": "Jake Mandel",
+      "major": "Information Technology and Web Science",
+      "year": "'26",
+      "hometown": "State Hill, NY",
+      "imageUrl": "JakeF24.jpg"
+    },
+    {
+      "position": "Philanthropy Chair",
+      "name": "Ian Lewis",
+      "major": "Math and Computer Science",
+      "year": "'26",
+      "hometown": "Pleasant Valley, NY",
+      "imageUrl": "IanF24.jpg"
+    },
+    {
+      "position": "Marketing Chair",
+      "name": "Gavin MacKenzie",
+      "major": "Aeronautical / Mechanical Engineering",
+      "year": "'25",
+      "hometown": "Kirkland, WA",
+      "imageUrl": "GavinF24.jpg"
+    },
+    {
+      "position": "Recruitment Chair",
+      "name": "Jacob Edwards",
+      "major": "Computer Science / Business Analytics",
+      "year": "'25",
+      "hometown": "Fairfax Station, VA",
+      "imageUrl": "JacobF24.jpg"
+    },
+    {
+      "position": "Alumni Relations Chair",
+      "name": "Alexander Orr",
+      "major": "Computer Science",
+      "year": "'24",
+      "hometown": "Danbury, CT",
+      "imageUrl": "AlexF24.jpg"
+    }
+  ]
+}

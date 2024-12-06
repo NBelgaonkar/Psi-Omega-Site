@@ -1,0 +1,69 @@
+{
+  "showImages": false,
+  "imagesPath": null,
+  "members": [
+    {
+      "position": "Brotherhood Chair",
+      "name": "Nikhil Belgaonkar",
+      "major": "Computer Science / Economics",
+      "year": "'26",
+      "hometown": "Lexington, MA"
+    },
+    {
+      "position": "House Manager",
+      "name": "Theodore Olinkiewicz",
+      "major": "Biomedical Engineering",
+      "year": "'25",
+      "hometown": "Shelter Island, NY"
+    },
+    {
+      "position": "Secretary",
+      "name": "Shastraveer Thapa",
+      "major": "Engineering",
+      "year": "'27",
+      "hometown": "Nepal"
+    },
+    {
+      "position": "Academic Chair",
+      "name": "Alexander Orr",
+      "major": "Computer Science",
+      "year": "'24",
+      "hometown": "Danbury, CT"
+    },
+    {
+      "position": "IFC Delegate",
+      "name": "Ian Lewis",
+      "major": "Math and Computer Science",
+      "year": "'26",
+      "hometown": "Pleasant Valley, NY"
+    },
+    {
+      "position": "Live-in-Advisor",
+      "name": "Theodore Olinkiewicz",
+      "major": "Biomedical Engineering",
+      "year": "'25",
+      "hometown": "Shelter Island, NY"
+    },
+    {
+      "position": "Associate Member Educator",
+      "name": "Unfilled Position",
+      "major": "",
+      "year": "",
+      "hometown": ""
+    },
+    {
+      "position": "Sergeant at Arms",
+      "name": "Unfilled Position",
+      "major": "",
+      "year": "",
+      "hometown": ""
+    },
+    {
+      "position": "DEIB Representative",
+      "name": "Joseph Kirschner",
+      "major": "Mechanical Engineering",
+      "year": "'26",
+      "hometown": "Kingston, NY"
+    }
+  ]
+}
