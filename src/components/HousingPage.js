@@ -11,8 +11,6 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
 
   body {
-    font-family: 'Literata', serif;
-    background-color: #F5F5F5; /* Light background color */
     margin: 0;
     padding: 0;
   }
