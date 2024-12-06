@@ -1,15 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-
-// Global Styles
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
+import styled from 'styled-components';
 
 // Styled Components
 const Container = styled.div`
@@ -96,7 +86,6 @@ const FormIframe = styled.iframe`
 const AlumniInvolvementPage = () => {
   return (
     <>
-      <GlobalStyle />
       <Container>
         {/* Title Section */}
         <Title>Alumni - How to Get Involved</Title>

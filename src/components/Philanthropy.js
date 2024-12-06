@@ -1,16 +1,8 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import oakwoodLogo from '../Images/oakwood.png';
 import specialOlympicsLogo from '../Images/specialOlympics.png';
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 const PhilanthropyContainer = styled.div`
   display: flex;
@@ -88,7 +80,6 @@ const EventImage = styled.img`
 const Philanthropy = () => {
   return (
     <>
-      <GlobalStyle />
       <PhilanthropyContainer>
         <Title>Philanthropy</Title>
 

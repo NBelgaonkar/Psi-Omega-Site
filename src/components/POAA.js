@@ -1,16 +1,7 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import defaultProfileImage from '../Images/blank-profile-picture.png';
 
-
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 const Container = styled.div`
   display: flex;
@@ -158,7 +149,6 @@ const POAA = () => {
 
   return (
     <>
-      <GlobalStyle />
       <Container>
         <Title>Psi Omega Alumni Association</Title>
         <Paragraph>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { eachDayOfInterval, endOfWeek, format, isSameDay, startOfWeek } from 'date-fns';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import rampantLion from '../Images/dke-lion.png'; // Replace with the correct path
 
 
@@ -10,14 +10,6 @@ This webpage can be connected to an event database and will be properly formated
 based on the event days and details. No update to the design is necessary.
 */
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
   max-width: 800px;
@@ -223,7 +215,6 @@ const RushCalendar = () => {
 
   return (
     <>
-    <GlobalStyle />
     <CalendarContainer>
       <LionImage src={rampantLion} alt="Rampant Lion" />
       <CalendarTitle>{title}</CalendarTitle>

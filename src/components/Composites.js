@@ -1,15 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-
-// Global styles
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
+import styled from 'styled-components';
 
 // Container styles
 const PageContainer = styled.div`
@@ -72,8 +62,6 @@ const composites = [
 const CompositesPage = () => {
   return (
     <>
-      {/* Apply global styles */}
-      <GlobalStyle />
 
       {/* Main container */}
       <PageContainer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import Alex from '../Images/AlexF24.jpg';
 import Ben from '../Images/BenF24.jpg';
 import David from '../Images/David2F24.jpg';
@@ -11,14 +11,6 @@ import Joe from '../Images/JoeF24.jpg';
 import Shastoo from '../Images/ShastooF24.jpg';
 
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 const Container = styled.div`
   display: flex;
@@ -252,7 +244,6 @@ class OfficerPage extends React.Component {
   render() {
     return (
       <>
-        <GlobalStyle />
         <Container>
           <MemberList title="Meet the Executive Board" members={eboard} showImages={true} />
           <MemberList title="Meet the Officer Board" members={officerBoard} showImages={false} />

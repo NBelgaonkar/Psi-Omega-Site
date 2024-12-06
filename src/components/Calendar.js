@@ -11,21 +11,10 @@ import {
   startOfWeek,
   subMonths,
 } from 'date-fns';
-import styled, { createGlobalStyle } from 'styled-components';
 import ChapterCrest from '../Images/Psi-Omega-Crest.png'; 
 import NationalCrest from '../Images/dke-coat-of-arms.png'; 
+import styled from 'styled-components';
 
-
-
-// Global styles for consistent font and background
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 const PageContainer = styled.div`
   display: flex;
@@ -190,7 +179,6 @@ const Calendar = () => {
 
   return (
     <>
-      <GlobalStyle />
       <PageContainer>
         <Crest
           src={ChapterCrest} // Replace with the actual path to the chapter crest image

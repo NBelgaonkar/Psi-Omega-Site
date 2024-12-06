@@ -1,14 +1,4 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 const Container = styled.div`
   display: flex;
@@ -69,7 +59,6 @@ const AchievementContent = styled.p`
 const ChapterAchievements = () => {
   return (
     <>
-      <GlobalStyle />
       <Container>
         <Title>Chapter Achievements</Title>
         <Paragraph>

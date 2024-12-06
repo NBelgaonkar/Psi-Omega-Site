@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -134,7 +125,6 @@ const Scholarships = () => {
 
   return (
     <>
-      <GlobalStyle />
       <Container>
         <Title>Scholarship Opportunities</Title>
         <Paragraph>

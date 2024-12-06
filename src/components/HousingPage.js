@@ -1,20 +1,10 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import peoplesImage from '../Images/peoples.png';
 import riverStImage from '../Images/river_st.png';
 import sageAveImage from '../Images/sage_ave.png';
 import tibbitsImage from '../Images/tibbits.jpg';
 
-
-// Global styles
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;700&display=swap');
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 // Styled components
 const Container = styled.div`
@@ -76,7 +66,6 @@ const Image = styled.img`
 const HousingPage = () => {
   return (
     <>
-      <GlobalStyle />
       <Container>
         <Title>Description of DPG & Housing Organization</Title>
         <Description>
