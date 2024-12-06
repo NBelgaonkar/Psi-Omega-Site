@@ -14,7 +14,7 @@ import HealthAndSafety from './components/HealthAndSafety';
 import HistoryPage from './components/History';
 import HomePage from './components/Homepage';
 import HousingPage from './components/HousingPage';
-import OfficerPage from './components/officers';
+import OfficerPage from './components/Officers';
 import Philanthropy from './components/Philanthropy';
 import POAA from './components/POAA';
 import RushCalendar from './components/Rush';
