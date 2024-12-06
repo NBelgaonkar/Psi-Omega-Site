@@ -74,7 +74,8 @@ const RedirectButton = styled.button`
   color: white;
   padding: 15px 30px;
   margin: 0 10px;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: 'Literata', serif;
   border: none;
   border-radius: 20px;
   cursor: pointer;
