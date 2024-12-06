@@ -11,8 +11,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'Literata', serif;
-    background-color: #F5F5F5;
   }
 
   * {
