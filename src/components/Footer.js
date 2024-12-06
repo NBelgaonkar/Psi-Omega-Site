@@ -14,6 +14,16 @@ const FooterContainer = styled.footer`
   border-top: 1px solid #ccc;
 `;
 
+const FooterContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columns layout */
+  gap: 20px; /* Adjust gap between columns */
+  width: 100%; /* Span the full width of the container */
+  max-width: 100%; /* Override any max-width restrictions */
+  padding: 0; /* Remove internal padding */
+  margin: 0; /* Remove any margins */
+`;
+
 const Section = styled.div`
   flex: 1;
   display: flex;
@@ -23,12 +33,17 @@ const Section = styled.div`
 
   &:first-child {
     text-align: left;
-    padding-left: 0; /* Adjust spacing dynamically */
+    padding-left: 100px;
+    padding-right: 200px;
+    margin-left: 0; /* Ensure no margin */
+    justify-self: start; /* Align to the left edge */
   }
 
   &:last-child {
-    text-align: left; /* Align content to the left */
-    padding-right: 0; /* Adjust spacing dynamically */
+    text-align: right; /* Align content to the right */
+    padding-right: 100px;
+    margin-right: 0; /* Ensure no margin */
+    justify-self: end; /* Align to the right edge */
   }
 
   h3 {
@@ -66,16 +81,6 @@ const Section = styled.div`
     color: #ffc72c;
   }
 `;
-
-const FooterContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
-  gap: 20px; /* Adjust gap between sections */
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px; /* Small padding for slight spacing from page edges */
-`;
-
 const SocialIcons = styled.div`
   display: flex;
   flex-wrap: wrap; /* Allow wrapping to form rows */
