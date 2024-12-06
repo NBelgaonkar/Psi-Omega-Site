@@ -10,45 +10,44 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 2.5rem 0; /* Scalable padding */
   border-top: 1px solid #ccc;
+  width: 100%;
 `;
 
 const FooterContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columns layout */
-  gap: 20px; /* Adjust gap between columns */
-  width: 100%; /* Span the full width of the container */
-  max-width: 100%; /* Override any max-width restrictions */
-  padding: 0; /* Remove internal padding */
-  margin: 0; /* Remove any margins */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+  gap: 1.5rem; /* Use rem for consistent spacing */
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit the width for large screens */
+  padding: 0 2%; /* Use percentages for scalable padding */
+  margin: 0 auto; /* Center content */
 `;
 
 const Section = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
-  align-items: flex-start; /* Align elements to the left */
+  align-items: flex-start;
   text-align: left;
 
   &:first-child {
-    text-align: left;
-    padding-left: 100px;
-    padding-right: 200px;
-    margin-left: 0; /* Ensure no margin */
-    justify-self: start; /* Align to the left edge */
+    justify-self: start; /* Align the left section to the start */
   }
 
   &:last-child {
-    text-align: right; /* Align content to the right */
-    padding-right: 100px;
-    margin-right: 0; /* Ensure no margin */
-    justify-self: end; /* Align to the right edge */
+    justify-self: end; /* Align the right section to the end */
+    text-align: right; /* Ensure text is aligned properly */
+  }
+
+  img {
+    width: 8rem; /* Use rem for consistent scaling */
+    margin-bottom: 1rem;
   }
 
   h3 {
-    font-size: 20px;
-    margin-bottom: 30px; /* Increase spacing below the header */
+    font-size: 1.25rem; /* Scalable font size */
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -59,67 +58,62 @@ const Section = styled.div`
     margin: 0;
 
     li {
-      margin: 10px 0;
-      font-size: 18px;
+      margin: 0.5rem 0; /* Use rem for scalable spacing */
+      font-size: 1rem;
     }
 
     a {
       text-decoration: none;
       color: #ffc72c;
+      font-size: 1rem;
     }
   }
 
-  img {
-    width: 120px;
-    margin-bottom: 15px;
-  }
-
   p {
-    font-size: 16px;
-    margin-top: 30px; /* Increase spacing above Privacy Policy */
+    font-size: 1rem; /* Scalable font size */
+    margin-top: 1.5rem;
     margin-bottom: 0;
     color: #ffc72c;
   }
 `;
+
 const SocialIcons = styled.div`
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping to form rows */
-  gap: 10px; /* Adjust space between icons */
-  margin-bottom: 30px; /* Add more space below the icons */
+  flex-wrap: wrap;
+  gap: 1rem; /* Use rem for consistent spacing */
+  margin-bottom: 2rem;
 
   a {
     text-decoration: none;
-    color: #002d72; /* Blue icon color (inside gold background) */
-    background-color: #ffc72c; /* Gold circle background */
-    width: 45px; /* Icon container size */
-    height: 45px; /* Match width for circular size */
+    color: #002d72;
+    background-color: #ffc72c;
+    width: 2.5rem; /* Scalable width and height */
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* Make the icons circular */
+    border-radius: 50%;
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: #ffd700; /* Brighter gold on hover */
-      color: #002d72; /* Ensure the blue remains the same */
+      background-color: #ffd700;
+      color: #002d72;
     }
 
     .icon {
-      font-size: 22px; /* Icon size */
+      font-size: 1.25rem; /* Scalable icon size */
     }
   }
 `;
 
-
-
-
 const FooterBottom = styled.div`
   text-align: center;
-  font-size: 14px;
-  margin-top: 20px;
+  font-size: 0.875rem; /* Scalable font size */
+  margin-top: 1.5rem;
   color: #ffc72c;
 `;
 
+/* Media queries for smaller screens */
 const Footer = () => {
   return (
     <FooterContainer>
@@ -145,7 +139,7 @@ const Footer = () => {
               <a href="/calendar/upcoming">Upcoming Events</a>
             </li>
             <li>
-            <a href="/about/history">Chapter History</a>
+              <a href="/about/history">Chapter History</a>
             </li>
           </ul>
         </Section>
