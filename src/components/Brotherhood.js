@@ -119,7 +119,10 @@ const Brotherhood = () => {
         </MembershipList>
 
         <Subtitle>Brotherhood Campus Contributions</Subtitle>
-
+        <Paragraph>
+        The Delta Kappa Epsilon brotherhood is a tight-knit group of 22 dedicated brothers who excel both inside and outside the classroom. 
+        Together, we bring diverse talents and passions, actively participating in a wide range of academic and school-wide clubs and societies as described below.
+        </Paragraph>
         {/* Contribution Sections */}
         <ContributionSection>
           <ContributionTitle>Media & Technology</ContributionTitle>
