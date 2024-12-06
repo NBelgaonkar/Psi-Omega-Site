@@ -14,15 +14,6 @@ const FooterContainer = styled.footer`
   border-top: 1px solid #ccc;
 `;
 
-const FooterContent = styled.div`
-  display: flex;
-  justify-content: space-between; /* Spread left and right sections to edges */
-  align-items: flex-start;
-  width: 100%; /* Full width to allow edge alignment */
-  max-width: 1200px;
-  padding: 0 20px; /* Small padding for slight spacing from page edges */
-`;
-
 const Section = styled.div`
   flex: 1;
   display: flex;
@@ -32,13 +23,12 @@ const Section = styled.div`
 
   &:first-child {
     text-align: left;
-    margin-left: -180px; /* Move left section closer to the page edge */
-  
+    padding-left: 0; /* Adjust spacing dynamically */
   }
 
   &:last-child {
     text-align: left; /* Align content to the left */
-    margin-right: -350px; /* Move right section closer to the page edge */
+    padding-right: 0; /* Adjust spacing dynamically */
   }
 
   h3 {
@@ -75,6 +65,15 @@ const Section = styled.div`
     margin-bottom: 0;
     color: #ffc72c;
   }
+`;
+
+const FooterContent = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
+  gap: 20px; /* Adjust gap between sections */
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px; /* Small padding for slight spacing from page edges */
 `;
 
 const SocialIcons = styled.div`

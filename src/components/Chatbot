@@ -79,7 +79,7 @@ export const Chatbot = () => {
         How can I learn more about the chapter?
         Example: "Joining a fraternity is a commitment, but our members manage it alongside academics and other responsibilities. We also offer scholarships and financial aid for those concerned about membership costs."
         [Output Format]
-        Keep your responses short and concise, max of 3-4 sentences.`,
+        Keep your responses short and concise, max of 2-3 sentences.`,
       };
 
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
