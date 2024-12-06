@@ -136,6 +136,12 @@ const Header = () => {
             <DropdownItem>
               <Link to="/faq">FAQs</Link>
             </DropdownItem>
+            {/* New dropdown item for DKE website */}
+            <DropdownItem>
+              <a href="https://www.dke.org" target="_blank" rel="noopener noreferrer">
+                DKE International
+              </a>
+            </DropdownItem>
           </DropdownMenu>
         </NavItem>
 

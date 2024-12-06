@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 import AlumniGetInvolved from './components/AlumniGetInvolved';
 import AlumniRecentEvents from './components/AlumniRecentEvents';
@@ -18,7 +18,6 @@ import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
 import POAA from './components/POAA';
 import RushCalendar from './components/Rush';
-
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -45,6 +44,14 @@ const App = () => {
             <Route path="/about/philanthropy" element={<Philanthropy />} />
             <Route path="/about/history" element={<HistoryPage />} />
             <Route path="/about/house" element={<HousingPage />} />
+            <Route path="/about/health-and-safety" element={<HealthAndSafety />} />
+            <Route path="/about/awards" element={<Awards />} />
+
+            {/* New external redirect path */}
+            <Route
+              path="/about/dke-website"
+              element={<Navigate to="https://www.dke.org" replace />}
+            />
 
             <Route path="/calendar/rush" element={<RushCalendar />} />
             <Route path="/calendar/upcoming" element={<Calendar />} />
@@ -55,11 +62,6 @@ const App = () => {
 
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<ContactPage />} />
-
-            <Route path="/about/health-and-safety" element={<HealthAndSafety />} />
-            <Route path="/about/awards" element={<Awards />} />
-
-            
           </Routes>
         </MainContent>
         <Footer />
