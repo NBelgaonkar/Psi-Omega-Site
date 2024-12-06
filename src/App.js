@@ -18,7 +18,7 @@ import OfficerPage from './components/officers';
 import Philanthropy from './components/Philanthropy';
 import POAA from './components/POAA';
 import RushCalendar from './components/Rush';
-import GlobalStyle from './globalStyles'
+/*import GlobalStyle from './globalStyles'*/
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -35,7 +35,7 @@ const App = () => {
   return (
     <Router>
       <AppContainer>
-        <GlobalStyle />
+        {/* <GlobalStyle /> */}
         <Header />
         <MainContent>
           <Routes>
