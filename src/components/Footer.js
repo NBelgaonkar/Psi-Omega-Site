@@ -155,6 +155,9 @@ const Footer = () => {
             <li>
               <a href="/about/history">Chapter History</a>
             </li>
+            <li>
+              <a href="https://dke.org/" target="_blank" rel="noopener noreferrer">DKE IHQ Official Website</a>
+            </li>
           </ul>
         </Section>
 
