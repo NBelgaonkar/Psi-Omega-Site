@@ -215,4 +215,7 @@ Docker is used to locally host the website and a psql database. From there, ngin
 
 There's already a cronjob to have certbot automatically renew the SSL certificates for the website to be on HTTPS.
 
+### Monitoring the AWS Instance
+Occasionally, the server will go down. It is important to do regular checks on the instance through the AWS console to make sure it passes all the security checks and has no alarms.
+If there are any failures or alarms, shut the server down and start it again. This will take a moment, but this should reset all the connections and allow access.
   
