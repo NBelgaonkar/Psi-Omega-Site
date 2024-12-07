@@ -106,6 +106,12 @@ const ContactPage = () => {
         { href: 'https://linktr.ee/dke_rpi', text: 'Linktree', icon: <FaLink /> },
       ],
     },
+    {
+      title: 'Technical Improvements or Issues',
+      link: 'mailto:it.dkepsiomega@gmail.com',
+      text: 'it.dkepsiomega@gmail.com',
+      icon: <FaEnvelope />,
+    },
   ];
 
   return (
