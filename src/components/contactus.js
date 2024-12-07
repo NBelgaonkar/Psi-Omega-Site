@@ -94,6 +94,12 @@ const ContactPage = () => {
       icon: <FaEnvelope />,
     },
     {
+      title: 'Philanthropic Partnerships and Opportunities',
+      link: 'mailto:philanthropy.dkepsiomega@gmail.com',
+      text: 'philanthropy.dkepsiomega@gmail.com',
+      icon: <FaEnvelope />,
+    },
+    {
       title: 'Follow Us',
       links: [
         { href: 'https://www.instagram.com/dke_rpi/', text: '@dke_rpi', icon: <FaInstagram /> },

@@ -147,7 +147,7 @@ const MerchStore = () => {
         </Paragraph>
 
         <Paragraph>
-          <strong>Need assistance?</strong> Contact our merch coordinator at merch@psiomega.org for any questions or bulk orders.
+          <strong>Need assistance?</strong> Contact our merchandise coordinator at marketing.dkepsiomega@gmail.com for any questions or bulk orders.
         </Paragraph>
       </Container>
     </>
