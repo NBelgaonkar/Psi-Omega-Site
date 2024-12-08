@@ -24,10 +24,8 @@ app.post('/api/admin-login', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Password not set in database' });
     }
 
-    const storedPassword = result.rows[0].password_hash;
-    console.log(storedPassword);
-    console.log(result)
-
+    const storedPassword = result.rows[0].password;
+    
     if (password === storedPassword) {
       return res.json({ success: true, message: 'Login successful' });
     } else {
