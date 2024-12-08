@@ -25,11 +25,13 @@ app.post('/api/admin-login', async (req, res) => {
     }
 
     const storedPassword = result.rows[0].password_hash;
+    console.log(storedPassword);
+    console.log(result)
 
     if (password === storedPassword) {
       return res.json({ success: true, message: 'Login successful' });
     } else {
-      return res.json({ success: false, message: 'result: ' + result + ' storedpass: ' + storedPassword });
+      return res.json({ success: false, message: 'bad pass' });
     }
   } catch (error) {
     console.error('Error during login:', error);
