@@ -29,7 +29,7 @@ app.post('/api/admin-login', async (req, res) => {
     if (password === storedPassword) {
       return res.json({ success: true, message: 'Login successful' });
     } else {
-      return res.json({ success: false, message: 'Incorrect password' });
+      return res.json({ success: false, message: 'Password' + password + 'is incorrect' });
     }
   } catch (error) {
     console.error('Error during login:', error);
