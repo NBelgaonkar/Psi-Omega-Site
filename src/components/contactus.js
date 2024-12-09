@@ -94,11 +94,23 @@ const ContactPage = () => {
       icon: <FaEnvelope />,
     },
     {
+      title: 'Philanthropic Partnerships and Opportunities',
+      link: 'mailto:philanthropy.dkepsiomega@gmail.com',
+      text: 'philanthropy.dkepsiomega@gmail.com',
+      icon: <FaEnvelope />,
+    },
+    {
       title: 'Follow Us',
       links: [
         { href: 'https://www.instagram.com/dke_rpi/', text: '@dke_rpi', icon: <FaInstagram /> },
         { href: 'https://linktr.ee/dke_rpi', text: 'Linktree', icon: <FaLink /> },
       ],
+    },
+    {
+      title: 'Technical Improvements or Issues',
+      link: 'mailto:it.dkepsiomega@gmail.com',
+      text: 'it.dkepsiomega@gmail.com',
+      icon: <FaEnvelope />,
     },
   ];
 
