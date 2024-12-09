@@ -39,10 +39,14 @@ app.post('/api/admin-login', async (req, res) => {
 
 // API endpoint (get events)
 app.get('/api/events', async (req, res) => {
-  const result = await pool.query('SELECT * FROM events');
-  res.json(result.rows);
+  try {
+    const result = await pool.query('SELECT * FROM events');
+    res.json(result.rows);
+  } catch (error) {
+    console.error('Error fetching events:', error);
+    res.status(500).json({ error: 'Failed to fetch events' });
+  }
 });
-
 // API endpoint (add events)
 app.post('/api/events', async (req, res) => {
   const { title, time, date, location, description } = req.body;
