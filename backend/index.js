@@ -47,6 +47,7 @@ app.get('/api/events', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch events' });
   }
 });
+
 // API endpoint (add events)
 app.post('/api/events', async (req, res) => {
   const { title, time, date, location, description } = req.body;
