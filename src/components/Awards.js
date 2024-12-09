@@ -89,7 +89,7 @@ const Awards = () => {
           </Paragraph>
           <Paragraph>
           Psi Omega also made impressive strides in campus presence, academic achievement, and community service,
-          raising over $1,000 for charity and dedicating record-setting hours to philanthropic initiatives. These efforts
+          raising over $1,500 for charity and dedicating record-setting hours to philanthropic initiatives. These efforts
           showcase Psi Omega’s commitment to brotherhood, leadership, and excellence.
           </Paragraph>
         </Section>
