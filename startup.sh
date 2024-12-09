@@ -25,15 +25,15 @@ echo "Refreshing Nginx..."
 
 # Define paths and domain
 LOCAL_NGINX_CONF="./nginx.conf"
-NGINX_SITES_AVAILABLE="/etc/nginx/sites-available/default"
+NGINX_CONF="/etc/nginx/nginx.conf" 
 DOMAIN="dekesrpi.org"
 EMAIL="it.dkepsiomega@gmail.com"
 
 # Step 1: Copy the local nginx.conf to /etc/nginx/sites-available as 'default'
 if [ -f "$LOCAL_NGINX_CONF" ]; then
-    echo "Copying local nginx.conf to $NGINX_SITES_AVAILABLE..."
-    sudo cp "$LOCAL_NGINX_CONF" "$NGINX_SITES_AVAILABLE"
-    echo "Successfully copied nginx.conf to sites-available as 'default'."
+    echo "Copying local nginx.conf to "$NGINX_CONF"..."
+    sudo cp "$LOCAL_NGINX_CONF" "$NGINX_CONF"
+    echo "copy done."
 else
     echo "Error: Local nginx.conf not found in the current directory."
     exit 1
