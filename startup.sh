@@ -39,6 +39,8 @@ if [ -f "$LOCAL_NGINX_CONF" ]; then
     echo "Copying local nginx.conf to "$LOCAL_NGINX_CONF"..."
     sudo cp "$LOCAL_NGINX_CONF" "$LOCAL_NGINX_CONF"
     echo "copies done."
+    echo "creating symbolic link..."
+    sudo ln -s "$NGINX_SITES_AVAILABLE" "/etc/nginx/sites-enabled/dekesrpi.org"
 else
     echo "Error: Local nginx.conf not found in the current directory."
     exit 1
@@ -58,7 +60,8 @@ fi
 
 # Step 3: Register SSL certificates using Certbot
 echo "Registering SSL certificates for $DOMAIN..."
-sudo certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" --email "$EMAIL" --agree-tos --no-eff-email
+sudo certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" --email "$EMAIL" --agree-tos --no-eff-email --non-interactive
+
 
 # Check if Certbot succeeded
 if [ $? -eq 0 ]; then
@@ -66,4 +69,14 @@ if [ $? -eq 0 ]; then
 else
     echo "Error: Failed to register SSL certificates."
     exit 1
+fi
+
+# Step 4: Check if the Certbot cron job file exists
+CRON_FILE="/etc/cron.d/certbot"
+
+# Check if the Certbot cron job file exists
+if [ -f "$CRON_FILE" ]; then
+    echo "Certbot cron job file exists: $CRON_FILE"
+else
+    echo "Certbot cron job file not found: $CRON_FILE"
 fi
