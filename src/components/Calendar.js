@@ -131,10 +131,14 @@ const Calendar = () => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get('/api/events');
-        const eventData = response.data.map((event) => ({
-          ...event,
-          date: new Date(event.event_date), // Parse date correctly
-        }));
+        const eventData = response.data.map((event) => {
+          // Combine date and time and ensure it's treated as UTC
+          const combinedDateTime = new Date(`${event.event_date.split('T')[0]}T${event.event_time}Z`);
+          return {
+            ...event,
+            date: combinedDateTime, // Ensure correct time zone handling
+          };
+        });
         setEvents(eventData);
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -142,6 +146,7 @@ const Calendar = () => {
     };
     fetchEvents();
   }, []);
+  
   
 
   const startMonth = startOfMonth(currentMonth);
