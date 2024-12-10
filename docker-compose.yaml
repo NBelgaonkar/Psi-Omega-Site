@@ -1,6 +1,15 @@
 version: '3.3'
 
 services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - psql
+    networks:
+      - psi-omega-network
+
   psi-omega-server:
     container_name: psi-omega-server
     build: .
@@ -11,7 +20,7 @@ services:
       - PORT=3000
     networks:
       - psi-omega-network
-
+      
   psql:
     image: postgres:latest
     environment:

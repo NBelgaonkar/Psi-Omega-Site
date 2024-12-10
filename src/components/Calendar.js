@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   addMonths,
   eachDayOfInterval,
@@ -11,26 +12,24 @@ import {
   startOfWeek,
   subMonths,
 } from 'date-fns';
+import styled from 'styled-components';
 import ChapterCrest from '../Images/Psi-Omega-Crest.png'; 
 import NationalCrest from '../Images/dke-coat-of-arms.png'; 
-import styled from 'styled-components';
-
 
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center; /* Vertically center content */
+  align-items: center;
   padding: 20px;
-  box-sizing: border-box; /* Prevent padding from causing overflow */
-  flex-grow: 1; /* Allow the container to fill available space */
+  box-sizing: border-box;
+  flex-grow: 1;
 `;
-
 
 const Crest = styled.img`
   width: ${(props) => props.width || '150px'};
   height: auto;
-  margin: 0 20px; 
-  align-self: center; 
+  margin: 0 20px;
+  align-self: center;
 `;
 
 const CalendarContainer = styled.div`
@@ -124,32 +123,26 @@ const Event = styled.div`
 
 const Calendar = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [events, setEvents] = useState([]);
   const currentDay = new Date();
 
-  // Static events data
-  const events = [
-    {
-      date: new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 5),
-      title: 'Bowling',
-      time: '6:00 PM',
-      location: 'Union Lanes',
-      description: 'Join us for a fun evening of bowling!',
-    },
-    {
-      date: new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 15),
-      title: 'Casino Night',
-      time: '8:00 PM',
-      location: 'Grand Hall',
-      description: 'Test your luck at our Casino Night!',
-    },
-    {
-      date: new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 25),
-      title: 'Bid Dinner',
-      time: '7:00 PM',
-      location: 'Chapter House',
-      description: 'Formal dinner to celebrate the new members.',
-    },
-  ];
+  // Fetch events from the backend
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get('/api/events');
+        const eventData = response.data.map((event) => ({
+          ...event,
+          date: new Date(event.event_date + 'T00:00:00'), // Force the time to midnight in local time zone
+        }));
+        setEvents(eventData);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
+  
 
   const startMonth = startOfMonth(currentMonth);
   const endMonth = endOfMonth(currentMonth);
@@ -181,7 +174,7 @@ const Calendar = () => {
     <>
       <PageContainer>
         <Crest
-          src={ChapterCrest} // Replace with the actual path to the chapter crest image
+          src={ChapterCrest}
           alt="Chapter Crest"
           width="150px"
         />
@@ -212,7 +205,7 @@ const Calendar = () => {
           </CalendarGrid>
         </CalendarContainer>
         <Crest
-          src={NationalCrest} // Replace with the actual path to the national crest image
+          src={NationalCrest}
           alt="National Crest"
           width="150px"
         />

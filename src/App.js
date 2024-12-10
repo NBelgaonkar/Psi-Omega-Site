@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import AlumniGetInvolved from './components/AlumniGetInvolved';
 import AlumniRecentEvents from './components/AlumniRecentEvents';
 import Awards from './components/Awards';
+import Admin from './components/Admin';
 import Brotherhood from './components/Brotherhood';
 import Calendar from './components/Calendar';
 import ContactPage from './components/contactus';
@@ -40,7 +41,8 @@ const App = () => {
         <MainContent>
           <Routes>
             <Route path="/" element={<HomePage />} />
-
+            
+            <Route path="/admin" element={<Admin />} />
             <Route path="/about/officers" element={<OfficerPage />} />
             <Route path="/about/brotherhood" element={<Brotherhood />} />
             <Route path="/about/philanthropy" element={<Philanthropy />} />
