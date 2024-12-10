@@ -133,7 +133,7 @@ const Calendar = () => {
         const response = await axios.get('/api/events');
         const eventData = response.data.map((event) => ({
           ...event,
-          date: new Date(event.event_date), // Ensure the date is a JavaScript Date object
+          date: new Date(event.event_date + 'T00:00:00'), // Force the time to midnight in local time zone
         }));
         setEvents(eventData);
       } catch (error) {
@@ -142,6 +142,7 @@ const Calendar = () => {
     };
     fetchEvents();
   }, []);
+  
 
   const startMonth = startOfMonth(currentMonth);
   const endMonth = endOfMonth(currentMonth);
