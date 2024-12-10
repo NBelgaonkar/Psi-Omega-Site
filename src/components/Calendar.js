@@ -133,7 +133,7 @@ const Calendar = () => {
         const response = await axios.get('/api/events');
         const eventData = response.data.map((event) => ({
           ...event,
-          date: new Date(event.event_date + 'T00:00:00'), // Force the time to midnight in local time zone
+          date: new Date(event.event_date), // Parse date correctly
         }));
         setEvents(eventData);
       } catch (error) {
