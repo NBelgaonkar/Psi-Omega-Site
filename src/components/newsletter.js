@@ -30,6 +30,15 @@ const Newsletter = () => {
 
                 <h2>Sweethearts</h2>
                 <p>The brotherhood has decided to sweetheart two sisters from Alpha Gamma Delta, Jolie Dolan and Brother Mackenzie (Left), and Meghan Shipley and Brother Rodgers (Right).</p>
+
+                <h2>Semester Away</h2>
+                <p>We are sending four Juniors on their Arch Away Semester in the fall: Dylan Sutherland (Left), Henry Holt (Middle), Dylan Ohno (Right), and not pictured Eric Olson. Brother Sutherland will be studying abroad in Copenhagen, Denmark, and traveling the nearby countries. Brother Holt will be doing an internship at NYISO, working on the marketing solutions engineering team. Brother Ohno will be doing an internship at General Dynamics Electric Boat, working on internal structures. Brother Olson will also be working at General Dynamics Electric Boat, working in the non-nuclear engineering department.</p>
+
+                <h2>Community Service Achievements</h2>
+                <p>This semester was, by every statistical measure, the best Psi Omega has ever had. Motivated by a good Fall semester, we were able to total over 320 hours of community service with an average of 18 hours of community service per brother. The brothers worked hard this semester through food pantries, fundraisers, and days of service. A few brothers even crossed the 30 community service hours mark! Through all the hard work, we managed to donate just over $850 this summer, which put us just over $1,500 for the entire year. It will be a very special thing if these numbers are ever replicated. We hope to build off this once again going into next semester.</p>
+
+                <h2>Rush Recap</h2>
+                <p>Rush was very action-packed with some of the usual events like Mac & Milkshakes and Laser Tag, along with some new events like Casino Night and Dodgeball. Although no new members were acquired, the brotherhood learned many lessons from it and starting next semester will enact many new recruitment techniques learned from other chapters and DKE IHQ. With the new house, we will be sure to utilize it as much as possible and we have many new ideas for events in store.</p>
             </section>
 
             <footer className="newsletter-footer">
