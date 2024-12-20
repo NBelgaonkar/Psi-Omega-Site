@@ -1,0 +1,42 @@
+{
+  "showImages": true,
+  "imagesPath": "POAA/",
+  "members": [
+    {
+      "position": "President",
+      "name": "Jackson Lyons",
+      "year": "'16",
+      "imageUrl": "alumni_JackL.jpeg"
+    },
+    {
+      "position": "Vice President",
+      "name": "Zachary Neidich",
+      "year": "'21",
+      "imageUrl": "alumni_ZachN.jpeg"
+    },
+    {
+      "position": "Treasurer",
+      "name": "Orlando Hernandez",
+      "year": "'15",
+      "imageUrl": "alumni_OrlandoH.jpeg"
+    },
+    {
+      "position": "Chapter Advisor",
+      "name": "Robert Riccio",
+      "year": "'19",
+      "imageUrl": "alumni_RobR.jpeg"
+    },
+    {
+      "position": "Director at Large",
+      "name": "Ryan Michaels",
+      "year": "'17",
+      "imageUrl": "alumni_RyanM.jpeg"
+    },
+    {
+      "position": "Director at Large",
+      "name": "James Gordon",
+      "year": "'19",
+      "imageUrl": "alumni_JamesG.png"
+    }
+  ]
+}

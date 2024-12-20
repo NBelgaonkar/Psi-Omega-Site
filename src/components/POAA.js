@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import defaultProfileImage from '../Images/blank-profile-picture.png';
+import poaaData from '../content/POAAboard.json';
+
 
 
 const Container = styled.div`
@@ -73,70 +74,14 @@ const MemberImage = styled.img`
   border: 2px solid #ccc;
 `;
 
-const poaa_board = [
-  {
-    position: "President",
-    name: "Unknown",
-    year: "'26",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Vice President",
-    name: "Unknown",
-    year: "'26",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Treasurer",
-    name: "Unknown",
-    year: "'26",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Board Member",
-    name: "Unknown",
-    year: "'27",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Board Member",
-    name: "Unknown",
-    year: "'26",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Board Member",
-    name: "Unknown",
-    year: "'26",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Board Member",
-    name: "Unknown",
-    year: "'25",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Board Member",
-    name: "Unknown",
-    year: "'25",
-    imageUrl: defaultProfileImage
-  },
-  {
-    position: "Board Member",
-    name: "Unknown",
-    year: "'24",
-    imageUrl: defaultProfileImage
-  },
-];
 
-const MemberList = ({ title, members }) => (
+const MemberList = ({ title, data }) => (
   <Section>
     <h1>{title}</h1>
     <ImageGrid>
-      {members.map((member, index) => (
+      {data.members.map((member, index) => (
         <MemberContainer key={index}>
-          {member.imageUrl && <MemberImage src={member.imageUrl} alt={member.position} />}
+          {member.imageUrl && <MemberImage src={require("../Images/" + data.imagesPath + member.imageUrl)} alt={member.position} />}
           <PositionTitle>{member.position}</PositionTitle>
           <MemberName>{member.name} {member.year}</MemberName>
         </MemberContainer>
@@ -158,7 +103,7 @@ const POAA = () => {
           ensure the continued success of our brotherhood.
         </Paragraph>
 
-        <MemberList title="Meet the POAA Board" members={poaa_board} />
+        <MemberList title="Meet the POAA Board" data={poaaData} />
       </Container>
     </>
   );
