@@ -7,7 +7,7 @@ import {
   startOfWeek,
 } from 'date-fns';
 import styled from 'styled-components';
-import rampantLion from '../Images/dke-lion.png'; // Replace with the correct path
+import rampantLion from '../Images/dke-lion.png';
 import axios from 'axios';
 
 // Styled Components
@@ -96,34 +96,26 @@ const Event = styled.div`
   }
 `;
 
-// Helper function to determine title
 const getRushTitle = (events) => {
   if (!events || events.length === 0) return 'ΔKE Rush Calendar';
 
-  const firstEventDate = events[0]?.date instanceof Date && !isNaN(events[0].date)
-    ? events[0].date
-    : new Date();
-  const lastEventDate = events[events.length - 1]?.date instanceof Date &&
-    !isNaN(events[events.length - 1].date)
-    ? events[events.length - 1].date
-    : new Date();
+  // Sort events by date to find the earliest event
+  const sortedEvents = [...events].sort((a, b) => a.date - b.date);
+  const firstEventDate = sortedEvents[0]?.date;
 
-  const firstYear = firstEventDate.getFullYear();
-  const lastYear = lastEventDate.getFullYear();
+  // Ensure valid date before calculating title
+  if (!firstEventDate || isNaN(firstEventDate)) return 'ΔKE Rush Calendar';
 
-  if (firstYear === lastYear) {
-    const month = firstEventDate.getMonth() + 1;
-    const season = month >= 7 && month <= 12 ? 'Fall' : 'Spring';
-    return `ΔKE ${season} Rush ${firstYear}`;
-  }
+  const month = firstEventDate.getMonth() + 1;
+  const year = firstEventDate.getFullYear();
+  const season = month >= 7 && month <= 12 ? 'Fall' : 'Spring';
 
-  return `ΔKE Rush ${firstYear} - ${lastYear}`;
+  return `ΔKE ${season} Rush ${year}`;
 };
 
 const RushCalendar = () => {
   const [events, setEvents] = useState([]);
 
-  // Fetch events from the database
   useEffect(() => {
     const fetchRushEvents = async () => {
       try {
@@ -140,14 +132,15 @@ const RushCalendar = () => {
     fetchRushEvents();
   }, []);
 
-  // Generate week intervals based on events
-  const firstEventDate = events.length > 0 ? events[0].date : new Date();
+  // Generate week intervals
+  const sortedEvents = [...events].sort((a, b) => a.date - b.date);
+  const firstEventDate = sortedEvents.length > 0 ? sortedEvents[0].date : new Date();
   const lastEventDate =
-    events.length > 0 ? events[events.length - 1].date : new Date();
+    sortedEvents.length > 0 ? sortedEvents[sortedEvents.length - 1].date : new Date();
   const weeks = [];
   let currentStart = startOfWeek(firstEventDate);
 
-  while (currentStart <= lastEventDate) {
+  while (currentStart <= endOfWeek(lastEventDate)) {
     weeks.push(
       eachDayOfInterval({
         start: currentStart,
