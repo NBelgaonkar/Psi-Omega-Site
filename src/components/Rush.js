@@ -4,8 +4,7 @@ import rampantLion from '../Images/dke-lion.png';
 import axios from 'axios';
 import { eachDayOfInterval, endOfWeek, format, isSameDay, startOfWeek } from 'date-fns';
 
-
-
+// Styled Components
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
   max-width: 800px;
@@ -15,40 +14,39 @@ const CalendarContainer = styled.div`
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative; // Establish a positioning context 
+  position: relative;
 `;
 
 const LionImage = styled.img`
   position: absolute;
-  top: 100px; // Position below the title 
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px; // Restrict the lion's width 
-  height: auto; // Maintain aspect ratio 
-  z-index: 0; // Place it in the background 
-  pointer-events: none; // Prevent interaction with the lion 
+  width: 500px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
 `;
 
 const Week = styled.div`
-  position: relative; // Ensure content stacks correctly above the lion 
+  position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-bottom: 20px;
   text-align: left;
-  z-index: 1; // Place content above the lion 
+  z-index: 1;
 `;
 
 const CalendarTitle = styled.h1`
   color: #221F73;
   margin-bottom: 20px;
-  position: relative; // Ensure title stacks above the lion 
-  z-index: 1; // Title above the lion 
+  position: relative;
+  z-index: 1;
 `;
-
 
 const Day = styled.div`
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8); // Semi-transparent background 
+  background-color: rgba(255, 255, 255, 0.8);
   border: ${(props) =>
     props.isInviteOnly
       ? '3px dashed #B32017'
@@ -75,7 +73,6 @@ const Event = styled.div`
   background-color: #221F73;
   color: #fff;
   border-radius: 4px;
-  position: relative;
 
   .invite-only {
     font-size: 10px;
@@ -86,7 +83,6 @@ const Event = styled.div`
   }
 `;
 
-
 const WeekdayHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -96,29 +92,27 @@ const WeekdayHeader = styled.div`
   color: #B32017;
 `;
 
-// Helper function to determine the title
 const getRushTitle = (events) => {
-  if (!events || events.length === 0) return "ΔKE Rush"; // Default title
-
-  const firstEventDate = new Date(events[0].date);
-  const month = firstEventDate.getMonth() + 1; // Months are 0-indexed
+  if (!events || events.length === 0) return "ΔKE Rush Calendar";
+  const firstEventDate = new Date(events[0].event_date);
+  const month = firstEventDate.getMonth() + 1;
   const year = firstEventDate.getFullYear();
-
   const season = month >= 7 && month <= 12 ? "Fall" : "Spring";
   return `ΔKE ${season} Rush ${year}`;
 };
 
-
-  
 const RushCalendar = () => {
-  // retrieve events
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     const fetchRushEvents = async () => {
       try {
         const response = await axios.get('/api/rush');
-        setEvents(response.data);
+        const eventData = response.data.map((event) => ({
+          ...event,
+          event_date: new Date(event.event_date), // Ensure date is a Date object
+        }));
+        setEvents(eventData);
       } catch (error) {
         console.error('Error fetching rush events:', error);
       }
@@ -126,14 +120,17 @@ const RushCalendar = () => {
     fetchRushEvents();
   }, []);
 
-  // Helper function to find the first and last event dates
-  const firstEventDate = events[0].date;
-  const lastEventDate = events[events.length - 1].date;
+  if (!events.length) {
+    return <CalendarContainer>Loading...</CalendarContainer>;
+  }
 
-  // Helper function to get all weeks containing events
+  const firstEventDate = events[0]?.event_date || new Date();
+  const lastEventDate = events[events.length - 1]?.event_date || new Date();
+
   const weeks = [];
   let currentStart = startOfWeek(firstEventDate);
-  while (currentStart <= lastEventDate) {
+
+  while (currentStart <= endOfWeek(lastEventDate)) {
     const week = eachDayOfInterval({
       start: currentStart,
       end: endOfWeek(currentStart),
@@ -142,12 +139,11 @@ const RushCalendar = () => {
     currentStart = new Date(currentStart.setDate(currentStart.getDate() + 7));
   }
 
-  // Render the weekday headers
   const renderWeekdayHeaders = () => {
     const weekdays = eachDayOfInterval({
       start: startOfWeek(new Date()),
       end: endOfWeek(new Date()),
-    }).map((day) => format(day, 'EEEE')); // Full weekday names
+    }).map((day) => format(day, 'EEEE'));
     return (
       <WeekdayHeader>
         {weekdays.map((weekday, index) => (
@@ -158,23 +154,21 @@ const RushCalendar = () => {
   };
 
   const renderEvents = (day) => {
-    const dayEvents = events.filter((event) => isSameDay(event.event_date, day));
-    return dayEvents.length > 0
-      ? dayEvents.map((event, index) => (
-          <Event key={event.id} isInviteOnly={event.isInviteOnly}>
-            <div><strong>{event.title}</strong></div>
-            <div>{event.event_time}</div>
-            {!event.isInviteOnly && <div>{event.location}</div>}
-            {event.isInviteOnly && <span className="invite-only">Invite Only</span>}
-          </Event>
-        ))
-      : null; // Blank for days without events
+    const dayEvents = events.filter((event) =>
+      isSameDay(event.event_date, day)
+    );
+    return dayEvents.map((event, index) => (
+      <Event key={index} isInviteOnly={event.is_invite_only}>
+        <div><strong>{event.title}</strong></div>
+        <div>{event.event_time}</div>
+        {event.is_invite_only && <span className="invite-only">Invite Only</span>}
+      </Event>
+    ));
   };
 
   const title = getRushTitle(events);
 
   return (
-    <>
     <CalendarContainer>
       <LionImage src={rampantLion} alt="Rampant Lion" />
       <CalendarTitle>{title}</CalendarTitle>
@@ -182,9 +176,11 @@ const RushCalendar = () => {
       {weeks.map((week, weekIndex) => (
         <Week key={weekIndex}>
           {week.map((day, dayIndex) => {
-            const isEvent = events.some((event) => isSameDay(event.date, day));
+            const isEvent = events.some((event) =>
+              isSameDay(event.event_date, day)
+            );
             const isInviteOnly = events.some(
-              (event) => isSameDay(event.date, day) && event.isInviteOnly
+              (event) => isSameDay(event.event_date, day) && event.is_invite_only
             );
             return (
               <Day key={dayIndex} isEvent={isEvent} isInviteOnly={isInviteOnly}>
@@ -196,11 +192,11 @@ const RushCalendar = () => {
         </Week>
       ))}
     </CalendarContainer>
-    </>
   );
 };
 
 export default RushCalendar;
+
 
 
 /* -------- Leaving this here for reference ------------
