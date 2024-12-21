@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import rampantLion from '../Images/dke-lion.png';
 import axios from 'axios';
-import { eachDayOfInterval, endOfWeek, format, isSameDay, startOfWeek } from 'date-fns';
+import { 
+  eachDayOfInterval, 
+  endOfWeek, 
+  format, 
+  isSameDay, 
+  startOfWeek 
+} from 'date-fns';
 
 // Styled Components
 const CalendarContainer = styled.div`
@@ -111,6 +117,7 @@ const RushCalendar = () => {
         const eventData = response.data.map((event) => ({
           ...event,
           event_date: new Date(event.event_date), // Ensure date is a Date object
+          is_invite_only: event.is_invite_only === 'Yes', // Normalize to boolean
         }));
         setEvents(eventData);
       } catch (error) {
@@ -161,6 +168,7 @@ const RushCalendar = () => {
       <Event key={index} isInviteOnly={event.is_invite_only}>
         <div><strong>{event.title}</strong></div>
         <div>{event.event_time}</div>
+        {!event.is_invite_only && <div>{event.location}</div>}
         {event.is_invite_only && <span className="invite-only">Invite Only</span>}
       </Event>
     ));
