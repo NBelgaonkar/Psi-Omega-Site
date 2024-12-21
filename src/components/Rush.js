@@ -14,11 +14,11 @@ import axios from 'axios';
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
   max-width: 1000px;
-  margin: 50px auto; /* Added more space to center */
+  margin: 50px auto;
   text-align: center;
   background-color: #f8f9fa;
   border-radius: 8px;
-  padding: 30px; /* Increased padding */
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 `;
@@ -28,10 +28,10 @@ const LionImage = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px; /* Adjusted width */
+  width: 600px;
   height: auto;
   z-index: 0;
-  opacity: 0.1; /* Increased transparency */
+  opacity: 0.1;
   pointer-events: none;
 `;
 
@@ -71,7 +71,7 @@ const Day = styled.div`
   text-align: left;
   position: relative;
   box-shadow: ${(props) => (props.isEvent ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
-  overflow: hidden; /* Prevents content overflow */
+  overflow: hidden;
 `;
 
 const DayHeader = styled.div`
@@ -100,7 +100,11 @@ const Event = styled.div`
 const getRushTitle = (events) => {
   if (!events || events.length === 0) return 'ΔKE Rush Calendar';
 
-  const firstEventDate = new Date(events[0].date);
+  // Ensure dates are valid
+  const firstEventDate = events[0]?.date instanceof Date && !isNaN(events[0].date)
+    ? events[0].date
+    : new Date();
+
   const month = firstEventDate.getMonth() + 1;
   const year = firstEventDate.getFullYear();
   const season = month >= 7 && month <= 12 ? 'Fall' : 'Spring';
