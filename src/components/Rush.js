@@ -121,7 +121,7 @@ const RushCalendar = () => {
   }, []);
 
   if (!events.length) {
-    return <CalendarContainer>Loading...</CalendarContainer>;
+    return <CalendarContainer>No Rush Events!</CalendarContainer>;
   }
 
   const firstEventDate = events[0]?.event_date || new Date();
