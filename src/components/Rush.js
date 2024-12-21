@@ -100,16 +100,24 @@ const Event = styled.div`
 const getRushTitle = (events) => {
   if (!events || events.length === 0) return 'ΔKE Rush Calendar';
 
-  // Ensure dates are valid
   const firstEventDate = events[0]?.date instanceof Date && !isNaN(events[0].date)
     ? events[0].date
     : new Date();
+  const lastEventDate = events[events.length - 1]?.date instanceof Date &&
+    !isNaN(events[events.length - 1].date)
+    ? events[events.length - 1].date
+    : new Date();
 
-  const month = firstEventDate.getMonth() + 1;
-  const year = firstEventDate.getFullYear();
-  const season = month >= 7 && month <= 12 ? 'Fall' : 'Spring';
+  const firstYear = firstEventDate.getFullYear();
+  const lastYear = lastEventDate.getFullYear();
 
-  return `ΔKE ${season} Rush ${year}`;
+  if (firstYear === lastYear) {
+    const month = firstEventDate.getMonth() + 1;
+    const season = month >= 7 && month <= 12 ? 'Fall' : 'Spring';
+    return `ΔKE ${season} Rush ${firstYear}`;
+  }
+
+  return `ΔKE Rush ${firstYear} - ${lastYear}`;
 };
 
 const RushCalendar = () => {
