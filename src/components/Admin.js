@@ -13,6 +13,7 @@ function Admin() {
     date: '',
     location: '',
     description: '',
+    inviteOnly: false,
   });
   const [selectedTables, setSelectedTables] = useState([]);
 
@@ -159,6 +160,14 @@ function Admin() {
               />
               Add to Rush
             </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={newEvent.inviteOnly}
+                onChange={(e) => setNewEvent({ ...newEvent, inviteOnly: e.target.checked })}
+              />
+              Invite Only
+            </label>
           </div>
           <button onClick={handleAddEvent}>Add Event</button>
 
@@ -199,6 +208,7 @@ function Admin() {
                 <th>Date</th>
                 <th>Location</th>
                 <th>Description</th>
+                <th>Invite Only</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -210,6 +220,7 @@ function Admin() {
                   <td>{event.event_date}</td>
                   <td>{event.location}</td>
                   <td>{event.description}</td>
+                  <td>{event.inviteOnly ? 'Yes' : 'No'}</td>
                   <td>
                     <button onClick={() => handleDeleteEvent(event.id, 'rush')}>Delete</button>
                   </td>

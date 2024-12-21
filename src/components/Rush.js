@@ -2,70 +2,116 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import rampantLion from '../Images/dke-lion.png';
 import axios from 'axios';
+import { eachDayOfInterval, endOfWeek, format, isSameDay, startOfWeek } from 'date-fns';
 
-// Styled Components
+
+
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 800px;
+  margin: auto;
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: #f5f5f5;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: relative; // Establish a positioning context 
 `;
 
 const LionImage = styled.img`
   position: absolute;
-  top: 50%;
+  top: 100px; // Position below the title 
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: auto;
-  z-index: 0;
-  opacity: 0.1;
-  pointer-events: none;
+  transform: translateX(-50%);
+  width: 500px; // Restrict the lion's width 
+  height: auto; // Maintain aspect ratio 
+  z-index: 0; // Place it in the background 
+  pointer-events: none; // Prevent interaction with the lion 
+`;
+
+const Week = styled.div`
+  position: relative; // Ensure content stacks correctly above the lion 
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 20px;
+  text-align: left;
+  z-index: 1; // Place content above the lion 
 `;
 
 const CalendarTitle = styled.h1`
-  color: #221f73;
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 1;
+  color: #221F73;
+  margin-bottom: 20px;
+  position: relative; // Ensure title stacks above the lion 
+  z-index: 1; // Title above the lion 
 `;
 
-const EventList = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-`;
 
-const EventItem = styled.div`
-  background-color: #fff;
-  border: 1px solid #ddd;
+const Day = styled.div`
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); // Semi-transparent background 
+  border: ${(props) =>
+    props.isInviteOnly
+      ? '3px dashed #B32017'
+      : props.isEvent
+      ? '3px solid #FDB813'
+      : '1px solid #ddd'};
   border-radius: 5px;
-  padding: 15px;
-  margin: 10px 0;
-  width: 100%;
-  max-width: 600px;
+  position: relative;
+  min-height: 100px;
   text-align: left;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: ${(props) => (props.isEvent ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
 `;
 
-const EventTitle = styled.h3`
-  color: #221f73;
-  margin: 0 0 5px;
+const DayHeader = styled.div`
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #B32017;
 `;
 
-const EventDetails = styled.p`
-  margin: 5px 0;
+const Event = styled.div`
   font-size: 14px;
-  color: #333;
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #221F73;
+  color: #fff;
+  border-radius: 4px;
+  position: relative;
+
+  .invite-only {
+    font-size: 10px;
+    font-style: italic;
+    color: #FDB813;
+    margin-top: 2px;
+    display: block;
+  }
 `;
 
+
+const WeekdayHeader = styled.div`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #B32017;
+`;
+
+// Helper function to determine the title
+const getRushTitle = (events) => {
+  if (!events || events.length === 0) return "ΔKE Rush"; // Default title
+
+  const firstEventDate = new Date(events[0].date);
+  const month = firstEventDate.getMonth() + 1; // Months are 0-indexed
+  const year = firstEventDate.getFullYear();
+
+  const season = month >= 7 && month <= 12 ? "Fall" : "Spring";
+  return `ΔKE ${season} Rush ${year}`;
+};
+
+
+  
 const RushCalendar = () => {
+  // retrieve events
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -80,31 +126,133 @@ const RushCalendar = () => {
     fetchRushEvents();
   }, []);
 
+  // Helper function to find the first and last event dates
+  const firstEventDate = events[0].date;
+  const lastEventDate = events[events.length - 1].date;
+
+  // Helper function to get all weeks containing events
+  const weeks = [];
+  let currentStart = startOfWeek(firstEventDate);
+  while (currentStart <= lastEventDate) {
+    const week = eachDayOfInterval({
+      start: currentStart,
+      end: endOfWeek(currentStart),
+    });
+    weeks.push(week);
+    currentStart = new Date(currentStart.setDate(currentStart.getDate() + 7));
+  }
+
+  // Render the weekday headers
+  const renderWeekdayHeaders = () => {
+    const weekdays = eachDayOfInterval({
+      start: startOfWeek(new Date()),
+      end: endOfWeek(new Date()),
+    }).map((day) => format(day, 'EEEE')); // Full weekday names
+    return (
+      <WeekdayHeader>
+        {weekdays.map((weekday, index) => (
+          <div key={index}>{weekday}</div>
+        ))}
+      </WeekdayHeader>
+    );
+  };
+
+  const renderEvents = (day) => {
+    const dayEvents = events.filter((event) => isSameDay(event.event_date, day));
+    return dayEvents.length > 0
+      ? dayEvents.map((event, index) => (
+          <Event key={event.id} isInviteOnly={event.isInviteOnly}>
+            <div><strong>{event.title}</strong></div>
+            <div>{event.event_time}</div>
+            {!event.isInviteOnly && <div>{event.location}</div>}
+            {event.isInviteOnly && <span className="invite-only">Invite Only</span>}
+          </Event>
+        ))
+      : null; // Blank for days without events
+  };
+
+  const title = getRushTitle(events);
+
   return (
+    <>
     <CalendarContainer>
       <LionImage src={rampantLion} alt="Rampant Lion" />
-      <CalendarTitle>ΔKE Rush Calendar</CalendarTitle>
-      <EventList>
-        {events.map((event) => (
-          <EventItem key={event.id}>
-            <EventTitle>{event.title}</EventTitle>
-            <EventDetails>
-              <strong>Date:</strong> {event.event_date}
-            </EventDetails>
-            <EventDetails>
-              <strong>Time:</strong> {event.event_time}
-            </EventDetails>
-            <EventDetails>
-              <strong>Location:</strong> {event.location}
-            </EventDetails>
-            <EventDetails>
-              <strong>Description:</strong> {event.description}
-            </EventDetails>
-          </EventItem>
-        ))}
-      </EventList>
+      <CalendarTitle>{title}</CalendarTitle>
+      {renderWeekdayHeaders()}
+      {weeks.map((week, weekIndex) => (
+        <Week key={weekIndex}>
+          {week.map((day, dayIndex) => {
+            const isEvent = events.some((event) => isSameDay(event.date, day));
+            const isInviteOnly = events.some(
+              (event) => isSameDay(event.date, day) && event.isInviteOnly
+            );
+            return (
+              <Day key={dayIndex} isEvent={isEvent} isInviteOnly={isInviteOnly}>
+                <DayHeader>{format(day, 'MMM d')}</DayHeader>
+                {renderEvents(day)}
+              </Day>
+            );
+          })}
+        </Week>
+      ))}
     </CalendarContainer>
+    </>
   );
 };
 
 export default RushCalendar;
+
+
+/* -------- Leaving this here for reference ------------
+const events = [
+  {
+    date: new Date(2024, 8, 7), // November 5, 2024
+    title: 'Mac & Milkshakes',
+    time: '5:00 PM',
+    location: 'Mothers @ Union',
+    isInviteOnly: false,
+  },
+  {
+    date: new Date(2024, 8, 11), // November 15, 2024
+    title: 'Hot Wings Challenge',
+    time: '6:00 PM',
+    location: 'Game Room @ Union',
+    isInviteOnly: false,
+  },
+  {
+    date: new Date(2024, 8, 14), // November 15, 2024
+    title: 'Ziplining',
+    time: '1:30 PM',
+    location: 'Union Horseshoe',
+    isInviteOnly: true,
+  },
+  {
+    date: new Date(2024, 8, 17), // November 15, 2024
+    title: 'Axe Throwing',
+    time: '6:00 PM',
+    location: 'Union Horseshoe',
+    isInviteOnly: true,
+  },
+  {
+    date: new Date(2024, 8, 21), // November 15, 2024
+    title: 'BBQ Cookout',
+    time: '12:00 PM',
+    location: 'Freshman Hill',
+    isInviteOnly: false,
+  },
+  {
+    date: new Date(2024, 8, 23), // November 15, 2024
+    title: 'Tacos & Trivia',
+    time: '6:00 PM',
+    location: 'Mothers @ Union',
+    isInviteOnly: false,
+  },
+  {
+    date: new Date(2024, 8, 25), // November 25, 2024
+    title: 'Bid Dinner',
+    time: '8:00 PM',
+    location: 'Chapter House',
+    isInviteOnly: true,
+  },
+];
+*/
