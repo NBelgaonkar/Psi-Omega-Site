@@ -13,25 +13,25 @@ import axios from 'axios';
 // Styled Components
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: 50px auto; /* Added more space to center */
   text-align: center;
   background-color: #f8f9fa;
   border-radius: 8px;
-  padding: 20px;
+  padding: 30px; /* Increased padding */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 `;
 
 const LionImage = styled.img`
   position: absolute;
-  top: 120px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 450px;
+  transform: translate(-50%, -50%);
+  width: 600px; /* Adjusted width */
   height: auto;
   z-index: 0;
-  opacity: 0.15;
+  opacity: 0.1; /* Increased transparency */
   pointer-events: none;
 `;
 
@@ -59,7 +59,7 @@ const Week = styled.div`
 `;
 
 const Day = styled.div`
-  padding: 10px;
+  padding: 15px;
   background-color: ${(props) =>
     props.isEvent ? 'rgba(221, 240, 255, 0.9)' : 'rgba(255, 255, 255, 0.9)'};
   border: ${(props) =>
@@ -67,10 +67,11 @@ const Day = styled.div`
       ? '2px solid #221f73'
       : '1px solid rgba(200, 200, 200, 0.6)'};
   border-radius: 5px;
-  min-height: 100px;
+  min-height: 120px;
   text-align: left;
   position: relative;
   box-shadow: ${(props) => (props.isEvent ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
+  overflow: hidden; /* Prevents content overflow */
 `;
 
 const DayHeader = styled.div`
