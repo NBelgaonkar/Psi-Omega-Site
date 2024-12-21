@@ -48,6 +48,18 @@ app.get('/api/events', async (req, res) => {
   }
 });
 
+// API endpoint (get events)
+app.get('/api/rush', async (req, res) => {
+  try {
+      const result = await pool.query('SELECT * FROM rush');
+      res.json(result.rows);
+  } catch (error) {
+      console.error('Error fetching rush events:', error);
+      res.status(500).json({ success: false, message: 'Failed to fetch rush events' });
+  }
+});
+
+
 // API endpoint (add events)
 app.post('/api/events', async (req, res) => {
   const { title, time, date, location, description } = req.body;
@@ -58,6 +70,22 @@ app.post('/api/events', async (req, res) => {
   res.json({ success: true });
 });
 
+// API endpoint (add rush events)
+app.post('/api/rush', async (req, res) => {
+  const { title, time, date, location, description } = req.body;
+  try {
+      await pool.query(
+          'INSERT INTO rush (title, event_time, event_date, location, description) VALUES ($1, $2, $3, $4, $5)',
+          [title, time, date, location, description]
+      );
+      res.json({ success: true });
+  } catch (error) {
+      console.error('Error adding rush event:', error);
+      res.status(500).json({ success: false, message: 'Failed to add rush event' });
+  }
+});
+
+
 // API endpoint (delete events)
 app.delete('/api/events/:id', async (req, res) => {
   const { id } = req.params;
@@ -65,6 +93,17 @@ app.delete('/api/events/:id', async (req, res) => {
   res.json({ success: true });
 });
 
+// API endpoint (delete rush events)
+app.delete('/api/rush/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+      await pool.query('DELETE FROM rush WHERE id = $1', [id]);
+      res.json({ success: true });
+  } catch (error) {
+      console.error('Error deleting rush event:', error);
+      res.status(500).json({ success: false, message: 'Failed to delete rush event' });
+  }
+});
 
 
 // Start the server

@@ -1,14 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { eachDayOfInterval, endOfWeek, format, isSameDay, startOfWeek } from 'date-fns';
 import styled from 'styled-components';
 import rampantLion from '../Images/dke-lion.png'; // Replace with the correct path
-
-
-
-/*
-This webpage can be connected to an event database and will be properly formated
-based on the event days and details. No update to the design is necessary.
-*/
+import axios from 'axios';
 
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -24,35 +18,34 @@ const CalendarContainer = styled.div`
 
 const LionImage = styled.img`
   position: absolute;
-  top: 100px; /* Position below the title */
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px; /* Restrict the lion's width */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 0; /* Place it in the background */
-  pointer-events: none; /* Prevent interaction with the lion */
+  width: 500px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
 `;
 
 const Week = styled.div`
-  position: relative; /* Ensure content stacks correctly above the lion */
+  position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-bottom: 20px;
   text-align: left;
-  z-index: 1; /* Place content above the lion */
+  z-index: 1;
 `;
 
 const CalendarTitle = styled.h1`
   color: #221F73;
   margin-bottom: 20px;
-  position: relative; /* Ensure title stacks above the lion */
-  z-index: 1; /* Title above the lion */
+  position: relative;
+  z-index: 1;
 `;
-
 
 const Day = styled.div`
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.8);
   border: ${(props) =>
     props.isInviteOnly
       ? '3px dashed #B32017'
@@ -90,7 +83,6 @@ const Event = styled.div`
   }
 `;
 
-
 const WeekdayHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -102,75 +94,41 @@ const WeekdayHeader = styled.div`
 
 // Helper function to determine the title
 const getRushTitle = (events) => {
-  if (!events || events.length === 0) return "ΔKE Rush"; // Default title
+  if (!events || events.length === 0) return "ΔKE Rush";
 
-  const firstEventDate = new Date(events[0].date);
-  const month = firstEventDate.getMonth() + 1; // Months are 0-indexed
+  const firstEventDate = new Date(events[0].event_date);
+  const month = firstEventDate.getMonth() + 1;
   const year = firstEventDate.getFullYear();
-
   const season = month >= 7 && month <= 12 ? "Fall" : "Spring";
+
   return `ΔKE ${season} Rush ${year}`;
 };
 
-// Example event data
-const events = [
-  {
-    date: new Date(2024, 8, 7), // November 5, 2024
-    title: 'Mac & Milkshakes',
-    time: '5:00 PM',
-    location: 'Mothers @ Union',
-    isInviteOnly: false,
-  },
-  {
-    date: new Date(2024, 8, 11), // November 15, 2024
-    title: 'Hot Wings Challenge',
-    time: '6:00 PM',
-    location: 'Game Room @ Union',
-    isInviteOnly: false,
-  },
-  {
-    date: new Date(2024, 8, 14), // November 15, 2024
-    title: 'Ziplining',
-    time: '1:30 PM',
-    location: 'Union Horseshoe',
-    isInviteOnly: true,
-  },
-  {
-    date: new Date(2024, 8, 17), // November 15, 2024
-    title: 'Axe Throwing',
-    time: '6:00 PM',
-    location: 'Union Horseshoe',
-    isInviteOnly: true,
-  },
-  {
-    date: new Date(2024, 8, 21), // November 15, 2024
-    title: 'BBQ Cookout',
-    time: '12:00 PM',
-    location: 'Freshman Hill',
-    isInviteOnly: false,
-  },
-  {
-    date: new Date(2024, 8, 23), // November 15, 2024
-    title: 'Tacos & Trivia',
-    time: '6:00 PM',
-    location: 'Mothers @ Union',
-    isInviteOnly: false,
-  },
-  {
-    date: new Date(2024, 8, 25), // November 25, 2024
-    title: 'Bid Dinner',
-    time: '8:00 PM',
-    location: 'Chapter House',
-    isInviteOnly: true,
-  },
-];
-
 const RushCalendar = () => {
-  // Helper function to find the first and last event dates
-  const firstEventDate = events[0].date;
-  const lastEventDate = events[events.length - 1].date;
+  const [events, setEvents] = useState([]);
 
-  // Helper function to get all weeks containing events
+  // Fetch rush events from the database
+  useEffect(() => {
+    const fetchRushEvents = async () => {
+      try {
+        const response = await axios.get('/api/rush');
+        const eventData = response.data.map((event) => ({
+          ...event,
+          date: new Date(`${event.event_date}T${event.event_time}`), // Combine date and time
+        }));
+        setEvents(eventData);
+      } catch (error) {
+        console.error('Error fetching rush events:', error);
+      }
+    };
+    fetchRushEvents();
+  }, []);
+
+  // Determine first and last event dates
+  const firstEventDate = events.length > 0 ? events[0].date : new Date();
+  const lastEventDate = events.length > 0 ? events[events.length - 1].date : new Date();
+
+  // Generate weeks containing events
   const weeks = [];
   let currentStart = startOfWeek(firstEventDate);
   while (currentStart <= lastEventDate) {
@@ -182,12 +140,11 @@ const RushCalendar = () => {
     currentStart = new Date(currentStart.setDate(currentStart.getDate() + 7));
   }
 
-  // Render the weekday headers
   const renderWeekdayHeaders = () => {
     const weekdays = eachDayOfInterval({
       start: startOfWeek(new Date()),
       end: endOfWeek(new Date()),
-    }).map((day) => format(day, 'EEEE')); // Full weekday names
+    }).map((day) => format(day, 'EEEE'));
     return (
       <WeekdayHeader>
         {weekdays.map((weekday, index) => (
@@ -199,43 +156,41 @@ const RushCalendar = () => {
 
   const renderEvents = (day) => {
     const dayEvents = events.filter((event) => isSameDay(event.date, day));
-    return dayEvents.length > 0
-      ? dayEvents.map((event, index) => (
-          <Event key={index} isInviteOnly={event.isInviteOnly}>
-            <div><strong>{event.title}</strong></div>
-            <div>{event.time}</div>
-            {!event.isInviteOnly && <div>{event.location}</div>}
-            {event.isInviteOnly && <span className="invite-only">Invite Only</span>}
-          </Event>
-        ))
-      : null; // Blank for days without events
+    return dayEvents.map((event, index) => (
+      <Event key={index} isInviteOnly={event.is_invite_only}>
+        <div><strong>{event.title}</strong></div>
+        <div>{event.event_time}</div>
+        <div>{event.location}</div>
+        {event.is_invite_only && <span className="invite-only">Invite Only</span>}
+      </Event>
+    ));
   };
 
   const title = getRushTitle(events);
 
   return (
     <>
-    <CalendarContainer>
-      <LionImage src={rampantLion} alt="Rampant Lion" />
-      <CalendarTitle>{title}</CalendarTitle>
-      {renderWeekdayHeaders()}
-      {weeks.map((week, weekIndex) => (
-        <Week key={weekIndex}>
-          {week.map((day, dayIndex) => {
-            const isEvent = events.some((event) => isSameDay(event.date, day));
-            const isInviteOnly = events.some(
-              (event) => isSameDay(event.date, day) && event.isInviteOnly
-            );
-            return (
-              <Day key={dayIndex} isEvent={isEvent} isInviteOnly={isInviteOnly}>
-                <DayHeader>{format(day, 'MMM d')}</DayHeader>
-                {renderEvents(day)}
-              </Day>
-            );
-          })}
-        </Week>
-      ))}
-    </CalendarContainer>
+      <CalendarContainer>
+        <LionImage src={rampantLion} alt="Rampant Lion" />
+        <CalendarTitle>{title}</CalendarTitle>
+        {renderWeekdayHeaders()}
+        {weeks.map((week, weekIndex) => (
+          <Week key={weekIndex}>
+            {week.map((day, dayIndex) => {
+              const isEvent = events.some((event) => isSameDay(event.date, day));
+              const isInviteOnly = events.some(
+                (event) => isSameDay(event.date, day) && event.is_invite_only
+              );
+              return (
+                <Day key={dayIndex} isEvent={isEvent} isInviteOnly={isInviteOnly}>
+                  <DayHeader>{format(day, 'MMM d')}</DayHeader>
+                  {renderEvents(day)}
+                </Day>
+              );
+            })}
+          </Week>
+        ))}
+      </CalendarContainer>
     </>
   );
 };

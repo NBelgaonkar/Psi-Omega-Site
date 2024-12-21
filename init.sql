@@ -12,3 +12,12 @@ CREATE TABLE events (
     location TEXT NOT NULL,
     description TEXT
 );
+
+CREATE TABLE rush (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    event_time TIME NOT NULL,
+    event_date DATE NOT NULL,
+    location TEXT NOT NULL,
+    description TEXT
+);
