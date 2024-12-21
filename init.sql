@@ -19,5 +19,6 @@ CREATE TABLE rush (
     event_time TIME NOT NULL,
     event_date DATE NOT NULL,
     location TEXT NOT NULL,
-    description TEXT
+    description TEXT,    
+    is_invite_only BOOLEAN DEFAULT FALSE
 );

@@ -13,7 +13,7 @@ function Admin() {
     date: '',
     location: '',
     description: '',
-    inviteOnly: false,
+    inviteOnly: false, // For the "Invite Only" feature
   });
   const [selectedTables, setSelectedTables] = useState([]);
 
@@ -67,14 +67,27 @@ function Admin() {
   const handleAddEvent = async () => {
     try {
       if (selectedTables.includes('events')) {
-        await axios.post('/api/events', newEvent);
+        await axios.post('/api/events', {
+          ...newEvent,
+          is_invite_only: newEvent.inviteOnly,
+        });
       }
       if (selectedTables.includes('rush')) {
-        await axios.post('/api/rush', newEvent);
+        await axios.post('/api/rush', {
+          ...newEvent,
+          is_invite_only: newEvent.inviteOnly,
+        });
       }
       fetchEvents();
       fetchRushEvents();
-      setNewEvent({ title: '', time: '', date: '', location: '', description: '' });
+      setNewEvent({
+        title: '',
+        time: '',
+        date: '',
+        location: '',
+        description: '',
+        inviteOnly: false,
+      });
       setSelectedTables([]);
     } catch (error) {
       console.error('Error adding event:', error);
@@ -108,8 +121,6 @@ function Admin() {
       ) : (
         <div>
           <h2>Admin Options</h2>
-          <p>Welcome to the admin page! Here are your options:</p>
-
           <h3>Add New Event</h3>
           <div style={{ marginBottom: '20px' }}>
             <input
@@ -120,13 +131,11 @@ function Admin() {
             />
             <input
               type="time"
-              placeholder="Time"
               value={newEvent.time}
               onChange={(e) => setNewEvent({ ...newEvent, time: e.target.value })}
             />
             <input
               type="date"
-              placeholder="Date"
               value={newEvent.date}
               onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
             />
@@ -142,6 +151,14 @@ function Admin() {
               value={newEvent.description}
               onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })}
             />
+            <label>
+              <input
+                type="checkbox"
+                checked={newEvent.inviteOnly}
+                onChange={(e) => setNewEvent({ ...newEvent, inviteOnly: e.target.checked })}
+              />
+              Invite Only
+            </label>
           </div>
           <div>
             <label>
@@ -160,44 +177,8 @@ function Admin() {
               />
               Add to Rush
             </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={newEvent.inviteOnly}
-                onChange={(e) => setNewEvent({ ...newEvent, inviteOnly: e.target.checked })}
-              />
-              Invite Only
-            </label>
           </div>
           <button onClick={handleAddEvent}>Add Event</button>
-
-          <h3>Events</h3>
-          <table border="1" style={{ margin: '0 auto', width: '80%' }}>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Time</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Description</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {events.map((event) => (
-                <tr key={event.id}>
-                  <td>{event.title}</td>
-                  <td>{event.event_time}</td>
-                  <td>{event.event_date}</td>
-                  <td>{event.location}</td>
-                  <td>{event.description}</td>
-                  <td>
-                    <button onClick={() => handleDeleteEvent(event.id, 'events')}>Delete</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
 
           <h3>Rush Events</h3>
           <table border="1" style={{ margin: '0 auto', width: '80%' }}>
@@ -220,7 +201,7 @@ function Admin() {
                   <td>{event.event_date}</td>
                   <td>{event.location}</td>
                   <td>{event.description}</td>
-                  <td>{event.inviteOnly ? 'Yes' : 'No'}</td>
+                  <td>{event.is_invite_only ? 'Yes' : 'No'}</td>
                   <td>
                     <button onClick={() => handleDeleteEvent(event.id, 'rush')}>Delete</button>
                   </td>
