@@ -1,11 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {
-  eachDayOfInterval,
-  endOfWeek,
-  format,
-  isSameDay,
-  startOfWeek,
-} from 'date-fns';
 import styled from 'styled-components';
 import rampantLion from '../Images/dke-lion.png';
 import axios from 'axios';
@@ -13,12 +6,12 @@ import axios from 'axios';
 // Styled Components
 const CalendarContainer = styled.div`
   font-family: 'Arial', sans-serif;
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: 900px;
+  margin: 30px auto;
   text-align: center;
   background-color: #f8f9fa;
   border-radius: 8px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 `;
@@ -28,7 +21,7 @@ const LionImage = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 500px;
   height: auto;
   z-index: 0;
   opacity: 0.1;
@@ -42,76 +35,35 @@ const CalendarTitle = styled.h1`
   z-index: 1;
 `;
 
-const WeekHeader = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 15px;
-  text-align: center;
-  font-weight: bold;
-  color: #b32017;
+const EventList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 `;
 
-const Week = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 20px;
-  z-index: 1;
-`;
-
-const Day = styled.div`
-  padding: 15px;
-  background-color: ${(props) =>
-    props.isEvent ? 'rgba(221, 240, 255, 0.9)' : 'rgba(255, 255, 255, 0.9)'};
-  border: ${(props) =>
-    props.isEvent
-      ? '2px solid #221f73'
-      : '1px solid rgba(200, 200, 200, 0.6)'};
+const EventItem = styled.div`
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  min-height: 120px;
+  padding: 15px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 600px;
   text-align: left;
-  position: relative;
-  box-shadow: ${(props) => (props.isEvent ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none')};
-  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const DayHeader = styled.div`
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: ${(props) => (props.isEvent ? '#221f73' : '#b32017')};
+const EventTitle = styled.h3`
+  color: #221f73;
+  margin: 0 0 5px;
 `;
 
-const Event = styled.div`
+const EventDetails = styled.p`
+  margin: 5px 0;
   font-size: 14px;
-  margin-top: 5px;
-  padding: 8px;
-  background-color: #221f73;
-  color: #fff;
-  border-radius: 4px;
-
-  .location {
-    font-size: 12px;
-    font-style: italic;
-    margin-top: 5px;
-    color: #ffd700;
-  }
+  color: #333;
 `;
-
-const getRushTitle = (events) => {
-  if (!events || events.length === 0) return 'ΔKE Rush Calendar';
-
-  // Sort events by date to find the earliest event
-  const sortedEvents = [...events].sort((a, b) => a.date - b.date);
-  const firstEventDate = sortedEvents[0]?.date;
-
-  // Ensure valid date before calculating title
-  if (!firstEventDate || isNaN(firstEventDate)) return 'ΔKE Rush Calendar';
-
-  const month = firstEventDate.getMonth() + 1;
-  const year = firstEventDate.getFullYear();
-  const season = month >= 7 && month <= 12 ? 'Fall' : 'Spring';
-
-  return `ΔKE ${season} Rush ${year}`;
-};
 
 const RushCalendar = () => {
   const [events, setEvents] = useState([]);
@@ -120,11 +72,7 @@ const RushCalendar = () => {
     const fetchRushEvents = async () => {
       try {
         const response = await axios.get('/api/rush');
-        const eventData = response.data.map((event) => ({
-          ...event,
-          date: new Date(`${event.event_date}T${event.event_time}`),
-        }));
-        setEvents(eventData);
+        setEvents(response.data);
       } catch (error) {
         console.error('Error fetching rush events:', error);
       }
@@ -132,61 +80,29 @@ const RushCalendar = () => {
     fetchRushEvents();
   }, []);
 
-  // Generate week intervals
-  const sortedEvents = [...events].sort((a, b) => a.date - b.date);
-  const firstEventDate = sortedEvents.length > 0 ? sortedEvents[0].date : new Date();
-  const lastEventDate =
-    sortedEvents.length > 0 ? sortedEvents[sortedEvents.length - 1].date : new Date();
-  const weeks = [];
-  let currentStart = startOfWeek(firstEventDate);
-
-  while (currentStart <= endOfWeek(lastEventDate)) {
-    weeks.push(
-      eachDayOfInterval({
-        start: currentStart,
-        end: endOfWeek(currentStart),
-      })
-    );
-    currentStart = new Date(currentStart.setDate(currentStart.getDate() + 7));
-  }
-
-  const renderEvents = (day) => {
-    const dayEvents = events.filter((event) => isSameDay(event.date, day));
-    return dayEvents.map((event, index) => (
-      <Event key={index}>
-        <div><strong>{event.title}</strong></div>
-        <div>{format(event.date, 'p')}</div>
-        <div className="location">{event.location}</div>
-      </Event>
-    ));
-  };
-
-  const title = getRushTitle(events);
-
   return (
     <CalendarContainer>
       <LionImage src={rampantLion} alt="Rampant Lion" />
-      <CalendarTitle>{title}</CalendarTitle>
-      <WeekHeader>
-        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(
-          (day, index) => (
-            <div key={index}>{day}</div>
-          )
-        )}
-      </WeekHeader>
-      {weeks.map((week, weekIndex) => (
-        <Week key={weekIndex}>
-          {week.map((day, dayIndex) => {
-            const isEvent = events.some((event) => isSameDay(event.date, day));
-            return (
-              <Day key={dayIndex} isEvent={isEvent}>
-                <DayHeader isEvent={isEvent}>{format(day, 'MMM d')}</DayHeader>
-                {renderEvents(day)}
-              </Day>
-            );
-          })}
-        </Week>
-      ))}
+      <CalendarTitle>ΔKE Rush Calendar</CalendarTitle>
+      <EventList>
+        {events.map((event) => (
+          <EventItem key={event.id}>
+            <EventTitle>{event.title}</EventTitle>
+            <EventDetails>
+              <strong>Date:</strong> {event.event_date}
+            </EventDetails>
+            <EventDetails>
+              <strong>Time:</strong> {event.event_time}
+            </EventDetails>
+            <EventDetails>
+              <strong>Location:</strong> {event.location}
+            </EventDetails>
+            <EventDetails>
+              <strong>Description:</strong> {event.description}
+            </EventDetails>
+          </EventItem>
+        ))}
+      </EventList>
     </CalendarContainer>
   );
 };
